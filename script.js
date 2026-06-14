@@ -178,9 +178,17 @@ if (contactForm) {
 }
 
 contactForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!contactForm.reportValidity()) return;
-  if (!formStatus) return;
+  if (!contactForm.reportValidity()) {
+    event.preventDefault();
+    return;
+  }
 
-  formStatus.textContent = "送信機能は準備中です。公開時に予約フォームやメール連携へ接続できます。";
+  if (contactForm.action.startsWith("mailto:")) {
+    return;
+  }
+
+  event.preventDefault();
+  if (formStatus) {
+    formStatus.textContent = "送信先の設定を確認してください。";
+  }
 });
