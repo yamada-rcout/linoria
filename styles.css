@@ -4462,6 +4462,19 @@ button:disabled:hover {
 
 @media (min-width: 721px) {
   h2,
+  .about-copy h2,
+  .reason-section h2,
+  .support-link-copy h2,
+  .supporter-cta-copy h2,
+  .price-summary-copy h2,
+  .faq-copy h2,
+  .flow-copy h2,
+  .about-intro-copy h2,
+  .about-for-you-copy h2,
+  .contact-section h2,
+  .message-section h2,
+  .supporter-message-head h2,
+  .supporter-message-subsection h3,
   .vmv-cta-copy h2,
   .legal-section h2,
   .vmv-content-section .section-head h2 {
