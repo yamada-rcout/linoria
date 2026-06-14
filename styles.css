@@ -4459,3 +4459,12 @@ button:disabled:hover {
     line-height: 1.35;
   }
 }
+
+@media (min-width: 721px) {
+  h2,
+  .vmv-cta-copy h2,
+  .legal-section h2,
+  .vmv-content-section .section-head h2 {
+    font-size: clamp(calc(2rem - 6px), calc(4.8vw - 6px), calc(4.35rem - 6px));
+  }
+}
