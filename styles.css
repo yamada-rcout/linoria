@@ -8,6 +8,8 @@
   --soft: #f4f7fa;
   --white: #ffffff;
   --paper: #fbfaf6;
+  --section-title-size: clamp(calc(2rem - 22px), calc(4.8vw - 22px), calc(4.35rem - 22px));
+  --section-title-size-mobile: 26px;
 }
 
 * {
@@ -477,6 +479,14 @@ h2 {
   font-size: clamp(2rem, 4.8vw, 4.35rem);
   font-weight: 900;
   line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.section-title {
+  margin-bottom: 0;
+  font-size: var(--section-title-size);
+  font-weight: 900;
+  line-height: 1.35;
   letter-spacing: 0;
 }
 
@@ -2315,7 +2325,7 @@ main > section.vmv-cta-section::before {
   align-items: start;
 }
 
-.supporter-message-subsection h3 {
+.supporter-message-subsection h2 {
   margin: 0;
   color: var(--ink);
   font-size: clamp(2.5rem, 5.1vw, 4.55rem);
@@ -2417,7 +2427,7 @@ main > section.vmv-cta-section::before {
     margin-top: 18px;
   }
 
-  .supporter-message-subsection h3 {
+  .supporter-message-subsection h2 {
     font-size: 26px;
     line-height: 1.35;
   }
@@ -4474,7 +4484,7 @@ button:disabled:hover {
   .contact-section h2,
   .message-section h2,
   .supporter-message-head h2,
-  .supporter-message-subsection h3,
+  .supporter-message-subsection h2,
   .vmv-cta-copy h2,
   .legal-section h2,
   .vmv-content-section .section-head h2 {
@@ -4483,5 +4493,17 @@ button:disabled:hover {
 
   .supporter-cta-copy h2 {
     font-size: clamp(2rem, calc(4.8vw - 30px), calc(4.35rem - 30px));
+  }
+}
+
+.section-title {
+  font-size: var(--section-title-size);
+  line-height: 1.35;
+}
+
+@media (max-width: 720px) {
+  .section-title {
+    font-size: var(--section-title-size-mobile);
+    line-height: 1.35;
   }
 }
