@@ -4478,6 +4478,10 @@ button:disabled:hover {
   .vmv-cta-copy h2,
   .legal-section h2,
   .vmv-content-section .section-head h2 {
-    font-size: clamp(calc(2rem - 14px), calc(4.8vw - 14px), calc(4.35rem - 14px));
+    font-size: clamp(calc(2rem - 22px), calc(4.8vw - 22px), calc(4.35rem - 22px));
+  }
+
+  .supporter-cta-copy h2 {
+    font-size: clamp(2rem, calc(4.8vw - 30px), calc(4.35rem - 30px));
   }
 }
