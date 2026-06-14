@@ -1167,7 +1167,7 @@ main > section.vmv-cta-section::before {
   pointer-events: none;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.8) 42%, rgba(255, 255, 255, 0.58) 100%),
-    url("assets/about-career-support.png") center right / cover no-repeat;
+    url("assets/top-inline-visual.jpg") center right / cover no-repeat;
   opacity: 0.72;
   transform: scale(1.04);
 }
@@ -3729,7 +3729,7 @@ button:disabled:hover {
   .theme-section::after {
     background:
       linear-gradient(180deg, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.9) 48%, rgba(255, 255, 255, 0.98) 100%),
-      url("assets/about-career-support.png") center top / cover no-repeat;
+      url("assets/top-inline-visual.jpg") center top / cover no-repeat;
     opacity: 0.58;
     transform: none;
   }
