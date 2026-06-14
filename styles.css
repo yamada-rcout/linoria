@@ -3140,12 +3140,16 @@ button:disabled:hover {
 }
 
 .form-note {
-  margin: -26px 0 0;
+  margin: -20px 0 0;
   color: var(--muted);
   font-size: 12px;
   font-weight: 500;
-  line-height: 1.7;
-  text-align: center;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.form-note p {
+  margin: 0;
 }
 
 .form-status {
