@@ -178,16 +178,32 @@ if (contactForm) {
 }
 
 contactForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
   if (!contactForm.reportValidity()) {
-    event.preventDefault();
     return;
   }
 
   if (contactForm.action.startsWith("mailto:")) {
+    const formData = new FormData(contactForm);
+    const name = String(formData.get("name") || "未入力");
+    const email = String(formData.get("email") || "");
+    const message = String(formData.get("message") || "");
+    const subject = "Linoriaお問い合わせ";
+    const body = [
+      "Linoriaへのお問い合わせ",
+      "",
+      `お名前：${name}`,
+      `メールアドレス：${email}`,
+      "",
+      "ご相談・ご質問内容：",
+      message
+    ].join("\n");
+
+    window.location.href = `mailto:info@linoria.jp?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     return;
   }
 
-  event.preventDefault();
   if (formStatus) {
     formStatus.textContent = "送信先の設定を確認してください。";
   }

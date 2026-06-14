@@ -3096,10 +3096,10 @@ textarea {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--muted);
-  font-size: 0.92rem;
-  font-weight: 700;
-  line-height: 1.7;
+  color: var(--ink);
+  font-size: inherit;
+  font-weight: 900;
+  line-height: 1.5;
 }
 
 .privacy-consent input {
@@ -3137,6 +3137,15 @@ button:disabled,
 button:disabled:hover {
   background: #b8c7dd;
   cursor: not-allowed;
+}
+
+.form-note {
+  margin: -26px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.7;
+  text-align: center;
 }
 
 .form-status {
