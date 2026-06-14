@@ -2051,9 +2051,6 @@ main > section.vmv-cta-section::before {
 .about-bottom-cta h2 {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(2.5rem, 5.1vw, 4.55rem);
-  font-weight: 900;
-  line-height: 1.16;
 }
 
 .about-bottom-cta-buttons {
@@ -2125,11 +2122,6 @@ main > section.vmv-cta-section::before {
   .about-compare-table th:first-child,
   .about-compare-table td:first-child {
     min-width: 132px;
-  }
-
-  .about-bottom-cta h2 {
-    font-size: 26px;
-    line-height: 1.35;
   }
 
   .about-bottom-cta-buttons {
@@ -4496,13 +4488,13 @@ button:disabled:hover {
   }
 }
 
-.section-title {
+h2.section-title.section-title {
   font-size: var(--section-title-size);
   line-height: 1.35;
 }
 
 @media (max-width: 720px) {
-  .section-title {
+  h2.section-title.section-title {
     font-size: var(--section-title-size-mobile);
     line-height: 1.35;
   }
