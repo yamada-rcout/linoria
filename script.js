@@ -183,5 +183,12 @@ contactForm?.addEventListener("submit", (event) => {
     return;
   }
 
-  if (formStatus) formStatus.textContent = "送信しています。";
+  if (contactForm.action.startsWith("mailto:")) {
+    return;
+  }
+
+  event.preventDefault();
+  if (formStatus) {
+    formStatus.textContent = "送信先の設定を確認してください。";
+  }
 });
