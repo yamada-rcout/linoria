@@ -3842,6 +3842,7 @@ button:disabled:hover {
   label,
   input,
   textarea,
+  select,
   button,
   button {
     font-size: 13px;
