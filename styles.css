@@ -2993,9 +2993,6 @@ main > section.vmv-cta-section::before {
 .legal-list p {
   margin: 0 0 10px;
   color: var(--text);
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 2;
 }
 
 .legal-bullet-list {
@@ -3004,9 +3001,20 @@ main > section.vmv-cta-section::before {
   margin: 0 0 18px;
   padding-left: 1.2em;
   color: var(--text);
-  font-size: 13px;
+}
+
+.legal-bullet-list li {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.legal-section .legal-list p,
+.legal-section .legal-bullet-list,
+.legal-section .legal-bullet-list li {
+  font-size: 1.1rem;
   font-weight: 500;
-  line-height: 1.9;
+  line-height: 2;
 }
 
 .vmv-hero-section {
@@ -3837,6 +3845,13 @@ button:disabled:hover {
   button,
   button {
     font-size: 13px;
+  }
+
+  .legal-section .legal-list p,
+  .legal-section .legal-bullet-list,
+  .legal-section .legal-bullet-list li {
+    font-size: 13px;
+    line-height: 1.9;
   }
 
   .vmv-hero-section {
