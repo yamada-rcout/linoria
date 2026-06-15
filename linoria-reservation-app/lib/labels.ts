@@ -18,3 +18,24 @@ export const formatDateTime = (value: string) =>
     timeStyle: "short",
     timeZone: "Asia/Tokyo"
   }).format(new Date(value));
+
+export const formatSlotRange = (startAt: string, endAt: string) => {
+  const date = new Intl.DateTimeFormat("ja-JP", {
+    month: "numeric",
+    day: "numeric",
+    weekday: "short",
+    timeZone: "Asia/Tokyo"
+  }).format(new Date(startAt));
+  const start = new Intl.DateTimeFormat("ja-JP", {
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "Asia/Tokyo"
+  }).format(new Date(startAt));
+  const end = new Intl.DateTimeFormat("ja-JP", {
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "Asia/Tokyo"
+  }).format(new Date(endAt));
+
+  return `${date} ${start}〜${end}`;
+};

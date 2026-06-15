@@ -1,0 +1,639 @@
+:root {
+  --blue: #0057d9;
+  --blue-dark: #003f9e;
+  --ink: #111111;
+  --text: #333333;
+  --muted: #6f7880;
+  --line: #d9e0e6;
+  --soft: #f4f7fa;
+  --white: #ffffff;
+  --paper: #fbfaf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--white);
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(115deg, rgba(0, 87, 217, 0.06), transparent 30%),
+    radial-gradient(circle at 82% 8%, rgba(0, 87, 217, 0.1), transparent 32%),
+    var(--white);
+  color: var(--ink);
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Arial, sans-serif;
+  line-height: 1.8;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.site-shell {
+  min-height: 100vh;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  margin: 12px clamp(10px, 2vw, 24px) 0;
+  padding: 0 clamp(20px, 5vw, 72px);
+  background: var(--white);
+  box-shadow: 0 1px 10px rgba(17, 17, 17, 0.045);
+}
+
+.brand {
+  color: var(--blue);
+  font-size: 1.45rem;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.brand span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.page-section {
+  padding: clamp(64px, 8vw, 108px) clamp(20px, 5vw, 72px);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(340px, 1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.section-kicker {
+  margin: 0 0 12px;
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(2rem, 4.6vw, 4rem);
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.lead {
+  max-width: 560px;
+  margin: 24px 0 0;
+  color: var(--muted);
+}
+
+.lead.compact {
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.info-list {
+  display: grid;
+  gap: 14px;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.info-list li {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.info-list span {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 20px 58px rgba(17, 17, 17, 0.055);
+}
+
+.reservation-form,
+.reservation-complete,
+.admin-login,
+.admin-panel {
+  display: grid;
+  gap: 18px;
+  padding: clamp(22px, 4vw, 36px);
+}
+
+.reservation-complete h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.4;
+}
+
+.complete-summary {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.complete-summary div {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.complete-summary span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.complete-summary strong {
+  color: var(--ink);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 13px 14px;
+  background: var(--white);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(0, 87, 217, 0.18);
+  border-color: var(--blue);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.primary-button,
+.secondary-button {
+  min-height: 56px;
+  border: 0;
+  border-radius: 0;
+  padding: 0 20px;
+  font-weight: 900;
+}
+
+.primary-button {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.primary-button:hover {
+  background: var(--blue-dark);
+}
+
+.primary-button:disabled {
+  background: #b8c7dd;
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.secondary-button:hover {
+  border-color: var(--blue);
+  background: #f4f7ff;
+  color: var(--blue);
+}
+
+.danger-button {
+  border-color: #f0c8c8;
+  color: #a51f1f;
+}
+
+.danger-button:hover {
+  border-color: #d93030;
+  background: #fff4f4;
+  color: #8f1111;
+}
+
+.status-message {
+  min-height: 28px;
+  margin: 0;
+  color: var(--blue);
+  font-weight: 900;
+}
+
+.status-message.is-error {
+  color: #a51f1f;
+}
+
+.admin-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.admin-stack {
+  display: grid;
+  gap: 28px;
+}
+
+.admin-header p {
+  max-width: 560px;
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.reservation-table {
+  width: 100%;
+  min-width: 920px;
+  border-collapse: collapse;
+}
+
+.reservation-table th,
+.reservation-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.reservation-table th {
+  background: #f8fafc;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.reservation-table td {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.reservation-table strong {
+  display: block;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.status-badge {
+  display: inline-flex;
+  min-width: 86px;
+  min-height: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.status-badge.pending {
+  background: #fff8e8;
+  color: #946000;
+}
+
+.status-badge.confirmed {
+  background: #eff5ff;
+  color: var(--blue);
+}
+
+.status-badge.cancelled {
+  background: #fff2f2;
+  color: #a51f1f;
+}
+
+.status-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.slot-picker {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.slot-picker legend {
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.slot-list,
+.slot-admin-list {
+  display: grid;
+  gap: 12px;
+}
+
+.slot-option {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: #fbfcfe;
+}
+
+.slot-option:has(input:checked) {
+  border-color: var(--blue);
+  background: #f4f7ff;
+}
+
+.slot-option input {
+  width: 18px;
+  height: 18px;
+  margin-top: 5px;
+  accent-color: var(--blue);
+}
+
+.slot-option strong,
+.slot-option small {
+  display: block;
+}
+
+.slot-option small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.slot-empty {
+  margin: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: #fbfcfe;
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.calendar-picker {
+  display: grid;
+  gap: 12px;
+}
+
+.calendar-toolbar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.calendar-toolbar p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.calendar-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.calendar-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.calendar-table th,
+.calendar-table td {
+  border: 1px solid var(--line);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.calendar-table thead th {
+  height: 50px;
+  padding: 6px 4px;
+  background: #fbfcfe;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.calendar-table thead th:first-child,
+.calendar-table tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  width: 64px;
+  background: #f8fafc;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.calendar-table thead th:first-child {
+  z-index: 3;
+}
+
+.calendar-table td {
+  height: 34px;
+  padding: 0;
+}
+
+.calendar-slot {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 34px;
+  border: 0;
+  background: transparent;
+  color: #47b83d;
+  font-size: 23px;
+  line-height: 1;
+  box-shadow: none;
+}
+
+.calendar-slot:hover,
+.calendar-slot.is-selected {
+  background: #edf8ec;
+  color: #2f9f27;
+}
+
+.calendar-slot.is-selected {
+  outline: 2px solid rgba(0, 87, 217, 0.28);
+  outline-offset: -2px;
+}
+
+.calendar-slot.is-disabled {
+  color: #9aa4ad;
+  cursor: not-allowed;
+}
+
+.selected-slot {
+  margin: 0;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.slot-form {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  align-items: end;
+}
+
+.slot-admin-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: #fbfcfe;
+}
+
+.inline-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.inline-check input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--blue);
+}
+
+.slot-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.empty-state {
+  padding: 34px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--muted);
+  font-weight: 900;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-header {
+    display: grid;
+  }
+
+  .slot-form {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .calendar-toolbar p {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    font-size: 14px;
+  }
+
+  .site-header {
+    min-height: 68px;
+    padding: 0 18px;
+  }
+
+  .page-section {
+    padding-top: 54px;
+    padding-bottom: 64px;
+  }
+
+  .page-title {
+    font-size: 30px;
+  }
+}
