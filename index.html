@@ -2533,6 +2533,32 @@ button:hover {
   line-height: 1.2;
 }
 
+.price-summary-side {
+  position: absolute;
+  top: 26px;
+  right: 0;
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+}
+
+.price-summary-side p,
+.price-summary-side strong {
+  margin: 0;
+  color: var(--blue);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.price-summary-side p {
+  position: static;
+  font-size: 0.9rem;
+}
+
+.price-summary-side strong {
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+}
+
 .about-intro-copy p:not(.section-kicker) {
   margin: 0;
   margin-top: 24px;
@@ -3839,6 +3865,21 @@ button:hover {
     font-size: 13px;
   }
 
+  .price-summary-side {
+    top: 20px;
+    right: 0;
+    gap: 6px;
+  }
+
+  .price-summary-side p {
+    position: static;
+    font-size: 12px;
+  }
+
+  .price-summary-side strong {
+    font-size: 15px;
+  }
+
   .faq-list summary {
     grid-template-columns: 20px minmax(0, 1fr) 20px;
     gap: 10px;
@@ -4209,9 +4250,9 @@ button:hover {
       <p>無料相談から継続サポートまで。<br>あなたの状況や目的に合わせて、必要なサポートだけを選べます。</p>
     </div>
     <div class="price-summary-list">
-      <article><h3>初回無料相談</h3><span>まずは話してみる</span><p>～30minutes</p></article>
-      <article><h3>キャリア整理相談</h3><span>悩みと選択肢を整理する</span><p>1hour～</p></article>
-      <article><h3>伴走プラン</h3><span>対話を重ねながら整理する</span><p>30days～</p></article>
+      <article><h3>初回無料相談</h3><span>まずは話してみる</span><div class="price-summary-side"><p>～30minutes</p><strong>￥0</strong></div></article>
+      <article><h3>キャリア整理相談</h3><span>悩みと選択肢を整理する</span><div class="price-summary-side"><p>1hour～</p><strong>￥3,500</strong></div></article>
+      <article><h3>伴走プラン</h3><span>対話を重ねながら整理する</span><div class="price-summary-side"><p>30days～</p><strong>￥9,800</strong></div></article>
     </div>
     <a class="section-link" href="price.html">料金・利用方法を見る<span aria-hidden="true">→</span></a>
   </section>
@@ -4299,9 +4340,9 @@ button:hover {
       <p>正式な価格は公開前に調整できます。現時点では、サイト上でわかりやすく見せるための仮表記です。</p>
     </div>
     <div class="price-summary-list">
-      <article><h3>初回無料相談</h3><span>まずは話してみる</span><p>～30minutes</p></article>
-      <article><h3>キャリア整理相談</h3><span>悩みと選択肢を整理する</span><p>1hour～</p></article>
-      <article><h3>伴走プラン</h3><span>対話を重ねながら整理する</span><p>30days～</p></article>
+      <article><h3>初回無料相談</h3><span>まずは話してみる</span><div class="price-summary-side"><p>～30minutes</p><strong>￥0</strong></div></article>
+      <article><h3>キャリア整理相談</h3><span>悩みと選択肢を整理する</span><div class="price-summary-side"><p>1hour～</p><strong>￥3,500</strong></div></article>
+      <article><h3>伴走プラン</h3><span>対話を重ねながら整理する</span><div class="price-summary-side"><p>30days～</p><strong>￥9,800</strong></div></article>
     </div>
     <a class="section-link" href="contact.html">申し込む<span aria-hidden="true">→</span></a>
   </section>
