@@ -2021,6 +2021,81 @@ main > section.vmv-cta-section::before {
   margin-top: clamp(12px, 2vw, 18px);
 }
 
+.reviews-section {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.42fr) minmax(0, 1fr);
+  gap: clamp(30px, 5vw, 72px);
+  align-items: start;
+  background: var(--white);
+}
+
+.reviews-copy h2 {
+  max-width: 420px;
+}
+
+.reviews-copy p:not(.section-kicker) {
+  max-width: 420px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.review-card-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.review-card {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  align-content: start;
+  min-height: 220px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.review-card span {
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.review-card h3 {
+  margin: 18px 0 12px;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.review-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+.review-profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.review-profile small {
+  color: var(--text);
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
 .faq-section {
   display: grid;
   grid-template-columns: minmax(260px, 0.62fr) minmax(0, 1fr);
@@ -3293,6 +3368,7 @@ button:hover {
   .support-link-copy h2,
   .supporter-cta-copy h2,
   .price-summary-copy h2,
+  .reviews-copy h2,
   .faq-copy h2,
   .flow-copy h2 {
     font-size: 26px;
@@ -3880,6 +3956,42 @@ button:hover {
     font-size: 15px;
   }
 
+  .reviews-section {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .reviews-copy p:not(.section-kicker) {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .review-card-list {
+    display: flex;
+    gap: 12px;
+    margin-right: -20px;
+    padding-right: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .review-card {
+    flex: 0 0 min(82vw, 310px);
+    min-height: 190px;
+    padding: 20px;
+    scroll-snap-align: start;
+  }
+
+  .review-card h3 {
+    font-size: 15px;
+  }
+
+  .review-card p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
   .faq-list summary {
     grid-template-columns: 20px minmax(0, 1fr) 20px;
     gap: 10px;
@@ -4038,6 +4150,7 @@ button:hover {
   .support-link-copy h2,
   .supporter-cta-copy h2,
   .price-summary-copy h2,
+  .reviews-copy h2,
   .faq-copy h2,
   .flow-copy h2 {
     font-size: 26px;
@@ -4129,6 +4242,7 @@ button:hover {
   .support-link-copy h2,
   .supporter-cta-copy h2,
   .price-summary-copy h2,
+  .reviews-copy h2,
   .faq-copy h2,
   .flow-copy h2,
   .about-intro-copy h2,
@@ -4254,6 +4368,21 @@ button:hover {
       <article><h3>伴走プラン</h3><span>対話を重ねながら整理する</span><div class="price-summary-side"><p>30days～</p><strong>￥9,800</strong></div></article>
     </div>
     <a class="section-link" href="price.html">料金・利用方法を見る<span aria-hidden="true">→</span></a>
+  </section>
+
+  <section class="content-section reviews-section">
+    <div class="reviews-copy">
+      <p class="section-kicker">Reviews</p>
+      <h2>安心して、<br>一歩を踏み出せるように</h2>
+      <p>実際にご相談いただいた方からいただいたご感想を紹介します。</p>
+    </div>
+    <div class="review-card-list" aria-label="クチコミ一覧">
+      <article class="review-card"><span>Review 01</span><h3>頭の中が整理されて、前向きになれました。</h3><p>「辞めたい」という気持ちだけで相談しましたが、無理に転職を勧められることはありませんでした。話を聞いてもらううちに考えが整理され、自分にとって納得できる選択肢が見えてきました。</p><div class="review-profile"><small>30代</small><small>小学校教員</small></div></article>
+      <article class="review-card"><span>Review 02</span><h3>単発で気軽に相談できるのがありがたかったです。</h3><p>いきなり高額なサービスを契約するのは不安でしたが、単発相談があったので安心して利用できました。価格も良心的で、最初の一歩を踏み出しやすかったです。</p><div class="review-profile"><small>20代</small><small>中学校教員</small></div></article>
+      <article class="review-card"><span>Review 03</span><h3>経験者だからこその言葉に説得力がありました。</h3><p>教員だけでなく民間企業や独立も経験されているので、幅広い視点からアドバイスをいただけました。知識も豊富で、とても信頼できるサポートでした。</p><div class="review-profile"><small>30代</small><small>高校教員</small></div></article>
+      <article class="review-card"><span>Review 04</span><h3>結果的に転職しませんでしたが、相談して本当によかったです。</h3><p>話を重ねる中で、自分は「辞めたい」のではなく「働き方を変えたい」のだと気づきました。今は以前より前向きに仕事と向き合えています。</p><div class="review-profile"><small>20代</small><small>特別支援学校教員</small></div></article>
+      <article class="review-card"><span>Review 05</span><h3>納得できる転職先に出会えました。</h3><p>焦って転職するのではなく、自分に合う道を一緒に考えていただきました。丁寧に伴走してもらえたおかげで、結果的に納得のいく転職ができています。</p><div class="review-profile"><small>30代</small><small>元教員</small></div></article>
+    </div>
   </section>
 
   <section id="faq" class="content-section faq-section">
@@ -4766,7 +4895,8 @@ function initReveal() {
     ['.hero-inner','main > section.content-section','.about-section','.vmv-cta-copy','.section-head',
      '.support-link-copy','.support-link-panel','.issue-grid article',
      '.supporter-cta-copy','.supporter-cta-photo','.price-summary-copy',
-     '.price-summary-list','.price-section > .section-link','.faq-copy',
+     '.price-summary-list','.price-section > .section-link','.reviews-copy','.review-card',
+     '.faq-copy',
      '.faq-summary-panel','.message-section > *','.contact-section > *',
      '.feature-item','.flow-list li',
      '.about-intro-2col','.about-detail-compare','.about-for-you','.about-cta-row',
