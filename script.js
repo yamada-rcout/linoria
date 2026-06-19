@@ -18,6 +18,7 @@ ensureLowerFixedBackground();
 
 const header = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
+const floatingCtaGroup = document.querySelector(".floating-cta-group");
 const mobileHeaderQuery = window.matchMedia("(max-width: 720px)");
 const hero = document.querySelector(".hero");
 const aboutSection = document.querySelector(".about-section");
@@ -50,20 +51,34 @@ setHeaderState();
 setLowerBackgroundState();
 setHeroPinnedState();
 
+const setFloatingCtaState = (currentScrollY) => {
+  if (!floatingCtaGroup) return;
+
+  if (currentScrollY < 120 || currentScrollY < lastScrollY) {
+    floatingCtaGroup.classList.remove("is-hidden");
+  } else if (currentScrollY > lastScrollY + 8) {
+    floatingCtaGroup.classList.add("is-hidden");
+  }
+};
+
 window.addEventListener(
   "scroll",
   () => {
+    const currentScrollY = window.scrollY;
+
     setHeaderState();
     setLowerBackgroundState();
     setHeroPinnedState();
+    setFloatingCtaState(currentScrollY);
+
     if (!header) return;
     if (!mobileHeaderQuery.matches) {
       header.classList.remove("is-hidden", "is-menu-open");
       menuToggle?.setAttribute("aria-expanded", "false");
+      lastScrollY = currentScrollY;
       return;
     }
 
-    const currentScrollY = window.scrollY;
     const isMenuOpen = header.classList.contains("is-menu-open");
 
     if (isMenuOpen || currentScrollY < 24 || currentScrollY < lastScrollY) {
@@ -176,6 +191,25 @@ if ("IntersectionObserver" in window) {
 } else {
   revealTargets.forEach((target) => target.classList.add("is-visible"));
 }
+
+const updateScrollProgress = (element) => {
+  const maxScroll = element.scrollWidth - element.clientWidth;
+  const progress = maxScroll > 0 ? (element.scrollLeft / maxScroll) * 100 : 100;
+  element.style.setProperty("--scroll-progress", `${Math.max(0, Math.min(100, progress))}%`);
+};
+
+const scrollProgressTargets = document.querySelectorAll(
+  ".about-process-steps, .about-compare-table-wrap, .price-summary-list"
+);
+
+scrollProgressTargets.forEach((target) => {
+  updateScrollProgress(target);
+  target.addEventListener("scroll", () => updateScrollProgress(target), { passive: true });
+});
+
+window.addEventListener("resize", () => {
+  scrollProgressTargets.forEach(updateScrollProgress);
+});
 
 const updateContactSubmitState = () => {
   if (!contactForm || !submitButton) return;

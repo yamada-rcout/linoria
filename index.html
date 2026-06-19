@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ja">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -88,19 +88,19 @@ a {
 
 .site-header {
   position: sticky;
-  top: 12px;
+  top: 8px;
   z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 76px;
+  min-height: 62px;
   width: auto;
-  margin: 12px clamp(10px, 2vw, 24px) 0;
+  margin: 8px clamp(10px, 2vw, 24px) 0;
   padding: 0 clamp(20px, 5vw, 72px);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
   border: 0;
   border-radius: 0;
-  box-shadow: 0 1px 10px rgba(17, 17, 17, 0.045);
+  box-shadow: 0 1px 8px rgba(17, 17, 17, 0.035);
   backdrop-filter: blur(14px);
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
@@ -116,7 +116,7 @@ a {
 .brand-symbol {
   display: block;
   color: var(--blue);
-  font-size: 1.45rem;
+  font-size: 1.34rem;
   font-weight: 900;
   letter-spacing: 0;
   line-height: 1;
@@ -126,7 +126,7 @@ a {
   display: block;
   margin-top: 0;
   color: var(--muted);
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   line-height: 1.2;
@@ -142,7 +142,7 @@ a {
 
 .nav a {
   position: relative;
-  padding: 26px 0;
+  padding: 19px 0;
 }
 
 .nav a::after {
@@ -162,28 +162,57 @@ a {
   transform: scaleX(1);
 }
 
-.floating-cta {
+.floating-cta-group {
   position: fixed;
   right: clamp(18px, 3vw, 34px);
   bottom: clamp(18px, 3vw, 34px);
   z-index: 30;
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.floating-cta-group.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(100% + 24px));
+}
+
+.floating-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
-  padding: 0 22px;
-  background: var(--blue);
+  min-height: 40px;
+  min-width: 166px;
+  width: 166px;
+  padding: 0 12px;
+  background: rgba(0, 87, 217, 0.9);
   color: var(--white);
-  box-shadow: 0 16px 42px rgba(0, 87, 217, 0.28);
-  font-size: 14px;
+  box-shadow: 0 10px 26px rgba(0, 87, 217, 0.16);
+  font-size: 12px;
   font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
   transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .floating-cta:hover {
   background: var(--blue-dark);
-  box-shadow: 0 18px 48px rgba(0, 63, 158, 0.32);
+  box-shadow: 0 12px 30px rgba(0, 63, 158, 0.2);
   transform: translateY(-2px);
+}
+
+.floating-cta--mail {
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--blue);
+  box-shadow: 0 8px 22px rgba(0, 40, 100, 0.09);
+}
+
+.floating-cta--mail:hover {
+  background: var(--white);
+  color: var(--blue-dark);
 }
 
 .menu-toggle {
@@ -594,20 +623,34 @@ h3 {
 .hero-action-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 0;
+  align-items: center;
 }
 
 .hero-action-badges span {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  min-height: 28px;
-  padding: 0 10px;
-  border: 1px solid rgba(0, 87, 217, 0.2);
-  background: rgba(255, 255, 255, 0.72);
   color: var(--blue);
-  font-size: 0.78rem;
+  font-size: 0.86rem;
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.6;
+}
+
+.hero-action-badges span:not(:last-child) {
+  margin-right: 12px;
+  padding-right: 12px;
+}
+
+.hero-action-badges span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 0.9em;
+  background: rgba(0, 87, 217, 0.32);
+  transform: translateY(-50%);
 }
 
 .hero-action-buttons,
@@ -2263,33 +2306,15 @@ main > section.vmv-cta-section::before {
 
 .reason-grid,
 .review-card-list {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 87, 217, 0.46) rgba(0, 87, 217, 0.08);
+  scrollbar-width: none;
+  background:
+    linear-gradient(90deg, var(--blue), #34c9ff) left bottom / var(--scroll-progress, 0%) 3px no-repeat,
+    linear-gradient(#d8dee6, #d8dee6) left bottom / 100% 3px no-repeat;
 }
 
 .reason-grid::-webkit-scrollbar,
 .review-card-list::-webkit-scrollbar {
-  height: 8px;
-}
-
-.reason-grid::-webkit-scrollbar-track,
-.review-card-list::-webkit-scrollbar-track {
-  border-radius: 999px;
-  background: rgba(0, 87, 217, 0.07);
-}
-
-.reason-grid::-webkit-scrollbar-thumb,
-.review-card-list::-webkit-scrollbar-thumb {
-  border: 2px solid rgba(255, 255, 255, 0.72);
-  border-radius: 999px;
-  background: linear-gradient(90deg, #0057d9, #34c9ff);
-}
-
-.reason-grid::-webkit-scrollbar-button,
-.review-card-list::-webkit-scrollbar-button {
   display: none;
-  width: 0;
-  height: 0;
 }
 
 .faq-section {
@@ -3005,6 +3030,16 @@ button:hover {
 .about-compare-table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+  padding-bottom: 16px;
+  scrollbar-width: none;
+  background:
+    linear-gradient(90deg, var(--blue), #34c9ff) left bottom / var(--scroll-progress, 0%) 3px no-repeat,
+    linear-gradient(#d8dee6, #d8dee6) left bottom / 100% 3px no-repeat;
+}
+
+.about-compare-table-wrap::-webkit-scrollbar {
+  display: none;
 }
 
 .about-compare-table {
@@ -3481,20 +3516,28 @@ button:hover {
 
   .site-header {
     position: sticky;
-    top: 8px;
+    top: 5px;
     align-items: center;
     flex-direction: row;
-    min-height: 60px;
-    margin: 8px 8px 0;
-    padding-right: 18px;
-    padding-left: 20px;
-    padding-top: 8px;
-    padding-bottom: 16px;
+    min-height: 46px;
+    margin: 5px 8px 0;
+    padding: 5px 15px 5px 17px;
+  }
+
+  .brand-symbol {
+    font-size: 1.16rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.54rem;
   }
 
   .menu-toggle {
     display: grid;
     align-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
   }
 
   .nav {
@@ -3529,14 +3572,19 @@ button:hover {
     max-height: 360px;
   }
 
-  .floating-cta {
+  .floating-cta-group {
     right: 14px;
-    left: auto;
     bottom: 14px;
-    min-height: 42px;
-    padding: 0 14px;
-    font-size: 12px;
-    box-shadow: 0 8px 24px rgba(0, 87, 217, 0.18);
+    gap: 6px;
+  }
+
+  .floating-cta {
+    min-height: 38px;
+    min-width: 158px;
+    width: 158px;
+    padding: 0 10px;
+    font-size: 11px;
+    box-shadow: 0 7px 18px rgba(0, 87, 217, 0.13);
   }
 
   .section-kicker,
@@ -3802,13 +3850,17 @@ button:hover {
   }
 
   .hero-action-badges {
-    gap: 6px;
+    gap: 0;
   }
 
   .hero-action-badges span {
-    min-height: 24px;
-    padding: 0 8px;
     font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .hero-action-badges span:not(:last-child) {
+    margin-right: 8px;
+    padding-right: 8px;
   }
 
   .hero-action-buttons,
@@ -4579,7 +4631,7 @@ button:hover {
   <nav class="nav" id="site-nav" aria-label="メインナビゲーション"><a href="#top">TOP</a><a href="about.html">ABOUT</a><a href="message.html">SUPPORTER</a><a href="price.html">PLAN / PRICE</a><a href="faq.html">FAQ</a><a href="contact.html">CONTACT</a></nav>
 </header>
 
-<a class="floating-cta" href="https://line.me/R/ti/p/@434cidql" target="_blank" rel="noopener">LINEで無料相談する</a>
+<div class="floating-cta-group" aria-label="お問い合わせ導線"><a class="floating-cta floating-cta--line" href="https://line.me/R/ti/p/@434cidql" target="_blank" rel="noopener">LINEで無料相談する</a><a class="floating-cta floating-cta--mail" href="contact.html">メールで問い合わせる</a></div>
 
 <!-- INDEX PAGE -->
 <div id="page-index">
@@ -4601,11 +4653,6 @@ button:hover {
             <span>無理な勧誘なし</span>
             <span>顔出しなしOK</span>
           </div>
-          <div class="hero-action-buttons">
-            <a href="https://line.me/R/ti/p/@434cidql" target="_blank" rel="noopener">LINEで無料相談する</a>
-            <a href="contact.html">メールで問い合わせる</a>
-          </div>
-          <p class="hero-action-note">今の仕事を続けるか迷っている段階でも相談できます。</p>
         </div>
       </div>
     </div>
@@ -4616,10 +4663,6 @@ button:hover {
       <p class="section-kicker">Free Consultation</p>
       <h2>続けるか、変えるか。<br>まずは30分、整理する時間を。</h2>
       <p>相談前に考えがまとまっていなくても大丈夫です。今の悩みを一緒にほどきながら、次に取れる選択肢を整理します。</p>
-      <div class="conversion-actions">
-        <a href="https://line.me/R/ti/p/@434cidql" target="_blank" rel="noopener">LINEで無料相談する</a>
-        <a href="contact.html">メールで問い合わせる</a>
-      </div>
       <p class="conversion-note">初回30分無料 / 無理な勧誘なし / 顔出しなしOK</p>
     </div>
     <div class="conversion-cards">
@@ -4678,23 +4721,6 @@ button:hover {
       <article><span>01</span><h3>完全中立の立場</h3><p>求人紹介や転職を前提にせず、相談者にとって納得できる選択を一緒に整理します。</p></article>
       <article><span>02</span><h3>教員・企業・起業・独立を経験</h3><p>教育現場だけでなく、民間企業や起業・独立の経験があるからこそ、現実的な選択肢を広く見渡せます。</p></article>
             <article><span>03</span><h3>一人ひとりに合わせた伴走</h3><p>悩みや状況に合わせて、無理のないペースでキャリアの整理から次の行動まで支援します。</p></article>
-    </div>
-  </section>
-
-  <section id="support" class="content-section support-link-section">
-    <div class="support-link-copy">
-      <p class="section-kicker">Support</p>
-      <h2>広く、深く、<br>あなたに合わせて</h2>
-      <p>考えがまとまっていなくても大丈夫です。<br>今の働き方への悩みから、新しい挑戦の準備まで、状況に合わせて一緒に整理します。</p>
-    </div>
-    <div class="support-link-panel">
-      <div class="support-link-list">
-        <details><summary>自己理解・キャリア整理</summary><p>今感じている悩みや大切にしたい価値観を整理し、次の判断軸を見つけます。</p></details>
-        <details><summary>現職継続</summary><p>続けるべきか、環境を変えるべきかを整理し、今の働き方や気持ちと向き合います。</p></details>
-        <details><summary>転職・キャリアチェンジ</summary><p>転職するかどうかの整理から、求人選び、企業研究、応募書類の作成まで支援します。</p></details>
-        <details><summary>起業・独立</summary><p>やりたいことの整理、サービス設計、開業準備など、現実的な一歩を一緒に進めます。</p></details>
-        <details><summary>働き方や将来への不安</summary><p>焦って答えを出さず、不安や迷いを整理しながら、必要な次の一歩を明確にします。</p></details>
-      </div>
     </div>
   </section>
 
@@ -5191,7 +5217,7 @@ function showPage(name, anchor) {
   }
   
   // floating cta visibility
-  const floatingCta = document.querySelector('.floating-cta');
+  const floatingCta = document.querySelector('.floating-cta-group');
   if (floatingCta) {
     floatingCta.style.display = (name === 'contact') ? 'none' : '';
   }
@@ -5290,7 +5316,7 @@ function updateCarouselProgress(carousel) {
 }
 
 function initCarouselProgress() {
-  const carousels = document.querySelectorAll('.reason-grid, .review-card-list');
+  const carousels = document.querySelectorAll('.reason-grid, .review-card-list, .about-compare-table-wrap, .price-summary-list');
   carousels.forEach(carousel => {
     updateCarouselProgress(carousel);
     carousel.addEventListener('scroll', () => updateCarouselProgress(carousel), {passive: true});
@@ -5318,6 +5344,7 @@ ensureLowerFixedBackground();
 
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
+const floatingCtaGroup = document.querySelector('.floating-cta-group');
 const mobileHeaderQuery = window.matchMedia('(max-width: 720px)');
 let lastScrollY = window.scrollY;
 
@@ -5350,17 +5377,32 @@ setHeaderState();
 setLowerBackgroundState();
 setHeroPinnedState();
 
+const setFloatingCtaState = (currentScrollY) => {
+  if (!floatingCtaGroup) return;
+
+  if (currentScrollY < 120 || currentScrollY < lastScrollY) {
+    floatingCtaGroup.classList.remove('is-hidden');
+  } else if (currentScrollY > lastScrollY + 8) {
+    floatingCtaGroup.classList.add('is-hidden');
+  }
+};
+
 window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+
   setHeaderState();
   setLowerBackgroundState();
   setHeroPinnedState();
+  setFloatingCtaState(currentScrollY);
+
   if (!header) return;
   if (!mobileHeaderQuery.matches) {
     header.classList.remove('is-hidden','is-menu-open');
     menuToggle?.setAttribute('aria-expanded', 'false');
+    lastScrollY = currentScrollY;
     return;
   }
-  const currentScrollY = window.scrollY;
+
   const isMenuOpen = header.classList.contains('is-menu-open');
   if (isMenuOpen || currentScrollY < 24 || currentScrollY < lastScrollY) {
     header.classList.remove('is-hidden');
@@ -5409,7 +5451,7 @@ initReveal();
 initCarouselProgress();
 
 window.addEventListener('resize', () => {
-  document.querySelectorAll('.reason-grid, .review-card-list').forEach(updateCarouselProgress);
+  document.querySelectorAll('.reason-grid, .review-card-list, .about-compare-table-wrap, .price-summary-list').forEach(updateCarouselProgress);
 });
 </script>
 </body>
