@@ -95,6 +95,23 @@ document.addEventListener("pointerdown", (event) => {
   menuToggle?.setAttribute("aria-label", "メニューを開く");
 });
 
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a");
+  if (!link || typeof window.gtag !== "function") return;
+
+  const href = link.getAttribute("href") || "";
+  const isLineCta = href.includes("line.me/R/ti/p/@434cidql");
+  const isContactCta = href.includes("contact.html") || href.startsWith("mailto:");
+
+  if (!isLineCta && !isContactCta) return;
+
+  window.gtag("event", isLineCta ? "line_cta_click" : "contact_cta_click", {
+    event_category: "engagement",
+    event_label: link.textContent.trim(),
+    link_url: href
+  });
+});
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
     const target = document.querySelector(link.getAttribute("href"));
@@ -178,33 +195,12 @@ if (contactForm) {
 }
 
 contactForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
-
   if (!contactForm.reportValidity()) {
-    return;
-  }
-
-  if (contactForm.action.startsWith("mailto:")) {
-    const formData = new FormData(contactForm);
-    const name = String(formData.get("name") || "未入力");
-    const email = String(formData.get("email") || "");
-    const message = String(formData.get("message") || "");
-    const subject = "Linoriaお問い合わせ";
-    const body = [
-      "Linoriaへのお問い合わせ",
-      "",
-      `お名前：${name}`,
-      `メールアドレス：${email}`,
-      "",
-      "ご相談・ご質問内容：",
-      message
-    ].join("\n");
-
-    window.location.href = `mailto:info@linoria.jp?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    event.preventDefault();
     return;
   }
 
   if (formStatus) {
-    formStatus.textContent = "送信先の設定を確認してください。";
+    formStatus.textContent = "送信しています。画面が切り替わるまでお待ちください。";
   }
 });

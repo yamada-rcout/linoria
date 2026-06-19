@@ -584,6 +584,141 @@ h3 {
   vertical-align: middle;
 }
 
+.hero-action-panel {
+  display: grid;
+  gap: 14px;
+  max-width: 620px;
+  margin-top: 28px;
+}
+
+.hero-action-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hero-action-badges span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 87, 217, 0.2);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.hero-action-buttons,
+.conversion-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-action-buttons a,
+.conversion-actions a,
+.price-plan-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--blue);
+  background: var(--blue);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.hero-action-buttons a:nth-child(2),
+.conversion-actions a:nth-child(2) {
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--blue);
+}
+
+.hero-action-buttons a:hover,
+.conversion-actions a:hover,
+.price-plan-cta:hover {
+  transform: translateY(-2px);
+}
+
+.hero-action-note,
+.conversion-note {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.conversion-section {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.64fr) minmax(0, 1fr);
+  gap: clamp(34px, 6vw, 84px);
+  align-items: start;
+  background: var(--white);
+}
+
+.conversion-copy p:not(.section-kicker):not(.conversion-note) {
+  margin-top: 22px;
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 2;
+}
+
+.conversion-actions {
+  margin-top: 24px;
+}
+
+.conversion-note {
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+.conversion-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.conversion-card {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  min-height: 100%;
+  padding: clamp(18px, 2vw, 24px);
+  border: 1px solid rgba(0, 87, 217, 0.15);
+  background:
+    linear-gradient(145deg, rgba(0, 87, 217, 0.05), transparent 52%),
+    var(--white);
+  box-shadow: 0 18px 44px rgba(0, 48, 120, 0.055);
+}
+
+.conversion-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.3vw, 1.16rem);
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.conversion-card ul,
+.conversion-card ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 1.2em;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
 .about-section {
   position: relative;
   display: grid;
@@ -3661,6 +3796,74 @@ button:hover {
     margin-left: auto;
   }
 
+  .hero-action-panel {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .hero-action-badges {
+    gap: 6px;
+  }
+
+  .hero-action-badges span {
+    min-height: 24px;
+    padding: 0 8px;
+    font-size: 11px;
+  }
+
+  .hero-action-buttons,
+  .conversion-actions {
+    gap: 8px;
+  }
+
+  .hero-action-buttons a,
+  .conversion-actions a {
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+
+  .hero-action-note,
+  .conversion-note {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .conversion-section {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .conversion-copy p:not(.section-kicker):not(.conversion-note) {
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .conversion-actions {
+    margin-top: 18px;
+  }
+
+  .conversion-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .conversion-card {
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .conversion-card h3 {
+    font-size: 15px;
+  }
+
+  .conversion-card ul,
+  .conversion-card ol {
+    gap: 7px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
   h1 span {
     white-space: nowrap;
   }
@@ -4392,7 +4595,59 @@ button:hover {
           <span class="hero-title-accent">あなたらしい選択肢がある</span>
         </h1>
         <p class="lead">「このまま続けていいのか」「もっと自分らしく働きたい」<br>続ける・変える<span class="inline-rule" aria-hidden="true"></span>。<br>一人で抱え込まず、一緒に整理してみませんか。</p>
+        <div class="hero-action-panel" aria-label="無料相談への導線">
+          <div class="hero-action-badges">
+            <span>初回30分無料</span>
+            <span>無理な勧誘なし</span>
+            <span>顔出しなしOK</span>
+          </div>
+          <div class="hero-action-buttons">
+            <a href="https://line.me/R/ti/p/@434cidql" target="_blank" rel="noopener">LINEで無料相談する</a>
+            <a href="contact.html">メールで問い合わせる</a>
+          </div>
+          <p class="hero-action-note">今の仕事を続けるか迷っている段階でも相談できます。</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section class="content-section conversion-section">
+    <div class="conversion-copy">
+      <p class="section-kicker">Free Consultation</p>
+      <h2>続けるか、変えるか。<br>まずは30分、整理する時間を。</h2>
+      <p>相談前に考えがまとまっていなくても大丈夫です。今の悩みを一緒にほどきながら、次に取れる選択肢を整理します。</p>
+      <div class="conversion-actions">
+        <a href="https://line.me/R/ti/p/@434cidql" target="_blank" rel="noopener">LINEで無料相談する</a>
+        <a href="contact.html">メールで問い合わせる</a>
+      </div>
+      <p class="conversion-note">初回30分無料 / 無理な勧誘なし / 顔出しなしOK</p>
+    </div>
+    <div class="conversion-cards">
+      <article class="conversion-card">
+        <h3>こんな方へ</h3>
+        <ul>
+          <li>続けるか辞めるか迷っている</li>
+          <li>転職したいが動けていない</li>
+          <li>教員経験を活かす道を知りたい</li>
+          <li>起業・独立も気になっている</li>
+        </ul>
+      </article>
+      <article class="conversion-card">
+        <h3>無料相談でできること</h3>
+        <ul>
+          <li>今の悩みの整理</li>
+          <li>続ける / 変えるの判断軸の言語化</li>
+          <li>次の一歩の明確化</li>
+        </ul>
+      </article>
+      <article class="conversion-card">
+        <h3>無料相談までの流れ</h3>
+        <ol>
+          <li>LINE登録</li>
+          <li>日程調整</li>
+          <li>無料相談30分</li>
+        </ol>
+      </article>
     </div>
   </section>
 
@@ -5130,6 +5385,23 @@ document.addEventListener('pointerdown', (event) => {
   header.classList.remove('is-menu-open');
   menuToggle?.setAttribute('aria-expanded', 'false');
   menuToggle?.setAttribute('aria-label', 'メニューを開く');
+});
+
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a');
+  if (!link || typeof window.gtag !== 'function') return;
+
+  const href = link.getAttribute('href') || '';
+  const isLineCta = href.includes('line.me/R/ti/p/@434cidql');
+  const isContactCta = href.includes('contact.html') || href.startsWith('mailto:');
+
+  if (!isLineCta && !isContactCta) return;
+
+  window.gtag('event', isLineCta ? 'line_cta_click' : 'contact_cta_click', {
+    event_category: 'engagement',
+    event_label: link.textContent.trim(),
+    link_url: href
+  });
 });
 
 // Init on load

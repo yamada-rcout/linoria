@@ -2552,6 +2552,29 @@ main > section.vmv-cta-section::before {
   line-height: 1.85;
 }
 
+.price-plan-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  margin-top: 2px;
+  padding: 0 16px;
+  border: 1px solid var(--blue);
+  background: var(--blue);
+  color: var(--white);
+  font-size: 0.86rem;
+  font-weight: 900;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.price-plan-cta:hover {
+  transform: translateY(-2px);
+  background: var(--blue-dark);
+}
+
 .price-section > .section-link {
   grid-column: 1 / -1;
   justify-self: end;
@@ -3062,6 +3085,35 @@ main > section.vmv-cta-section::before {
   color: var(--muted);
   font-weight: 500;
   line-height: 2;
+}
+
+.contact-assurance {
+  display: grid;
+  gap: 10px;
+  max-width: 620px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-assurance li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+.contact-assurance li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 7px;
+  height: 7px;
+  background: var(--blue);
+  transform: rotate(45deg);
 }
 
 .contact-form {
