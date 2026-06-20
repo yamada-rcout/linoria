@@ -1562,7 +1562,7 @@ main > section.vmv-cta-section::before {
 .reason-grid {
   position: relative;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 0;
   background: transparent;
 }
 
@@ -1574,19 +1574,20 @@ main > section.vmv-cta-section::before {
   align-content: start;
   gap: 12px;
   min-height: auto;
-  padding: 24px;
-  background:
-    linear-gradient(145deg, rgba(0, 87, 217, 0.05), transparent 48%),
-    #fff;
-  border: 1px solid rgba(0, 87, 217, 0.14);
+  padding: 24px 0;
+  background: transparent;
+  border: 0;
   color: var(--ink);
-  box-shadow: 0 18px 44px rgba(0, 48, 120, 0.055);
+  box-shadow: none;
 }
 
 .reason-grid article:first-child {
-  background:
-    linear-gradient(145deg, rgba(0, 87, 217, 0.05), transparent 48%),
-    #fff;
+  padding-top: 0;
+  background: transparent;
+}
+
+.reason-grid article + article {
+  border-top: 1px solid rgba(0, 87, 217, 0.18);
 }
 
 .reason-grid span {
@@ -4061,12 +4062,12 @@ button:hover {
   .reason-grid article,
   .reason-grid article:first-child {
     min-height: auto;
-    padding: 18px;
+    padding: 18px 20px;
   }
 
   .reason-grid {
     display: flex;
-    gap: 12px;
+    gap: 0;
     align-items: stretch;
     height: 224px;
     margin-right: -20px;
@@ -4154,6 +4155,11 @@ button:hover {
     gap: 12px;
     align-items: start;
     scroll-snap-align: start;
+  }
+
+  .reason-grid article + article {
+    border-top: 0;
+    border-left: 1px solid rgba(0, 87, 217, 0.18);
   }
 
   .reason-grid article:first-child h3,
@@ -4689,8 +4695,8 @@ button:hover {
       <div class="hero-inner">
         <p class="section-kicker">現役教員専門のキャリアサポート</p>
         <h1>
-          <span>教壇の先にも、</span>
-          <span class="hero-title-accent">あなたらしい選択肢がある</span>
+            <span>教員のキャリアを、</span>
+            <span class="hero-title-accent">もっと自由に</span>
         </h1>
         <ul class="hero-needs" aria-label="こんな方へ">
           <li>続けるか辞めるか迷っている</li>
@@ -4706,42 +4712,6 @@ button:hover {
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="content-section conversion-section">
-    <div class="conversion-copy">
-      <p class="section-kicker">Free Consultation</p>
-      <h2>続けるか、変えるか。<br>まずは30分、整理する時間を。</h2>
-      <p>相談前に考えがまとまっていなくても大丈夫です。今の悩みを一緒にほどきながら、次に取れる選択肢を整理します。</p>
-      <p class="conversion-note">初回30分無料 / 無理な勧誘なし / 顔出しなしOK</p>
-    </div>
-    <div class="conversion-cards">
-      <article class="conversion-card">
-        <h3>こんな方へ</h3>
-        <ul>
-          <li>続けるか辞めるか迷っている</li>
-          <li>転職したいが動けていない</li>
-          <li>教員経験を活かす道を知りたい</li>
-          <li>起業・独立も気になっている</li>
-        </ul>
-      </article>
-      <article class="conversion-card">
-        <h3>無料相談でできること</h3>
-        <ul>
-          <li>今の悩みの整理</li>
-          <li>続ける / 変えるの判断軸の言語化</li>
-          <li>次の一歩の明確化</li>
-        </ul>
-      </article>
-      <article class="conversion-card">
-        <h3>無料相談までの流れ</h3>
-        <ol>
-          <li>LINE登録</li>
-          <li>日程調整</li>
-          <li>無料相談30分</li>
-        </ol>
-      </article>
     </div>
   </section>
 
@@ -5244,7 +5214,7 @@ button:hover {
   <div class="footer-brand">
     <strong>Linoria</strong>
     <span>Career Support for Teachers</span>
-    <p>教壇の先にも、あなたらしい選択肢がある</p>
+        <p>教員のキャリアを、もっと自由に</p>
   </div>
   <div class="footer-navs"><nav class="footer-nav" aria-label="メニュー"><p>メニュー</p><a href="#top">TOP</a><a href="about.html">ABOUT</a><a href="message.html">SUPPORTER</a><a href="price.html">PLAN / PRICE</a><a href="faq.html">FAQ</a><a href="contact.html">CONTACT</a></nav><nav class="footer-nav" aria-label="ポリシー"><p>ポリシー</p><a href="legal.html">特定商取引法に基づく表記</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></nav></div>
       <small class="footer-copyright">&copy; 2026 Linoria. All Rights Reserved.</small>
