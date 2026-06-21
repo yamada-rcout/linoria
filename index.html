@@ -252,7 +252,7 @@ a {
 .hero {
   position: relative;
   z-index: 1;
-  min-height: calc(100vh - 76px);
+  min-height: calc(100vh + clamp(220px, 28vh, 340px));
   background: transparent;
 }
 
@@ -561,6 +561,7 @@ main > section.content-section.faq-section,
   padding-top: clamp(56px, 8vh, 88px);
   box-sizing: border-box;
   will-change: opacity, transform;
+  transition: opacity 120ms linear, transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-primary-content {
@@ -3897,7 +3898,7 @@ button:hover {
   }
 
   .hero {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh + clamp(180px, 30vh, 260px));
   }
 
   .hero-pin {
@@ -5559,26 +5560,28 @@ const setHeroPinnedState = () => {
   const hero = document.querySelector('.hero');
   if (!hero) return;
   const rect = hero.getBoundingClientRect();
-  document.body.classList.toggle('hero-pin-hidden', rect.bottom <= 0);
+  const exitPoint = window.innerHeight * 0.82;
+  document.body.classList.toggle('hero-pin-hidden', rect.bottom <= exitPoint);
 };
 
 const setHeroScrollContentState = () => {
   if (!heroPrimaryContent || !heroScrollContent) return;
-  const exitDistance = Math.max(110, Math.min(190, window.innerHeight * 0.2));
-  const enterStart = exitDistance * 0.58;
-  const enterDistance = Math.max(110, Math.min(180, window.innerHeight * 0.18));
+  const smoothStep = value => value * value * (3 - 2 * value);
+  const exitDistance = Math.max(150, Math.min(260, window.innerHeight * 0.28));
+  const enterStart = exitDistance * 0.34;
+  const enterDistance = exitDistance * 0.82;
   const exitRaw = Math.max(0, Math.min(1, window.scrollY / exitDistance));
   const enterRaw = Math.max(0, Math.min(1, (window.scrollY - enterStart) / enterDistance));
   const hasScrolled = window.scrollY > 16;
-  const exitProgress = reducedMotionQuery.matches && hasScrolled ? 1 : exitRaw;
-  const enterProgress = reducedMotionQuery.matches && hasScrolled ? 1 : enterRaw;
+  const exitProgress = reducedMotionQuery.matches && hasScrolled ? 1 : smoothStep(exitRaw);
+  const enterProgress = reducedMotionQuery.matches && hasScrolled ? 1 : smoothStep(enterRaw);
 
   heroPrimaryContent.style.opacity = (1 - exitProgress).toFixed(3);
-  heroPrimaryContent.style.transform = `translateY(${-28 * exitProgress}px)`;
+  heroPrimaryContent.style.transform = `translateY(${-20 * exitProgress}px)`;
   heroPrimaryContent.style.visibility = exitProgress < 0.99 ? 'visible' : 'hidden';
   heroPrimaryContent.setAttribute('aria-hidden', exitProgress < 0.99 ? 'false' : 'true');
 
-  const enterOffset = 28 * Math.max(0, 1 - enterProgress * 5);
+  const enterOffset = 20 * Math.max(0, 1 - enterProgress * 4);
   heroScrollContent.style.opacity = enterProgress.toFixed(3);
   heroScrollContent.style.transform = `translateY(${enterOffset}px)`;
   heroScrollContent.style.visibility = enterProgress > 0.01 ? 'visible' : 'hidden';
