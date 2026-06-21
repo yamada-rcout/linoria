@@ -659,7 +659,7 @@ h3 {
   opacity: 0;
   visibility: hidden;
   transform: translateY(28px);
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .hero-needs {
@@ -4981,6 +4981,11 @@ body.site-orbit-theme .site-footer {
   body.site-orbit-theme .site-footer :where(p, li, dd, dt, a, small, span) {
     font-size: max(14px, 1em) !important;
   }
+}
+
+body.site-orbit-theme #page-index main > section.reason-section,
+body.site-orbit-theme #page-index main > section.reason-section ~ section {
+  background: rgba(255, 255, 255, 0.5) !important;
 }
 
 body.site-orbit-theme #page-index main > section.vmv-cta-section {
