@@ -604,6 +604,18 @@ h3 {
   font-weight: 600;
 }
 
+.hero-scroll-content {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: min(620px, calc(100vw - 32px));
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(24px);
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
 .hero-needs {
   display: grid;
   gap: 8px;
@@ -4786,17 +4798,19 @@ button:hover {
             <span>教員のキャリアを、</span>
             <span class="hero-title-accent">もっと自由に</span>
         </h1>
-        <ul class="hero-needs" aria-label="こんな方へ">
-          <li>続けるか辞めるか迷っている</li>
-          <li>転職したいが動けていない</li>
-          <li>教員経験を活かす道を知りたい</li>
-          <li>起業・独立も気になっている</li>
-        </ul>
-        <div class="hero-action-panel" aria-label="無料相談への導線">
-          <div class="hero-action-badges">
-            <span>初回30分無料</span>
-            <span>無理な勧誘なし</span>
-            <span>顔出しなしOK</span>
+        <div class="hero-scroll-content">
+          <ul class="hero-needs" aria-label="こんな方へ">
+            <li>続けるか辞めるか迷っている</li>
+            <li>転職したいが動けていない</li>
+            <li>教員経験を活かす道を知りたい</li>
+            <li>起業・独立も気になっている</li>
+          </ul>
+          <div class="hero-action-panel" aria-label="無料相談への導線">
+            <div class="hero-action-badges">
+              <span>初回30分無料</span>
+              <span>無理な勧誘なし</span>
+              <span>顔出しなしOK</span>
+            </div>
           </div>
         </div>
       </div>
@@ -5454,7 +5468,9 @@ ensureLowerFixedBackground();
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const floatingCtaGroup = document.querySelector('.floating-cta-group');
+const heroScrollContent = document.querySelector('.hero-scroll-content');
 const mobileHeaderQuery = window.matchMedia('(max-width: 720px)');
+const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 let lastScrollY = window.scrollY;
 
 const setHeaderState = () => {
@@ -5482,9 +5498,21 @@ const setHeroPinnedState = () => {
   document.body.classList.toggle('hero-pin-hidden', rect.bottom <= 0);
 };
 
+const setHeroScrollContentState = () => {
+  if (!heroScrollContent) return;
+  const revealDistance = Math.max(120, Math.min(260, window.innerHeight * 0.28));
+  const rawProgress = Math.max(0, Math.min(1, (window.scrollY - 16) / revealDistance));
+  const progress = reducedMotionQuery.matches && rawProgress > 0 ? 1 : rawProgress;
+  heroScrollContent.style.opacity = progress.toFixed(3);
+  heroScrollContent.style.transform = `translateY(${24 * (1 - progress)}px)`;
+  heroScrollContent.style.visibility = progress > 0.01 ? 'visible' : 'hidden';
+  heroScrollContent.setAttribute('aria-hidden', progress > 0.01 ? 'false' : 'true');
+};
+
 setHeaderState();
 setLowerBackgroundState();
 setHeroPinnedState();
+setHeroScrollContentState();
 
 const setFloatingCtaState = (currentScrollY) => {
   if (!floatingCtaGroup) return;
@@ -5502,6 +5530,7 @@ window.addEventListener('scroll', () => {
   setHeaderState();
   setLowerBackgroundState();
   setHeroPinnedState();
+  setHeroScrollContentState();
   setFloatingCtaState(currentScrollY);
 
   if (!header) return;
@@ -5560,6 +5589,7 @@ initReveal();
 initCarouselProgress();
 
 window.addEventListener('resize', () => {
+  setHeroScrollContentState();
   document.querySelectorAll('.reason-grid, .review-card-list, .about-compare-table-wrap, .price-summary-list').forEach(updateCarouselProgress);
 });
 </script>
