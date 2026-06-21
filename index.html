@@ -4868,7 +4868,17 @@ body.site-orbit-theme .site-footer {
 }
 
 body.site-orbit-theme #page-index main > section.vmv-cta-section {
-  background: url("assets/vmv-tokyo-skyline.jpg") center bottom / cover no-repeat !important;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.86) 34%, rgba(255, 255, 255, 0.52) 62%, rgba(255, 255, 255, 0.08) 88%),
+    url("assets/vmv-tokyo-skyline.jpg") center 34% / cover no-repeat !important;
+}
+
+@media (max-width: 720px) {
+  body.site-orbit-theme #page-index main > section.vmv-cta-section {
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 68%, rgba(255, 255, 255, 0.44) 100%),
+      url("assets/vmv-tokyo-skyline.jpg") center 28% / cover no-repeat !important;
+  }
 }
     </style>
 </head>
