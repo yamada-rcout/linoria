@@ -660,6 +660,16 @@ h3 {
   text-align: left;
 }
 
+.hero-needs-intro {
+  width: min(620px, 100%);
+  margin: 0 0 18px;
+  color: var(--blue);
+  font-size: clamp(calc(0.95rem + 4px), calc(1.55vw + 4px), calc(1.08rem + 4px));
+  font-weight: 800;
+  line-height: 1.7;
+  text-align: center;
+}
+
 .hero-needs li {
   position: relative;
   padding-left: 18px;
@@ -4008,6 +4018,12 @@ button:hover {
     line-height: 1.65;
   }
 
+  .hero-needs-intro {
+    margin-bottom: 14px;
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
   .hero-needs li {
     padding-left: 14px;
   }
@@ -4936,6 +4952,7 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
           </h1>
         </div>
         <div class="hero-scroll-content">
+          <div class="hero-needs-intro">Linoriaは、教員経験をもつキャリアサポーターによる伴走型のキャリアサポートです。</div>
           <ul class="hero-needs" aria-label="こんな方へ">
             <li>続けるか辞めるか迷っている</li>
             <li>転職したいが動けていない</li>
