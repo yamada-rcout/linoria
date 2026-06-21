@@ -541,12 +541,35 @@ main > section.content-section.faq-section,
 .hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 760px;
+  width: min(620px, calc(100vw - 40px));
+  height: min(340px, calc(100vh - 150px));
   margin-top: auto;
   margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
   animation: fadeUp 800ms ease both;
+}
+
+.hero-primary-content,
+.hero-scroll-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  padding-top: clamp(56px, 8vh, 88px);
+  box-sizing: border-box;
+  will-change: opacity, transform;
+}
+
+.hero-primary-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-primary-content h1 {
+  margin-bottom: 0;
 }
 
 .section-kicker {
@@ -605,22 +628,17 @@ h3 {
 }
 
 .hero-scroll-content {
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  width: min(620px, calc(100vw - 32px));
   opacity: 0;
   visibility: hidden;
-  transform: translateY(24px);
+  transform: translateY(28px);
   pointer-events: none;
-  will-change: opacity, transform;
 }
 
 .hero-needs {
   display: grid;
   gap: 8px;
   max-width: 620px;
-  margin: 0 0 28px;
+  margin: 0 0 18px;
   padding: 0;
   list-style: none;
   color: var(--text);
@@ -696,7 +714,7 @@ h3 {
   display: grid;
   gap: 14px;
   max-width: 620px;
-  margin-top: 28px;
+  margin-top: 0;
 }
 
 .hero-action-badges {
@@ -3952,10 +3970,16 @@ button:hover {
   }
 
   .hero-inner {
-    width: max-content;
+    width: min(100%, 430px);
+    height: min(310px, calc(100vh - 128px));
     max-width: calc(100vw - 32px);
     margin: 0 auto;
     text-align: left;
+  }
+
+  .hero-primary-content,
+  .hero-scroll-content {
+    padding-top: 56px;
   }
 
   .hero .lead {
@@ -3965,7 +3989,7 @@ button:hover {
 
   .hero-needs {
     gap: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-size: 12px;
     line-height: 1.65;
   }
@@ -3982,7 +4006,7 @@ button:hover {
 
   .hero-action-panel {
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 0;
   }
 
   .hero-action-badges {
@@ -4793,11 +4817,13 @@ button:hover {
         <span class="hero-particle"></span>
       </div>
       <div class="hero-inner">
-        <p class="section-kicker">現役教員専門のキャリアサポート</p>
-        <h1>
-            <span>教員のキャリアを、</span>
-            <span class="hero-title-accent">もっと自由に</span>
-        </h1>
+        <div class="hero-primary-content">
+          <p class="section-kicker">現役教員専門のキャリアサポート</p>
+          <h1>
+              <span>教員のキャリアを、</span>
+              <span class="hero-title-accent">もっと自由に</span>
+          </h1>
+        </div>
         <div class="hero-scroll-content">
           <ul class="hero-needs" aria-label="こんな方へ">
             <li>続けるか辞めるか迷っている</li>
@@ -5468,6 +5494,7 @@ ensureLowerFixedBackground();
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const floatingCtaGroup = document.querySelector('.floating-cta-group');
+const heroPrimaryContent = document.querySelector('.hero-primary-content');
 const heroScrollContent = document.querySelector('.hero-scroll-content');
 const mobileHeaderQuery = window.matchMedia('(max-width: 720px)');
 const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -5499,14 +5526,26 @@ const setHeroPinnedState = () => {
 };
 
 const setHeroScrollContentState = () => {
-  if (!heroScrollContent) return;
-  const revealDistance = Math.max(120, Math.min(260, window.innerHeight * 0.28));
-  const rawProgress = Math.max(0, Math.min(1, (window.scrollY - 16) / revealDistance));
-  const progress = reducedMotionQuery.matches && rawProgress > 0 ? 1 : rawProgress;
-  heroScrollContent.style.opacity = progress.toFixed(3);
-  heroScrollContent.style.transform = `translateY(${24 * (1 - progress)}px)`;
-  heroScrollContent.style.visibility = progress > 0.01 ? 'visible' : 'hidden';
-  heroScrollContent.setAttribute('aria-hidden', progress > 0.01 ? 'false' : 'true');
+  if (!heroPrimaryContent || !heroScrollContent) return;
+  const exitDistance = Math.max(110, Math.min(190, window.innerHeight * 0.2));
+  const enterStart = exitDistance * 0.58;
+  const enterDistance = Math.max(110, Math.min(180, window.innerHeight * 0.18));
+  const exitRaw = Math.max(0, Math.min(1, window.scrollY / exitDistance));
+  const enterRaw = Math.max(0, Math.min(1, (window.scrollY - enterStart) / enterDistance));
+  const hasScrolled = window.scrollY > 16;
+  const exitProgress = reducedMotionQuery.matches && hasScrolled ? 1 : exitRaw;
+  const enterProgress = reducedMotionQuery.matches && hasScrolled ? 1 : enterRaw;
+
+  heroPrimaryContent.style.opacity = (1 - exitProgress).toFixed(3);
+  heroPrimaryContent.style.transform = `translateY(${-28 * exitProgress}px)`;
+  heroPrimaryContent.style.visibility = exitProgress < 0.99 ? 'visible' : 'hidden';
+  heroPrimaryContent.setAttribute('aria-hidden', exitProgress < 0.99 ? 'false' : 'true');
+
+  const enterOffset = 28 * Math.max(0, 1 - enterProgress * 5);
+  heroScrollContent.style.opacity = enterProgress.toFixed(3);
+  heroScrollContent.style.transform = `translateY(${enterOffset}px)`;
+  heroScrollContent.style.visibility = enterProgress > 0.01 ? 'visible' : 'hidden';
+  heroScrollContent.setAttribute('aria-hidden', enterProgress > 0.01 ? 'false' : 'true');
 };
 
 setHeaderState();
