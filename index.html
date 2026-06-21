@@ -687,6 +687,28 @@ h3 {
   text-align: center;
 }
 
+.hero-detail-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 42px;
+  margin-top: 12px;
+  padding: 8px 16px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1.4;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.hero-detail-link:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--blue-dark);
+}
+
 .hero-needs li {
   position: relative;
   padding-left: 18px;
@@ -5034,22 +5056,9 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
             <li>教員経験を活かせる道を知りたい</li>
             <li>家族や同僚には相談しにくい</li>
           </ul>
+          <a class="hero-detail-link" href="about.html">Linoriaのサービス詳細を見る<span aria-hidden="true">→</span></a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="about-section">
-    <div class="about-geometry" aria-hidden="true"></div>
-    <div class="about-copy">
-      <p class="section-kicker">About Linoria</p>
-      <h2>教員の悩みを深く知るから、<br>寄り添える</h2>
-      <div class="about-text">
-        <p>Linoriaは、教員経験をもつキャリアサポーターによる伴走型のキャリアサポートです。</p>
-        <p>転職を前提にせず、まずは対話を通して考えや気持ちを整理することから始めます。</p>
-        <p>価値観や優先順位を明確にしながら、現職継続・転職・起業・独立など複数の選択肢の中から、自分らしい一歩を見つけていきます。</p>
-      </div>
-      <a href="about.html" class="section-link">詳細を見る<span aria-hidden="true">→</span></a>
     </div>
   </section>
 
