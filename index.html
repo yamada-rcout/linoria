@@ -5036,6 +5036,108 @@ body.site-orbit-theme #page-index main section:not(.hero) {
 body.site-orbit-theme #page-index main > section.vmv-cta-section {
   background: transparent !important;
 }
+
+body.site-orbit-theme #page-index main > section.reason-section {
+  background: rgba(0, 87, 217, 0.9) !important;
+  color: #fff;
+}
+
+body.site-orbit-theme #page-index .reason-section .section-kicker,
+body.site-orbit-theme #page-index .reason-section h2,
+body.site-orbit-theme #page-index .reason-section h3 {
+  color: #fff;
+}
+
+body.site-orbit-theme #page-index .reason-section .reason-lead,
+body.site-orbit-theme #page-index .reason-section .reason-grid p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+body.site-orbit-theme #page-index .reason-section .reason-grid article,
+body.site-orbit-theme #page-index .reason-section .reason-grid article:first-child {
+  background: transparent;
+  color: #fff;
+}
+
+body.site-orbit-theme #page-index .reason-section .reason-grid article + article {
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+body.site-orbit-theme #page-index .reason-section .reason-grid span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.site-orbit-theme #page-index .reason-section .reason-grid {
+  background:
+    linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.72)) left bottom / var(--scroll-progress, 0%) 3px no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)) left bottom / 100% 3px no-repeat;
+}
+
+body.site-orbit-theme #page-index main > section.reason-section {
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+body.site-orbit-theme #page-index .reason-section .reason-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  background: transparent;
+}
+
+body.site-orbit-theme #page-index .reason-section .reason-grid article {
+  min-width: 0;
+  padding: 24px 28px;
+}
+
+body.site-orbit-theme #page-index .reason-section .reason-grid article:first-child {
+  padding-left: 0;
+}
+
+body.site-orbit-theme #page-index .reason-section .reason-grid article:last-child {
+  padding-right: 0;
+}
+
+body.site-orbit-theme #page-index .reason-section .reason-grid article + article {
+  border-top: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 720px) {
+  body.site-orbit-theme #page-index main > section.reason-section {
+    gap: 20px;
+  }
+
+  body.site-orbit-theme #page-index .reason-section .reason-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: auto;
+    margin-right: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+    background: transparent;
+  }
+
+  body.site-orbit-theme #page-index .reason-section .reason-grid article,
+  body.site-orbit-theme #page-index .reason-section .reason-grid article:first-child,
+  body.site-orbit-theme #page-index .reason-section .reason-grid article:last-child {
+    width: auto;
+    min-width: 0;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  body.site-orbit-theme #page-index .reason-section .reason-grid article:first-child {
+    padding-top: 0;
+  }
+
+  body.site-orbit-theme #page-index .reason-section .reason-grid article + article {
+    border-top: 1px solid rgba(255, 255, 255, 0.28);
+    border-left: 0;
+  }
+}
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -5105,8 +5207,6 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
   <section class="content-section reason-section">
     <div class="section-head">
       <p class="section-kicker">Features</p>
-      <h2>Linoriaだから、<br>できることがある</h2>
-      <p class="reason-lead">教員としての悩み、企業で働くこと、起業・独立を経験したサポーターが伴走。だからこそ、あなたに合った選択を一緒に探すことができます。</p>
     </div>
     <div class="issue-grid reason-grid">
       <article><span>01</span><h3>完全中立の立場</h3><p>求人紹介や転職を前提にせず、相談者にとって納得できる選択を一緒に整理します。</p></article>
@@ -5124,7 +5224,7 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
       <a class="section-link" href="message.html">サポーター紹介を見る<span aria-hidden="true">→</span></a>
     </div>
     <div class="supporter-cta-photo" aria-label="サポーター写真">
-      <img src="assets/supporter-photo.png" alt="Linoriaのサポーター" loading="lazy" decoding="async">
+          <img src="assets/supporter-profile-2026.png" alt="Linoriaのサポーター" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -5224,7 +5324,7 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
       <a class="section-link" href="contact.html">相談してみる<span aria-hidden="true">→</span></a>
     </div>
     <div class="supporter-cta-photo" aria-label="サポーター写真">
-      <img src="assets/supporter-photo.png" alt="Linoriaのサポーター" loading="lazy" decoding="async">
+          <img src="assets/supporter-profile-2026.png" alt="Linoriaのサポーター" loading="lazy" decoding="async">
     </div>
   </section>
 </main>
