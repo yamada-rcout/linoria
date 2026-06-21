@@ -2227,7 +2227,7 @@ main > section.vmv-cta-section::before {
 .supporter-profile-photo {
   position: relative;
   justify-self: center;
-  width: min(70.4%, 416px);
+  width: min(77.44%, 457.6px);
   overflow: visible;
   transform: rotate(-3deg);
   transform-origin: center;
@@ -2416,7 +2416,7 @@ main > section.vmv-cta-section::before {
   }
 
   .supporter-profile-photo {
-    width: 51.2%;
+    width: 56.32%;
     transform: rotate(-1.5deg);
   }
 
