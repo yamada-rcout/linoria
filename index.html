@@ -267,11 +267,8 @@ a {
   min-height: 100vh;
   padding: 76px clamp(20px, 5vw, 72px) 0;
   background:
-    linear-gradient(90deg, rgba(251, 250, 246, 0.9) 0%, rgba(251, 250, 246, 0.66) 42%, rgba(255, 255, 255, 0.22) 100%),
-    linear-gradient(180deg, rgba(251, 250, 246, 0.74) 0%, rgba(255, 255, 255, 0.58) 100%),
-    radial-gradient(circle at 78% 18%, rgba(0, 87, 217, 0.12), transparent 32%),
-    linear-gradient(90deg, rgba(0, 87, 217, 0.08), transparent 42%),
-    url("assets/vmv-tokyo-skyline.jpg") center right / cover no-repeat;
+    radial-gradient(circle at 76% 48%, rgba(52, 201, 255, 0.08), transparent 32%),
+    #fff;
   overflow: hidden;
   isolation: isolate;
   transition: opacity 180ms ease, visibility 180ms ease;
@@ -411,98 +408,139 @@ main > section.content-section.faq-section,
   display: none;
 }
 
-.motion-field {
-  display: none;
-}
-
-.motion-field::before {
-  content: none;
-}
-
-.motion-field span {
+.hero-orbit-scene {
   position: absolute;
-  left: -22vw;
-  width: 34vw;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(0, 87, 217, 0.62), transparent);
-  transform: rotate(-18deg);
-  animation: lightSweep 8s linear infinite;
-}
-
-.motion-field span:nth-child(1) {
-  top: 18%;
-  animation-delay: -2.4s;
-}
-
-.motion-field span:nth-child(2) {
-  top: 35%;
-  animation-delay: -6.5s;
-  animation-duration: 9.5s;
-}
-
-.motion-field span:nth-child(3) {
-  top: 54%;
-  animation-delay: -1.2s;
-  animation-duration: 11s;
-}
-
-.motion-field span:nth-child(4) {
-  top: 71%;
-  animation-delay: -7.4s;
-}
-
-.motion-field span:nth-child(5) {
-  top: 85%;
-  animation-delay: -4.6s;
-  animation-duration: 10s;
-}
-
-.hero-monogram {
-  position: absolute;
-  top: clamp(120px, 13vw, 170px);
-  left: clamp(18px, 4vw, 70px);
-  z-index: -1;
-  display: flex;
-  align-items: flex-start;
-  gap: clamp(2px, 1vw, 18px);
-  color: transparent;
-  font-size: clamp(13rem, 32vw, 31rem);
-  font-weight: 900;
-  letter-spacing: -0.08em;
-  line-height: 0.78;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
   pointer-events: none;
 }
 
-.hero-monogram span {
-  display: block;
-  background:
-    radial-gradient(circle at 68% 64%, rgba(98, 235, 255, 0.9), transparent 22%),
-    radial-gradient(circle at 24% 80%, rgba(135, 91, 255, 0.72), transparent 28%),
-    linear-gradient(135deg, #002bc4 0%, #0057d9 42%, #22b9ff 72%, #003fbd 100%);
-  background-size: 160% 160%, 180% 180%, 100% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  filter: drop-shadow(0 20px 40px rgba(0, 87, 217, 0.12));
-  animation: heroGradient 11s ease-in-out infinite;
+.hero-orbit {
+  position: absolute;
+  top: 50%;
+  left: 72%;
+  width: var(--orbit-size);
+  aspect-ratio: 1;
+  border: 1px dashed rgba(0, 87, 217, 0.14);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: heroOrbitRotate var(--orbit-duration) linear infinite;
 }
 
-.hero-monogram span:nth-child(2) {
-  animation-delay: -3s;
+.hero-orbit::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--orbit-start),
+    transparent 0 11%,
+    var(--orbit-color) 11% 24%,
+    transparent 24% 57%,
+    color-mix(in srgb, var(--orbit-color) 58%, white) 57% 66%,
+    transparent 66% 100%
+  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--orbit-width)), #000 0);
+  mask: radial-gradient(farthest-side, transparent calc(100% - var(--orbit-width)), #000 0);
 }
 
-.hero-monogram span:first-child {
-  background:
-    radial-gradient(circle at 64% 72%, rgba(104, 240, 255, 0.96), transparent 24%),
-    radial-gradient(circle at 18% 82%, rgba(136, 98, 255, 0.82), transparent 30%),
-    linear-gradient(135deg, #002bc4 0%, #0057d9 38%, #22b9ff 68%, #003fbd 100%);
-  background-size: 190% 190%, 210% 210%, 100% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation-name: heroGradientL;
-  animation-duration: 7.2s;
+.hero-orbit:nth-child(1) {
+  --orbit-size: min(88vw, 1120px);
+  --orbit-width: 13px;
+  --orbit-duration: 34s;
+  --orbit-start: 18deg;
+  --orbit-color: #174aa8;
+}
+
+.hero-orbit:nth-child(2) {
+  --orbit-size: min(68vw, 860px);
+  --orbit-width: 9px;
+  --orbit-duration: 27s;
+  --orbit-start: 136deg;
+  --orbit-color: #29aee6;
+  animation-direction: reverse;
+}
+
+.hero-orbit:nth-child(3) {
+  --orbit-size: min(47vw, 590px);
+  --orbit-width: 6px;
+  --orbit-duration: 21s;
+  --orbit-start: 244deg;
+  --orbit-color: #75c9ef;
+}
+
+.hero-orbit:nth-child(4) {
+  --orbit-size: min(28vw, 350px);
+  --orbit-width: 5px;
+  --orbit-duration: 16s;
+  --orbit-start: 72deg;
+  --orbit-color: #0057d9;
+  animation-direction: reverse;
+}
+
+.hero-particle {
+  position: absolute;
+  top: var(--particle-top);
+  left: var(--particle-left);
+  width: var(--particle-size);
+  aspect-ratio: 1;
+  border-radius: var(--particle-radius, 4px);
+  background: var(--particle-color);
+  opacity: 0.78;
+  transform: rotate(var(--particle-rotate));
+  animation: heroParticleFloat var(--particle-duration) ease-in-out infinite alternate;
+  animation-delay: var(--particle-delay);
+}
+
+.hero-particle:nth-child(5) {
+  --particle-top: 16%; --particle-left: 13%; --particle-size: 18px;
+  --particle-color: #19bec6; --particle-rotate: 45deg; --particle-duration: 7s; --particle-delay: -2s;
+}
+
+.hero-particle:nth-child(6) {
+  --particle-top: 76%; --particle-left: 18%; --particle-size: 34px;
+  --particle-color: #4d7ded; --particle-rotate: -14deg; --particle-duration: 9s; --particle-delay: -5s;
+}
+
+.hero-particle:nth-child(7) {
+  --particle-top: 12%; --particle-left: 84%; --particle-size: 26px;
+  --particle-color: #00b9c4; --particle-rotate: -12deg; --particle-duration: 8s; --particle-delay: -3s;
+}
+
+.hero-particle:nth-child(8) {
+  --particle-top: 68%; --particle-left: 88%; --particle-size: 31px;
+  --particle-color: #86a5ee; --particle-rotate: 42deg; --particle-duration: 10s; --particle-delay: -6s;
+}
+
+.hero-particle:nth-child(9) {
+  --particle-top: 28%; --particle-left: 57%; --particle-size: 14px;
+  --particle-color: #3c72e8; --particle-rotate: 28deg; --particle-duration: 6s; --particle-delay: -1s;
+}
+
+.hero-particle:nth-child(10) {
+  --particle-top: 84%; --particle-left: 67%; --particle-size: 21px;
+  --particle-color: #25aee5; --particle-rotate: -22deg; --particle-duration: 8.5s; --particle-delay: -4s;
+}
+
+.hero-particle:nth-child(11) {
+  --particle-top: 8%; --particle-left: 35%; --particle-size: 12px;
+  --particle-radius: 50%; --particle-color: #13bec6; --particle-rotate: 0deg; --particle-duration: 7.5s; --particle-delay: -3s;
+}
+
+@keyframes heroOrbitRotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes heroParticleFloat {
+  from { translate: 0 -8px; rotate: -4deg; }
+  to { translate: 8px 12px; rotate: 8deg; }
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 1;
   max-width: 760px;
   margin-top: auto;
   margin-bottom: auto;
@@ -3842,29 +3880,68 @@ button:hover {
     min-height: 100vh;
     padding-top: 60px;
     padding-right: 12px;
-    padding-bottom: 56px;
+    padding-bottom: 0;
     padding-left: 12px;
     background:
-      linear-gradient(180deg, rgba(251, 250, 246, 0.84) 0%, rgba(255, 255, 255, 0.68) 58%, rgba(255, 255, 255, 0.42) 100%),
-      url("assets/vmv-tokyo-skyline.jpg") center right / cover no-repeat;
+      radial-gradient(circle at 74% 32%, rgba(52, 201, 255, 0.09), transparent 34%),
+      #fff;
   }
 
   .hero::before {
     content: none;
   }
 
-  .hero-monogram {
-    top: 116px;
-    left: 10px;
-    font-size: clamp(7.4rem, 38vw, 10rem);
-    line-height: 0.78;
-    opacity: 0.92;
-    transform: none;
+  .hero-orbit-scene {
+    opacity: 0.68;
+  }
+
+  .hero-orbit {
+    top: 32%;
+    left: 72%;
+  }
+
+  .hero-orbit:nth-child(1) {
+    --orbit-size: 162vw;
+    --orbit-width: 8px;
+  }
+
+  .hero-orbit:nth-child(2) {
+    --orbit-size: 124vw;
+    --orbit-width: 6px;
+  }
+
+  .hero-orbit:nth-child(3) {
+    --orbit-size: 88vw;
+    --orbit-width: 4px;
+  }
+
+  .hero-orbit:nth-child(4) {
+    --orbit-size: 54vw;
+    --orbit-width: 4px;
+  }
+
+  .hero-particle:nth-child(5),
+  .hero-particle:nth-child(7),
+  .hero-particle:nth-child(9),
+  .hero-particle:nth-child(11) {
+    display: none;
+  }
+
+  .hero-particle:nth-child(6) {
+    --particle-top: 78%; --particle-left: 8%; --particle-size: 22px;
+  }
+
+  .hero-particle:nth-child(8) {
+    --particle-top: 66%; --particle-left: 88%; --particle-size: 22px;
+  }
+
+  .hero-particle:nth-child(10) {
+    --particle-top: 14%; --particle-left: 82%; --particle-size: 16px;
   }
 
   .hero-inner {
-    width: min(100%, 430px);
-    max-width: 100%;
+    width: max-content;
+    max-width: calc(100vw - 32px);
     margin: 0 auto;
     text-align: left;
   }
@@ -4690,8 +4767,19 @@ button:hover {
 <main id="top">
   <section class="hero">
     <div class="hero-pin">
-      <div class="motion-field" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
-      <div class="hero-monogram" aria-hidden="true"><span>L</span><span>i</span></div>
+      <div class="hero-orbit-scene" aria-hidden="true">
+        <span class="hero-orbit"></span>
+        <span class="hero-orbit"></span>
+        <span class="hero-orbit"></span>
+        <span class="hero-orbit"></span>
+        <span class="hero-particle"></span>
+        <span class="hero-particle"></span>
+        <span class="hero-particle"></span>
+        <span class="hero-particle"></span>
+        <span class="hero-particle"></span>
+        <span class="hero-particle"></span>
+        <span class="hero-particle"></span>
+      </div>
       <div class="hero-inner">
         <p class="section-kicker">現役教員専門のキャリアサポート</p>
         <h1>
