@@ -4633,7 +4633,7 @@ h2.section-title.section-title {
 /* Shared orbit background
    Section surfaces start fully transparent and can be adjusted per section later. */
 body.site-orbit-theme {
-  --section-surface: transparent;
+  --section-surface: rgba(255, 255, 255, 0.9);
   position: relative;
   background: #fff;
 }

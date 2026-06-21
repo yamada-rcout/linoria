@@ -4985,21 +4985,56 @@ body.site-orbit-theme .site-footer {
 
 body.site-orbit-theme #page-index main > section.reason-section,
 body.site-orbit-theme #page-index main > section.reason-section ~ section {
-  background: rgba(255, 255, 255, 0.5) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
 }
 
 body.site-orbit-theme #page-index main > section.vmv-cta-section {
+  width: 100%;
+  min-height: clamp(300px, 38vw, 520px);
+  aspect-ratio: auto;
+  margin: 0;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.86) 34%, rgba(255, 255, 255, 0.52) 62%, rgba(255, 255, 255, 0.08) 88%),
-    url("assets/vmv-tokyo-skyline.jpg") center 34% / cover no-repeat !important;
+    transparent !important;
+}
+
+body.site-orbit-theme #page-index main > section.vmv-cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.9;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.68) 34%, rgba(255, 255, 255, 0.25) 62%, rgba(255, 255, 255, 0.02) 88%),
+    url("assets/vmv-tokyo-skyline.jpg") center bottom / cover no-repeat;
+  pointer-events: none;
+}
+
+body.site-orbit-theme #page-index .vmv-cta-copy {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.92);
 }
 
 @media (max-width: 720px) {
   body.site-orbit-theme #page-index main > section.vmv-cta-section {
-    background:
-      linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 68%, rgba(255, 255, 255, 0.44) 100%),
-      url("assets/vmv-tokyo-skyline.jpg") center 28% / cover no-repeat !important;
+    min-height: 300px;
+    margin: 0;
+    aspect-ratio: auto;
   }
+
+  body.site-orbit-theme #page-index main > section.vmv-cta-section::before {
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.84) 0%, rgba(255, 255, 255, 0.62) 62%, rgba(255, 255, 255, 0.18) 100%),
+      url("assets/vmv-tokyo-skyline.jpg") center bottom / cover no-repeat;
+  }
+}
+
+body.site-orbit-theme #page-index main section:not(.hero) {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.site-orbit-theme #page-index main > section.vmv-cta-section {
+  background: transparent !important;
 }
     </style>
 </head>
