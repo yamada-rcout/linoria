@@ -871,7 +871,7 @@ h3 {
   color: var(--ink);
   overflow: hidden;
   isolation: isolate;
-  box-shadow: 0 -28px 70px rgba(17, 17, 17, 0.06);
+  box-shadow: none;
 }
 
 .about-section::before {
@@ -4781,10 +4781,96 @@ button:hover {
     font-size: clamp(2rem, calc(4.8vw - 30px), calc(4.35rem - 30px));
   }
 }
+
+/* Shared orbit background: all section surfaces start fully transparent. */
+body.site-orbit-theme {
+  background: #fff;
+}
+
+body.site-orbit-theme .site-orbit-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 420ms ease;
+}
+
+body.site-orbit-theme.hero-pin-hidden .site-orbit-background {
+  opacity: 1;
+}
+
+body.site-orbit-theme .hero-pin {
+  background: transparent !important;
+}
+
+body.site-orbit-theme .lower-fixed-bg {
+  display: none;
+}
+
+body.site-orbit-theme #page-index {
+  position: relative;
+  z-index: 1;
+}
+
+body.site-orbit-theme main section,
+body.site-orbit-theme .site-footer {
+  background: transparent !important;
+}
+
+body.site-orbit-theme #page-index main > section:not(.hero) {
+  background: transparent !important;
+}
+
+body.site-orbit-theme #page-index main > section.price-section,
+body.site-orbit-theme #page-index main > section.faq-section {
+  background: transparent !important;
+}
+
+body.site-orbit-theme #page-index main > section.vmv-cta-section {
+  background: transparent !important;
+}
+
+body.site-orbit-theme .site-footer {
+  background: transparent !important;
+}
+
+@media (max-width: 720px) {
+  body.site-orbit-theme .site-orbit-background {
+    opacity: 0.68;
+  }
+
+  body.site-orbit-theme.hero-pin-hidden .site-orbit-background {
+    opacity: 0.68;
+  }
+
+  body.site-orbit-theme #page-index main > section:not(.hero) {
+    background: transparent !important;
+  }
+
+  body.site-orbit-theme #page-index main > section.price-section,
+  body.site-orbit-theme #page-index main > section.faq-section,
+  body.site-orbit-theme .site-footer {
+    background: transparent !important;
+  }
+}
     </style>
 </head>
-<body>
-<div class="lower-fixed-bg" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<body class="site-orbit-theme">
+<div class="site-orbit-background hero-orbit-scene" aria-hidden="true">
+  <span class="hero-orbit"></span>
+  <span class="hero-orbit"></span>
+  <span class="hero-orbit"></span>
+  <span class="hero-orbit"></span>
+  <span class="hero-particle"></span>
+  <span class="hero-particle"></span>
+  <span class="hero-particle"></span>
+  <span class="hero-particle"></span>
+  <span class="hero-particle"></span>
+  <span class="hero-particle"></span>
+  <span class="hero-particle"></span>
+</div>
 <header class="site-header">
   <a class="brand" href="#top" onclick="showPage('index'); return false;" aria-label="Linoria トップへ">
     <span class="brand-symbol">Linoria</span>
@@ -4803,19 +4889,6 @@ button:hover {
 <main id="top">
   <section class="hero">
     <div class="hero-pin">
-      <div class="hero-orbit-scene" aria-hidden="true">
-        <span class="hero-orbit"></span>
-        <span class="hero-orbit"></span>
-        <span class="hero-orbit"></span>
-        <span class="hero-orbit"></span>
-        <span class="hero-particle"></span>
-        <span class="hero-particle"></span>
-        <span class="hero-particle"></span>
-        <span class="hero-particle"></span>
-        <span class="hero-particle"></span>
-        <span class="hero-particle"></span>
-        <span class="hero-particle"></span>
-      </div>
       <div class="hero-inner">
         <div class="hero-primary-content">
           <p class="section-kicker">現役教員専門のキャリアサポート</p>
@@ -4844,10 +4917,7 @@ button:hover {
   </section>
 
   <section class="about-section">
-    <div class="about-motion" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-    <div class="about-geometry" aria-hidden="true">
-      <div class="geometry-orb"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-    </div>
+    <div class="about-geometry" aria-hidden="true"></div>
     <div class="about-copy">
       <p class="section-kicker">About Linoria</p>
       <h2>教員の悩みを深く知るから、<br>寄り添える</h2>
@@ -5389,13 +5459,9 @@ function showPage(name, anchor) {
     menuToggle.setAttribute('aria-label', 'メニューを開く');
   }
   
-  // floating background squares
   if (name === 'index') {
     document.body.classList.remove('hero-pin-hidden');
-    setLowerBackgroundState();
     setHeroPinnedState();
-  } else {
-    document.body.classList.add('lower-bg-visible');
   }
 
   // re-run reveal animations
@@ -5475,22 +5541,6 @@ function initCarouselProgress() {
 // Original script.js logic
 document.documentElement.classList.add('js');
 
-const ensureLowerFixedBackground = () => {
-  if (document.querySelector('.lower-fixed-bg')) return;
-
-  const background = document.createElement('div');
-  background.className = 'lower-fixed-bg';
-  background.setAttribute('aria-hidden', 'true');
-
-  for (let i = 0; i < 6; i += 1) {
-    background.appendChild(document.createElement('span'));
-  }
-
-  document.body.prepend(background);
-};
-
-ensureLowerFixedBackground();
-
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const floatingCtaGroup = document.querySelector('.floating-cta-group');
@@ -5503,19 +5553,6 @@ let lastScrollY = window.scrollY;
 const setHeaderState = () => {
   if (!header) return;
   header.classList.toggle('is-scrolled', window.scrollY > 12);
-};
-
-const setLowerBackgroundState = () => {
-  const lowerBgStart = document.querySelector('.reason-section');
-  const aboutSection = document.querySelector('.about-section');
-  const target = lowerBgStart || aboutSection;
-  if (!target) {
-    document.body.classList.add('lower-bg-visible');
-    return;
-  }
-  const rect = target.getBoundingClientRect();
-  const triggerPoint = mobileHeaderQuery.matches ? window.innerHeight * 0.72 : window.innerHeight * 0.78;
-  document.body.classList.toggle('lower-bg-visible', rect.top <= triggerPoint);
 };
 
 const setHeroPinnedState = () => {
@@ -5549,7 +5586,6 @@ const setHeroScrollContentState = () => {
 };
 
 setHeaderState();
-setLowerBackgroundState();
 setHeroPinnedState();
 setHeroScrollContentState();
 
@@ -5567,7 +5603,6 @@ window.addEventListener('scroll', () => {
   const currentScrollY = window.scrollY;
 
   setHeaderState();
-  setLowerBackgroundState();
   setHeroPinnedState();
   setHeroScrollContentState();
   setFloatingCtaState(currentScrollY);

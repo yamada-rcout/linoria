@@ -1,44 +1,15 @@
 document.documentElement.classList.add("js");
 
-const ensureLowerFixedBackground = () => {
-  if (document.querySelector(".lower-fixed-bg")) return;
-
-  const background = document.createElement("div");
-  background.className = "lower-fixed-bg";
-  background.setAttribute("aria-hidden", "true");
-
-  for (let i = 0; i < 6; i += 1) {
-    background.appendChild(document.createElement("span"));
-  }
-
-  document.body.prepend(background);
-};
-
-ensureLowerFixedBackground();
-
 const header = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const floatingCtaGroup = document.querySelector(".floating-cta-group");
 const mobileHeaderQuery = window.matchMedia("(max-width: 720px)");
 const hero = document.querySelector(".hero");
-const aboutSection = document.querySelector(".about-section");
-const lowerBgStart = document.querySelector(".reason-section");
 let lastScrollY = window.scrollY;
 
 const setHeaderState = () => {
   if (!header) return;
   header.classList.toggle("is-scrolled", window.scrollY > 12);
-};
-
-const setLowerBackgroundState = () => {
-  const target = lowerBgStart || aboutSection;
-  if (!target) {
-    document.body.classList.add("lower-bg-visible");
-    return;
-  }
-  const rect = target.getBoundingClientRect();
-  const triggerPoint = mobileHeaderQuery.matches ? window.innerHeight * 0.72 : window.innerHeight * 0.78;
-  document.body.classList.toggle("lower-bg-visible", rect.top <= triggerPoint);
 };
 
 const setHeroPinnedState = () => {
@@ -48,7 +19,6 @@ const setHeroPinnedState = () => {
 };
 
 setHeaderState();
-setLowerBackgroundState();
 setHeroPinnedState();
 
 const setFloatingCtaState = (currentScrollY) => {
@@ -67,7 +37,6 @@ window.addEventListener(
     const currentScrollY = window.scrollY;
 
     setHeaderState();
-    setLowerBackgroundState();
     setHeroPinnedState();
     setFloatingCtaState(currentScrollY);
 
