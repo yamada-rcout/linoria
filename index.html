@@ -5615,7 +5615,7 @@ const setHeroScrollContentState = () => {
   if (!heroPrimaryContent || !heroScrollContent) return;
   const smoothStep = value => value * value * (3 - 2 * value);
   const exitDistance = Math.max(240, Math.min(420, window.innerHeight * 0.42));
-  const enterStart = exitDistance * 0.28;
+  const enterStart = exitDistance;
   const enterDistance = exitDistance * 0.9;
   const exitRaw = Math.max(0, Math.min(1, window.scrollY / exitDistance));
   const enterRaw = Math.max(0, Math.min(1, (window.scrollY - enterStart) / enterDistance));
