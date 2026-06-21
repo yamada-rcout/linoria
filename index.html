@@ -4855,6 +4855,16 @@ body.site-orbit-theme .site-footer {
   body.site-orbit-theme .site-footer {
     background: transparent !important;
   }
+
+  body.site-orbit-theme main,
+  body.site-orbit-theme .site-footer {
+    font-size: 14px;
+  }
+
+  body.site-orbit-theme main :where(p, li, dd, dt, a, label, button, input, textarea, select, summary, small, span),
+  body.site-orbit-theme .site-footer :where(p, li, dd, dt, a, small, span) {
+    font-size: max(14px, 1em) !important;
+  }
 }
     </style>
 </head>
