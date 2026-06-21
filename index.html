@@ -252,7 +252,7 @@ a {
 .hero {
   position: relative;
   z-index: 1;
-  min-height: 200vh;
+  min-height: 300vh;
   background: transparent;
 }
 
@@ -552,7 +552,8 @@ main > section.content-section.faq-section,
 }
 
 .hero-primary-content,
-.hero-scroll-content {
+.hero-scroll-content,
+.hero-tertiary-content {
   position: absolute;
   inset: 0;
   display: flex;
@@ -645,6 +646,13 @@ h3 {
   pointer-events: none;
 }
 
+.hero-tertiary-content {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(28px);
+  pointer-events: none;
+}
+
 .hero-needs {
   display: grid;
   gap: 8px;
@@ -664,7 +672,7 @@ h3 {
   width: min(620px, 100%);
   margin: 0 0 18px;
   color: var(--blue);
-  font-size: clamp(calc(0.95rem + 2px), calc(1.55vw + 2px), calc(1.08rem + 2px));
+  font-size: clamp(calc(0.95rem + 4px), calc(1.55vw + 4px), calc(1.08rem + 4px));
   font-weight: 800;
   line-height: 1.7;
   text-align: center;
@@ -684,6 +692,17 @@ h3 {
   height: 7px;
   background: var(--blue);
   transform: rotate(45deg);
+}
+
+.hero-needs--check li::before {
+  content: "✓";
+  top: 0;
+  width: auto;
+  height: auto;
+  background: transparent;
+  color: var(--blue);
+  font-weight: 900;
+  transform: none;
 }
 
 .js .reveal-item {
@@ -3921,7 +3940,7 @@ button:hover {
   }
 
   .hero {
-    min-height: 200vh;
+    min-height: 300vh;
   }
 
   .hero-pin {
@@ -4003,7 +4022,8 @@ button:hover {
   }
 
   .hero-primary-content,
-  .hero-scroll-content {
+  .hero-scroll-content,
+  .hero-tertiary-content {
     padding-top: 56px;
   }
 
@@ -4021,7 +4041,7 @@ button:hover {
 
   .hero-needs-intro {
     margin-bottom: 14px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.65;
   }
 
@@ -4961,6 +4981,15 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
             <li>起業・独立支援</li>
           </ul>
         </div>
+        <div class="hero-tertiary-content">
+          <div class="hero-needs-intro">あなたのキャリアを、<br>あなたらしい選択肢で、<br>納得のかたちで。</div>
+          <ul class="hero-needs hero-needs--check" aria-label="キャリアについてのご相談例">
+            <li>続けるべき？やめるべき？</li>
+            <li>転職はどう進めたらいい？</li>
+            <li>自分の経験を活かせる道を探したい</li>
+            <li>起業・独立も検討したい</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -5594,6 +5623,7 @@ const menuToggle = document.querySelector('.menu-toggle');
 const floatingCtaGroup = document.querySelector('.floating-cta-group');
 const heroPrimaryContent = document.querySelector('.hero-primary-content');
 const heroScrollContent = document.querySelector('.hero-scroll-content');
+const heroTertiaryContent = document.querySelector('.hero-tertiary-content');
 const mobileHeaderQuery = window.matchMedia('(max-width: 720px)');
 const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 let lastScrollY = window.scrollY;
@@ -5612,27 +5642,52 @@ const setHeroPinnedState = () => {
 };
 
 const setHeroScrollContentState = () => {
-  if (!heroPrimaryContent || !heroScrollContent) return;
+  if (!heroPrimaryContent || !heroScrollContent || !heroTertiaryContent) return;
   const smoothStep = value => value * value * (3 - 2 * value);
+  const clampProgress = value => Math.max(0, Math.min(1, value));
   const exitDistance = Math.max(240, Math.min(420, window.innerHeight * 0.42));
   const enterStart = exitDistance;
   const enterDistance = exitDistance * 0.9;
-  const exitRaw = Math.max(0, Math.min(1, window.scrollY / exitDistance));
-  const enterRaw = Math.max(0, Math.min(1, (window.scrollY - enterStart) / enterDistance));
-  const hasScrolled = window.scrollY > 16;
-  const exitProgress = reducedMotionQuery.matches && hasScrolled ? 1 : smoothStep(exitRaw);
-  const enterProgress = reducedMotionQuery.matches && hasScrolled ? 1 : smoothStep(enterRaw);
+  const secondExitStart = enterStart + enterDistance + Math.max(180, window.innerHeight * 0.28);
+  const secondExitDistance = Math.max(180, Math.min(320, window.innerHeight * 0.32));
+  const thirdEnterStart = secondExitStart + secondExitDistance;
+  const thirdEnterDistance = secondExitDistance * 0.9;
+  const exitProgress = smoothStep(clampProgress(window.scrollY / exitDistance));
+  const enterProgress = smoothStep(clampProgress((window.scrollY - enterStart) / enterDistance));
+  const secondExitProgress = smoothStep(clampProgress((window.scrollY - secondExitStart) / secondExitDistance));
+  const thirdEnterProgress = smoothStep(clampProgress((window.scrollY - thirdEnterStart) / thirdEnterDistance));
+
+  if (reducedMotionQuery.matches) {
+    const stage = window.scrollY < enterStart ? 1 : window.scrollY < thirdEnterStart ? 2 : 3;
+    heroPrimaryContent.style.opacity = stage === 1 ? '1' : '0';
+    heroScrollContent.style.opacity = stage === 2 ? '1' : '0';
+    heroTertiaryContent.style.opacity = stage === 3 ? '1' : '0';
+    [heroPrimaryContent, heroScrollContent, heroTertiaryContent].forEach((content, index) => {
+      const visible = stage === index + 1;
+      content.style.transform = 'translateY(0)';
+      content.style.visibility = visible ? 'visible' : 'hidden';
+      content.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    });
+    return;
+  }
 
   heroPrimaryContent.style.opacity = (1 - exitProgress).toFixed(3);
   heroPrimaryContent.style.transform = `translateY(${-20 * exitProgress}px)`;
   heroPrimaryContent.style.visibility = exitProgress < 0.99 ? 'visible' : 'hidden';
   heroPrimaryContent.setAttribute('aria-hidden', exitProgress < 0.99 ? 'false' : 'true');
 
-  const enterOffset = 20 * Math.max(0, 1 - enterProgress * 4);
-  heroScrollContent.style.opacity = enterProgress.toFixed(3);
-  heroScrollContent.style.transform = `translateY(${enterOffset}px)`;
-  heroScrollContent.style.visibility = enterProgress > 0.01 ? 'visible' : 'hidden';
-  heroScrollContent.setAttribute('aria-hidden', enterProgress > 0.01 ? 'false' : 'true');
+  const secondOpacity = enterProgress * (1 - secondExitProgress);
+  const secondEnterOffset = 20 * Math.max(0, 1 - enterProgress * 4);
+  heroScrollContent.style.opacity = secondOpacity.toFixed(3);
+  heroScrollContent.style.transform = `translateY(${secondEnterOffset - 20 * secondExitProgress}px)`;
+  heroScrollContent.style.visibility = secondOpacity > 0.01 ? 'visible' : 'hidden';
+  heroScrollContent.setAttribute('aria-hidden', secondOpacity > 0.01 ? 'false' : 'true');
+
+  const thirdEnterOffset = 20 * Math.max(0, 1 - thirdEnterProgress * 4);
+  heroTertiaryContent.style.opacity = thirdEnterProgress.toFixed(3);
+  heroTertiaryContent.style.transform = `translateY(${thirdEnterOffset}px)`;
+  heroTertiaryContent.style.visibility = thirdEnterProgress > 0.01 ? 'visible' : 'hidden';
+  heroTertiaryContent.setAttribute('aria-hidden', thirdEnterProgress > 0.01 ? 'false' : 'true');
 };
 
 setHeaderState();
