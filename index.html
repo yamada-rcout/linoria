@@ -252,7 +252,7 @@ a {
 .hero {
   position: relative;
   z-index: 1;
-  min-height: calc(100vh + clamp(320px, 38vh, 460px));
+  min-height: 200vh;
   background: transparent;
 }
 
@@ -271,12 +271,13 @@ a {
     #fff;
   overflow: hidden;
   isolation: isolate;
-  transition: opacity 180ms ease, visibility 180ms ease;
+  transition: opacity 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-pin-hidden .hero-pin {
   opacity: 0;
   visibility: hidden;
+  transition: opacity 520ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 520ms;
 }
 
 .hero::before {
@@ -563,7 +564,7 @@ main > section.content-section.faq-section,
   box-sizing: border-box;
   text-align: center;
   will-change: opacity, transform;
-  transition: opacity 120ms linear, transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 220ms linear, transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-primary-content {
@@ -3910,7 +3911,7 @@ button:hover {
   }
 
   .hero {
-    min-height: calc(100vh + clamp(260px, 40vh, 360px));
+    min-height: 200vh;
   }
 
   .hero-pin {
@@ -5602,9 +5603,9 @@ const setHeroPinnedState = () => {
 const setHeroScrollContentState = () => {
   if (!heroPrimaryContent || !heroScrollContent) return;
   const smoothStep = value => value * value * (3 - 2 * value);
-  const exitDistance = Math.max(150, Math.min(260, window.innerHeight * 0.28));
-  const enterStart = exitDistance * 0.34;
-  const enterDistance = exitDistance * 0.82;
+  const exitDistance = Math.max(240, Math.min(420, window.innerHeight * 0.42));
+  const enterStart = exitDistance * 0.28;
+  const enterDistance = exitDistance * 0.9;
   const exitRaw = Math.max(0, Math.min(1, window.scrollY / exitDistance));
   const enterRaw = Math.max(0, Math.min(1, (window.scrollY - enterStart) / enterDistance));
   const hasScrolled = window.scrollY > 16;
