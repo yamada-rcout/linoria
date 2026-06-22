@@ -2674,6 +2674,10 @@ main > section.vmv-cta-section::before {
   transform: scaleY(1);
 }
 
+.faq-section--plain-open .faq-list details[open] {
+  background: transparent;
+}
+
 .faq-list summary {
   position: relative;
   display: grid;
@@ -5461,7 +5465,7 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
     <p class="reviews-note">※掲載しているお声には、Linoria立ち上げ前に提供していた前身サービスでご相談いただいた方のご感想も含まれています。</p>
   </section>
 
-  <section id="faq" class="content-section faq-section">
+  <section id="faq" class="content-section faq-section faq-section--plain-open">
     <div class="faq-copy">
       <p class="section-kicker">FAQ</p>
     </div>
@@ -5558,7 +5562,7 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
 <!-- FAQ PAGE -->
 <div id="page-faq" style="display:none">
 <main>
-  <section class="content-section faq-section">
+  <section class="content-section faq-section faq-section--plain-open">
     <div class="faq-copy">
       <p class="section-kicker">FAQ</p>
       <h2>よくある質問</h2>
