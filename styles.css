@@ -3345,6 +3345,13 @@ textarea {
   accent-color: var(--blue);
 }
 
+@media (max-width: 720px) {
+  .privacy-consent input {
+    width: 14.4px;
+    height: 14.4px;
+  }
+}
+
 .privacy-consent a {
   color: var(--blue);
   text-decoration: none;
