@@ -3,7 +3,7 @@
   --blue-dark: #003f9e;
   --ink: #111111;
   --text: #333333;
-  --muted: #6f7880;
+  --muted: #4e545a;
   --line: #d9e0e6;
   --soft: #f4f7fa;
   --white: #ffffff;
@@ -1423,6 +1423,16 @@ main > section.vmv-cta-section::before {
   margin: 0;
   font-size: clamp(1.1rem, 1.55vw, 1.42rem);
   line-height: 1.45;
+}
+
+#page-index .reason-section .reason-grid h3 {
+  width: fit-content;
+  padding: 0 2px 2px;
+  background: linear-gradient(transparent 62%, rgba(52, 201, 255, 0.28) 62%);
+}
+
+#page-index .reason-section .reason-grid p {
+  color: #4e545a;
 }
 
 .issue-grid p {
