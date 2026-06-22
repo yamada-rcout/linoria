@@ -3335,6 +3335,23 @@ button:disabled:hover {
   white-space: nowrap;
 }
 
+.footer-instagram-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: url("assets/instagram-glyph-gradient.png") center / contain no-repeat;
+}
+
+.footer-instagram-link > * {
+  display: none;
+}
+
+.footer-instagram-link:hover {
+  opacity: 0.68;
+}
+
 .footer-copyright {
   grid-column: 1 / -1;
   justify-self: center;
@@ -3344,9 +3361,9 @@ button:disabled:hover {
 
 .footer-navs {
   display: grid;
-  grid-template-columns: minmax(180px, 0.8fr) minmax(220px, 1fr);
-  gap: clamp(34px, 5vw, 58px);
-  max-width: 580px;
+  grid-template-columns: minmax(150px, 0.8fr) minmax(110px, 0.5fr) minmax(210px, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  max-width: 700px;
 }
 
 .footer-nav {

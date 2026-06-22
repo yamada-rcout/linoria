@@ -9,8 +9,26 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-843M53SBXZ');
-    </script>
+  gtag('config', 'G-843M53SBXZ');
+</script>
+<!-- Google tag (gtag.js) event - delayed navigation helper -->
+<script>
+  // Helper function to delay opening a URL until a gtag event is sent.
+  // Call it in response to an action that should navigate to a URL.
+  function gtagSendEvent(url) {
+    var callback = function () {
+      if (typeof url === 'string') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion_event_contact', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
+    return false;
+  }
+</script>
     <title>&#x304A;&#x554F;&#x3044;&#x5408;&#x308F;&#x305B;&#x5B8C;&#x4E86; | Linoria</title>
     <meta name="description" content="Linoria&#x3078;&#x306E;&#x304A;&#x554F;&#x3044;&#x5408;&#x308F;&#x305B;&#x3092;&#x53D7;&#x3051;&#x4ED8;&#x3051;&#x307E;&#x3057;&#x305F;&#x3002;">
     <meta name="robots" content="noindex, follow">
@@ -49,7 +67,7 @@
     </main>
     <footer class="site-footer">
       <div class="footer-brand"><strong>Linoria</strong><span>Career Support for Teachers</span><p>&#x6559;&#x58C7;&#x306E;&#x5148;&#x306B;&#x3082;&#x3001;&#x3042;&#x306A;&#x305F;&#x3089;&#x3057;&#x3044;&#x9078;&#x629E;&#x80A2;&#x304C;&#x3042;&#x308B;</p></div>
-      <div class="footer-navs"><nav class="footer-nav" aria-label="&#x30E1;&#x30CB;&#x30E5;&#x30FC;"><p>&#x30E1;&#x30CB;&#x30E5;&#x30FC;</p><a href="index.html#top">TOP</a><a href="about.html">ABOUT</a><a href="message.html">SUPPORTER</a><a href="price.html">PLAN / PRICE</a><a href="faq.html">FAQ</a><a href="contact.html">CONTACT</a></nav><nav class="footer-nav" aria-label="&#x30DD;&#x30EA;&#x30B7;&#x30FC;"><p>&#x30DD;&#x30EA;&#x30B7;&#x30FC;</p><a href="legal.html">&#x7279;&#x5B9A;&#x5546;&#x53D6;&#x5F15;&#x6CD5;&#x306B;&#x57FA;&#x3065;&#x304F;&#x8868;&#x8A18;</a><a href="privacy.html">&#x30D7;&#x30E9;&#x30A4;&#x30D0;&#x30B7;&#x30FC;&#x30DD;&#x30EA;&#x30B7;&#x30FC;</a><a href="terms.html">&#x5229;&#x7528;&#x898F;&#x7D04;</a></nav></div>
+      <div class="footer-navs"><nav class="footer-nav" aria-label="&#x30E1;&#x30CB;&#x30E5;&#x30FC;"><p>&#x30E1;&#x30CB;&#x30E5;&#x30FC;</p><a href="index.html#top">TOP</a><a href="about.html">ABOUT</a><a href="message.html">SUPPORTER</a><a href="price.html">PLAN / PRICE</a><a href="faq.html">FAQ</a><a href="contact.html">CONTACT</a></nav><nav class="footer-nav footer-social-nav" aria-label="ソーシャル"><p>ソーシャル</p><a class="footer-instagram-link" href="https://www.instagram.com/linoria_official/" target="_blank" rel="noopener noreferrer" aria-label="Linoria公式Instagramを開く" title="Instagram"><img src="assets/instagram-glyph-gradient.png" alt="" width="24" height="24"></a></nav><nav class="footer-nav" aria-label="&#x30DD;&#x30EA;&#x30B7;&#x30FC;"><p>&#x30DD;&#x30EA;&#x30B7;&#x30FC;</p><a href="legal.html">&#x7279;&#x5B9A;&#x5546;&#x53D6;&#x5F15;&#x6CD5;&#x306B;&#x57FA;&#x3065;&#x304F;&#x8868;&#x8A18;</a><a href="privacy.html">&#x30D7;&#x30E9;&#x30A4;&#x30D0;&#x30B7;&#x30FC;&#x30DD;&#x30EA;&#x30B7;&#x30FC;</a><a href="terms.html">&#x5229;&#x7528;&#x898F;&#x7D04;</a></nav></div>
       <small class="footer-copyright">&copy; 2026 Linoria. All Rights Reserved.</small>
     </footer>
     <script src="script.js"></script>
