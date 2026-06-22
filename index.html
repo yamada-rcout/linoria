@@ -6277,6 +6277,17 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
   opacity: 1;
   transform: none;
 }
+
+/* Remove PLAN accent bars */
+#page-index .price-summary-list article {
+  grid-template-columns: 0 minmax(0, 1fr);
+  column-gap: 0;
+}
+
+#page-index .price-summary-list article::before {
+  content: none !important;
+  display: none !important;
+}
     </style>
 </head>
 <body class="site-orbit-theme">
