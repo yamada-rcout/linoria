@@ -4890,4 +4890,12 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
   body.site-orbit-theme #page-index .vmv-kicker-link {
     font-size: var(--section-title-size-mobile) !important;
   }
+
+  body.site-orbit-theme .site-footer {
+    padding-bottom: 124px;
+  }
+
+  body.site-orbit-theme .site-footer .footer-copyright {
+    font-size: 10px !important;
+  }
 }
