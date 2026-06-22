@@ -5649,3 +5649,50 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article:nth-child
     font-size: clamp(2.75rem, 4.4vw, 4.75rem) !important;
   }
 }
+
+
+/* Responsive one-column REVIEWS layout */
+@media (min-width: 981px) {
+  body.site-orbit-theme #page-index main > section.reviews-section {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  body.site-orbit-theme #page-index .reviews-copy,
+  body.site-orbit-theme #page-index .review-card-list,
+  body.site-orbit-theme #page-index .reviews-note {
+    grid-column: 1;
+  }
+
+  body.site-orbit-theme #page-index .review-card-list {
+    width: 100%;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1439px) {
+  body.site-orbit-theme #page-index .review-card-list {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+  }
+
+  body.site-orbit-theme #page-index .review-card {
+    flex: 0 0 calc(100% / 3);
+  }
+}
+
+@media (min-width: 1440px) {
+  body.site-orbit-theme #page-index .review-card-list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  body.site-orbit-theme #page-index .review-card {
+    min-width: 0;
+    width: auto;
+    flex: none;
+  }
+}
