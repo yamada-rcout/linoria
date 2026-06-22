@@ -2545,6 +2545,13 @@ main > section.vmv-cta-section::before {
   top: 112px;
 }
 
+@media (min-width: 981px) {
+  #page-index .faq-copy {
+    position: static;
+    top: auto;
+  }
+}
+
 .faq-copy h2 {
   max-width: 520px;
 }
@@ -5253,6 +5260,49 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
 
   body.site-orbit-theme .site-footer .footer-copyright {
     font-size: 10px !important;
+  }
+
+  body.site-orbit-theme #page-index {
+    --mobile-section-flow-gap: 24px;
+  }
+
+  body.site-orbit-theme #page-index main > section:is(
+    .reason-section,
+    .supporter-section,
+    .price-section,
+    .reviews-section,
+    .faq-section
+  ) {
+    gap: var(--mobile-section-flow-gap);
+  }
+
+  body.site-orbit-theme #page-index :is(
+    .section-head,
+    .supporter-cta-copy,
+    .price-summary-copy,
+    .reviews-copy,
+    .faq-copy
+  ) > .section-kicker {
+    margin: 0;
+  }
+
+  body.site-orbit-theme #page-index .supporter-cta-copy {
+    gap: var(--mobile-section-flow-gap);
+  }
+
+  body.site-orbit-theme #page-index .faq-summary-panel {
+    gap: var(--mobile-section-flow-gap);
+  }
+
+  body.site-orbit-theme #page-index :is(
+    .supporter-cta-meta,
+    .supporter-cta-copy .section-link,
+    .price-summary-copy,
+    .price-section > .section-link,
+    .reviews-note
+  ) {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
     </style>
