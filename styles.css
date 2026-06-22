@@ -970,7 +970,7 @@ main > section.vmv-cta-section {
   position: relative;
   z-index: 6;
   display: grid;
-  align-items: end;
+  align-items: start;
   min-height: 0;
   aspect-ratio: 2.45 / 1;
   width: auto;
@@ -1002,6 +1002,29 @@ main > section.vmv-cta-section::before {
   line-height: 1.2;
 }
 
+.vmv-kicker-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  color: var(--blue);
+  background: none;
+  backdrop-filter: none;
+  font-size: var(--section-title-size);
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.vmv-kicker-link:hover {
+  opacity: 1;
+}
+
+.vmv-kicker-link:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+
 .vmv-cta-copy p:not(.section-kicker) {
   max-width: 520px;
   margin: 22px 0 0;
@@ -1012,10 +1035,10 @@ main > section.vmv-cta-section::before {
 }
 
 .vmv-cta-copy .section-link {
-  margin-top: 28px;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(8px);
+  margin-top: 0;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
 }
 
 .image-credit {
@@ -3805,7 +3828,7 @@ button:disabled:hover {
   }
 
   main > section.vmv-cta-section {
-    align-items: end;
+    align-items: start;
     min-height: 0;
     aspect-ratio: 1.45 / 1;
     margin: 0 14px 28px;
@@ -3828,8 +3851,8 @@ button:disabled:hover {
   }
 
   .vmv-cta-copy .section-link {
-    margin-top: 20px;
-    padding: 8px 12px;
+    margin-top: 0;
+    padding: 0;
   }
 
   .about-geometry {
@@ -4851,5 +4874,20 @@ body.site-orbit-theme .lower-fixed-bg {
   body.site-orbit-theme main :where(p, li, dd, dt, a, label, button, input, textarea, select, summary, small, span),
   body.site-orbit-theme .site-footer :where(p, li, dd, dt, a, small, span) {
     font-size: max(14px, 1em) !important;
+  }
+}
+
+body.site-orbit-theme #page-index .vmv-kicker-link {
+  margin: 0;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
+  font-size: var(--section-title-size) !important;
+  line-height: 1.35;
+}
+
+@media (max-width: 720px) {
+  body.site-orbit-theme #page-index .vmv-kicker-link {
+    font-size: var(--section-title-size-mobile) !important;
   }
 }

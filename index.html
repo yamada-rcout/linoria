@@ -1349,7 +1349,7 @@ main > section.vmv-cta-section {
   position: relative;
   z-index: 6;
   display: grid;
-  align-items: center;
+  align-items: start;
   min-height: 0;
   aspect-ratio: 2.45 / 1;
   width: auto;
@@ -1386,7 +1386,13 @@ main > section.vmv-cta-section::before {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  margin: 0;
+  padding: 0;
   color: var(--blue);
+  background: none;
+  backdrop-filter: none;
+  font-size: var(--section-title-size);
+  line-height: 1.35;
   text-decoration: none;
 }
 
@@ -1409,10 +1415,10 @@ main > section.vmv-cta-section::before {
 }
 
 .vmv-cta-copy .section-link {
-  margin-top: 28px;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(8px);
+  margin-top: 0;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
 }
 
 .image-credit {
@@ -3854,7 +3860,7 @@ button:hover {
   }
 
   main > section.vmv-cta-section {
-    align-items: end;
+    align-items: start;
     min-height: 0;
     aspect-ratio: 1.45 / 1;
     margin: 0 14px 28px;
@@ -3878,8 +3884,8 @@ button:hover {
   }
 
   .vmv-cta-copy .section-link {
-    margin-top: 20px;
-    padding: 8px 12px;
+    margin-top: 0;
+    padding: 0;
   }
 
   .about-geometry {
@@ -5222,6 +5228,21 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article + article
 
   .hero-primary-lead {
     margin-top: 26px;
+  }
+}
+
+body.site-orbit-theme #page-index .vmv-kicker-link {
+  margin: 0;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
+  font-size: var(--section-title-size) !important;
+  line-height: 1.35;
+}
+
+@media (max-width: 720px) {
+  body.site-orbit-theme #page-index .vmv-kicker-link {
+    font-size: var(--section-title-size-mobile) !important;
   }
 }
     </style>
