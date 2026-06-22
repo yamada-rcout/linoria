@@ -2468,9 +2468,14 @@ main > section.vmv-cta-section::before {
 }
 
 .review-card-list {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  display: flex;
   gap: 0;
+  align-items: stretch;
+  padding-bottom: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .reviews-note {
@@ -2484,6 +2489,7 @@ main > section.vmv-cta-section::before {
 
 .review-card {
   position: relative;
+  flex: 0 0 calc(100% / 3);
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   align-content: start;
@@ -2492,6 +2498,7 @@ main > section.vmv-cta-section::before {
   border: 0;
   background: transparent;
   box-shadow: none;
+  scroll-snap-align: start;
 }
 
 .review-card + .review-card {
