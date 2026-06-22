@@ -2361,7 +2361,7 @@ main > section.vmv-cta-section::before {
   display: inline-grid;
   place-items: center;
   grid-row: 1 / 3;
-  width: 17px;
+  width: 8.5px;
   height: 56px;
   border: 0;
   background:
@@ -2393,6 +2393,39 @@ main > section.vmv-cta-section::before {
   color: var(--muted);
   font-size: 0.95rem;
   font-weight: 500;
+}
+
+#page-index .price-summary-list article::before {
+  grid-row: 1;
+}
+
+#page-index .price-summary-list h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  align-self: center;
+}
+
+#page-index .price-summary-list h3 .price-plan-duration {
+  display: inline-flex;
+  align-items: center;
+  grid-column: auto;
+  padding: 4px 9px;
+  border: 1px solid rgba(0, 87, 217, 0.18);
+  border-radius: 999px;
+  background: rgba(0, 87, 217, 0.07);
+  color: var(--blue);
+  font-size: 12px !important;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+#page-index .price-summary-side {
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .price-summary-list p {
@@ -4581,7 +4614,7 @@ button:hover {
 
   .price-summary-list article::before {
     grid-row: 1 / 3;
-    width: 13px;
+    width: 6.5px;
     height: 48px;
   }
 
@@ -5399,11 +5432,11 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
       <p class="section-kicker">Plan / Price</p>
     </div>
     <div class="price-summary-list">
-      <article><h3>初回無料相談</h3><span>まずは話してみる</span><div class="price-summary-side"><p>～30minutes</p><strong>￥0</strong></div></article>
-      <article><h3>キャリア整理相談</h3><span>悩みと選択肢を整理する</span><div class="price-summary-side"><p>1hour～</p><strong>￥3,500</strong></div></article>
-      <article><h3>伴走プラン</h3><span>対話を重ねながら整理する</span><div class="price-summary-side"><p>30days～</p><strong>￥9,800</strong></div></article>
+      <article><h3>初回無料相談<span class="price-plan-duration">30分</span></h3><div class="price-summary-side"><strong>￥0</strong></div></article>
+      <article><h3>キャリア整理相談<span class="price-plan-duration">1時間</span></h3><div class="price-summary-side"><strong>￥3,500</strong></div></article>
+      <article><h3>伴走プラン<span class="price-plan-duration">30日</span></h3><div class="price-summary-side"><strong>￥9,800</strong></div></article>
     </div>
-    <a class="section-link" href="price.html">料金・利用方法を見る<span aria-hidden="true">→</span></a>
+    <a class="section-link" href="price.html">プラン・料金を見る<span aria-hidden="true">→</span></a>
   </section>
 
   <section class="content-section reviews-section">
