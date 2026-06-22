@@ -2333,6 +2333,15 @@ main > section.vmv-cta-section::before {
   line-height: 2;
 }
 
+.supporter-profile-bio {
+  display: grid;
+  gap: 1em;
+}
+
+.supporter-profile-bio p {
+  margin: 0;
+}
+
 .supporter-profile-list {
   display: flex;
   flex-wrap: wrap;
