@@ -4924,10 +4924,6 @@ body.site-orbit-theme .faq-section .faq-group {
   background: transparent !important;
 }
 
-body.site-orbit-theme.page-faq main > .faq-section {
-  background: rgba(255, 255, 255, 0.85) !important;
-}
-
 body.site-orbit-theme.page-faq .faq-copy {
   position: static;
   top: auto;
@@ -4950,10 +4946,6 @@ body.site-orbit-theme .lower-fixed-bg {
 @media (max-width: 720px) {
   .site-orbit-background {
     opacity: 0.68;
-  }
-
-  body.site-orbit-theme.page-faq .site-orbit-background {
-    opacity: 1;
   }
 
   .site-orbit-ring {
