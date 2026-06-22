@@ -1382,6 +1382,23 @@ main > section.vmv-cta-section::before {
   white-space: nowrap;
 }
 
+.vmv-kicker-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.vmv-kicker-link:hover {
+  opacity: 1;
+}
+
+.vmv-kicker-link:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+
 .vmv-cta-copy p:not(.section-kicker) {
   max-width: 520px;
   margin: 22px 0 0;
@@ -5346,9 +5363,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article + article
 
   <section class="vmv-cta-section" aria-labelledby="vmv-cta-title">
     <div class="vmv-cta-copy">
-      <p class="section-kicker">Vision / Mission / Value</p>
-      <h2 id="vmv-cta-title">Linoriaが目指す社会</h2>
-    <a class="section-link" href="vmv.html">VMVを見る<span aria-hidden="true">→</span></a>
+      <a id="vmv-cta-title" class="section-kicker section-link vmv-kicker-link" href="vmv.html">Vision / Mission / Value<span aria-hidden="true">→</span></a>
     </div>
   </section>
 </main>
