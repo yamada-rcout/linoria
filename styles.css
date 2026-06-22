@@ -5703,3 +5703,75 @@ body.site-orbit-theme #page-index .reason-section .reason-grid h3 {
   padding: 0 2px 2px;
   background: linear-gradient(transparent 62%, rgba(52, 201, 255, 0.28) 62%);
 }
+
+
+#page-index .price-summary-list .price-plan-caption {
+  position: static;
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem !important;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+@media (max-width: 720px) {
+  #page-index .price-summary-list .price-plan-caption {
+    font-size: 12px !important;
+  }
+}
+
+
+#page-index .hero-scroll-content .hero-needs-intro,
+#page-index .hero-tertiary-content .hero-needs-intro {
+  width: min(760px, 100%);
+  font-size: clamp(1.75rem, 3.4vw, 3.2rem);
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  #page-index .hero-scroll-content .hero-needs-intro,
+  #page-index .hero-tertiary-content .hero-needs-intro {
+    font-size: 24px;
+    line-height: 1.55;
+  }
+}
+
+
+#page-index .hero-detail-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 54px;
+  margin-top: 6px;
+  padding: 0 28px;
+  border: 1px solid rgba(0, 87, 217, 0.34);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--blue);
+  box-shadow: 9px 9px 0 rgba(52, 201, 255, 0.2);
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+#page-index .hero-detail-cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 12px 12px 0 rgba(52, 201, 255, 0.24);
+}
+
+#page-index .hero-detail-cta span {
+  color: var(--blue);
+  font-size: 1.1em !important;
+}
+
+@media (max-width: 720px) {
+  #page-index .hero-detail-cta {
+    width: min(100%, 320px);
+    min-height: 48px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+}
