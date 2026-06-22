@@ -2441,6 +2441,7 @@ main > section.vmv-cta-section::before {
 }
 
 .reviews-note {
+  grid-column: 2;
   margin: 18px 0 0;
   color: var(--muted);
   font-size: 0.82rem;
@@ -2565,17 +2566,6 @@ main > section.vmv-cta-section::before {
 .faq-summary-panel {
   display: grid;
   gap: 18px;
-}
-
-.price-section.section-without-intro,
-.reviews-section.section-without-intro,
-.faq-section.section-without-intro {
-  grid-template-columns: 1fr;
-}
-
-.section-without-intro .price-summary-list,
-.price-section.section-without-intro > .section-link {
-  grid-column: 1;
 }
 
 .faq-group {
@@ -4661,6 +4651,7 @@ button:hover {
   }
 
   .reviews-note {
+    grid-column: auto;
     margin-top: 14px;
     font-size: 12px;
     line-height: 1.7;
@@ -5353,7 +5344,7 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
     </div>
   </section>
 
-  <section id="price" class="content-section price-section section-without-intro">
+  <section id="price" class="content-section price-section">
     <div class="price-summary-copy">
       <p class="section-kicker">Plan / Price</p>
     </div>
@@ -5365,7 +5356,7 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
     <a class="section-link" href="price.html">料金・利用方法を見る<span aria-hidden="true">→</span></a>
   </section>
 
-  <section class="content-section reviews-section section-without-intro">
+  <section class="content-section reviews-section">
     <div class="reviews-copy">
       <p class="section-kicker">Reviews</p>
     </div>
@@ -5379,7 +5370,7 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
     <p class="reviews-note">※掲載しているお声には、Linoria立ち上げ前に提供していた前身サービスでご相談いただいた方のご感想も含まれています。</p>
   </section>
 
-  <section id="faq" class="content-section faq-section section-without-intro">
+  <section id="faq" class="content-section faq-section">
     <div class="faq-copy">
       <p class="section-kicker">FAQ</p>
     </div>
