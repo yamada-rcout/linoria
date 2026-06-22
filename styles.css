@@ -4948,6 +4948,7 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
 }
 
 #page-index .review-card {
+  padding: 12px;
   border: 0;
   background: transparent;
   box-shadow: none;
@@ -4955,14 +4956,6 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
 
 #page-index .review-card + .review-card {
   border-left: 1px solid rgba(0, 87, 217, 0.18);
-}
-
-#page-index .review-card:first-child {
-  padding-left: 0;
-}
-
-#page-index .review-card:last-child {
-  padding-right: 0;
 }
 
 #page-index .review-card::before {
@@ -4976,8 +4969,15 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
 }
 
 #page-index .review-profile {
+  justify-content: flex-end;
+  align-self: end;
+  margin-top: 11px;
   padding-top: 0;
   border-top: 0;
+}
+
+#page-index .review-card h3 {
+  margin: 9px 0 6px;
 }
 
 @media (min-width: 721px) {
@@ -4998,6 +4998,14 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
 }
 
 @media (max-width: 720px) {
+  #page-index .review-card-list {
+    height: auto;
+  }
+
+  #page-index .review-card {
+    padding: 9px;
+  }
+
   body.site-orbit-theme #page-index .vmv-kicker-link {
     font-size: var(--section-title-size-mobile) !important;
   }

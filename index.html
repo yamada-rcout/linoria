@@ -2494,7 +2494,7 @@ main > section.vmv-cta-section::before {
   grid-template-rows: auto auto 1fr auto;
   align-content: start;
   min-height: 220px;
-  padding: 24px;
+  padding: 12px;
   border: 0;
   background: transparent;
   box-shadow: none;
@@ -2503,14 +2503,6 @@ main > section.vmv-cta-section::before {
 
 .review-card + .review-card {
   border-left: 1px solid rgba(0, 87, 217, 0.18);
-}
-
-.review-card:first-child {
-  padding-left: 0;
-}
-
-.review-card:last-child {
-  padding-right: 0;
 }
 
 .review-card::before {
@@ -2529,7 +2521,7 @@ main > section.vmv-cta-section::before {
 }
 
 .review-card h3 {
-  margin: 18px 0 12px;
+  margin: 9px 0 6px;
   font-size: 1rem;
   line-height: 1.55;
 }
@@ -2545,8 +2537,10 @@ main > section.vmv-cta-section::before {
 .review-profile {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
+  align-self: end;
   gap: 6px;
-  margin-top: 22px;
+  margin-top: 11px;
   padding-top: 0;
   border-top: 0;
 }
@@ -4684,7 +4678,7 @@ button:hover {
     display: flex;
     gap: 0;
     align-items: stretch;
-    height: 392px;
+    height: auto;
     margin-right: -20px;
     padding-right: 20px;
     padding-bottom: 16px;
@@ -4713,7 +4707,7 @@ button:hover {
     flex: 0 0 min(82vw, 310px);
     min-height: 190px;
     height: auto;
-    padding: 18px;
+    padding: 9px;
     scroll-snap-align: start;
   }
 
