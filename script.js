@@ -134,6 +134,9 @@ const revealTargets = document.querySelectorAll(
     ".faq-summary-panel",
     ".message-section > *",
     ".contact-section > *",
+    "body.page-about main > section.content-section > *",
+    "body.page-supporter main > section.content-section > *",
+    "body.page-price main > section.content-section > *",
     ".feature-item",
     ".flow-list li"
   ].join(", ")
