@@ -2470,7 +2470,7 @@ main > section.vmv-cta-section::before {
 .review-card-list {
   display: grid;
   grid-template-columns: repeat(5, minmax(150px, 1fr));
-  gap: 14px;
+  gap: 0;
 }
 
 .reviews-note {
@@ -2489,30 +2489,31 @@ main > section.vmv-cta-section::before {
   align-content: start;
   min-height: 220px;
   padding: 24px;
-  border: 1px solid rgba(0, 87, 217, 0.16);
-  background:
-    linear-gradient(145deg, rgba(0, 87, 217, 0.045), transparent 42%),
-    #fff;
-  box-shadow: 0 18px 42px rgba(0, 48, 120, 0.06);
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.review-card + .review-card {
+  border-left: 1px solid rgba(0, 87, 217, 0.18);
+}
+
+.review-card:first-child {
+  padding-left: 0;
+}
+
+.review-card:last-child {
+  padding-right: 0;
 }
 
 .review-card::before {
-  content: "“";
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  color: rgba(0, 87, 217, 0.1);
-  font-family: Georgia, serif;
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1;
-  pointer-events: none;
+  content: none;
 }
 
 .review-card span {
   width: fit-content;
-  padding: 5px 8px;
-  background: rgba(0, 87, 217, 0.08);
+  padding: 0;
+  background: transparent;
   color: var(--blue);
   font-size: 0.78rem;
   font-weight: 900;
@@ -2539,13 +2540,13 @@ main > section.vmv-cta-section::before {
   flex-wrap: wrap;
   gap: 6px;
   margin-top: 22px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(0, 87, 217, 0.14);
+  padding-top: 0;
+  border-top: 0;
 }
 
 .review-profile small {
-  padding: 4px 8px;
-  background: rgba(255, 255, 255, 0.72);
+  padding: 0;
+  background: transparent;
   color: var(--text);
   font-size: 0.74rem;
   font-weight: 700;
@@ -4670,7 +4671,7 @@ button:hover {
 
   .review-card-list {
     display: flex;
-    gap: 12px;
+    gap: 0;
     align-items: stretch;
     height: 392px;
     margin-right: -20px;
