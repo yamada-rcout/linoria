@@ -3,8 +3,9 @@ document.documentElement.classList.add("js");
 const header = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const floatingCtaGroup = document.querySelector(".floating-cta-group");
+const heroSection = document.querySelector("#page-index .hero");
+const heroPin = document.querySelector("#page-index .hero-pin");
 const mobileHeaderQuery = window.matchMedia("(max-width: 720px)");
-const hero = document.querySelector(".hero");
 let lastScrollY = window.scrollY;
 
 const setHeaderState = () => {
@@ -12,14 +13,16 @@ const setHeaderState = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 12);
 };
 
-const setHeroPinnedState = () => {
-  if (!hero) return;
-  const rect = hero.getBoundingClientRect();
-  document.body.classList.toggle("hero-pin-hidden", rect.bottom <= 0);
+const setHeroClipState = () => {
+  if (!heroSection || !heroPin) return;
+  const visibleBottom = Math.max(0, Math.min(window.innerHeight, heroSection.getBoundingClientRect().bottom));
+  const coveredHeight = Math.max(0, window.innerHeight - visibleBottom);
+  heroPin.style.clipPath = `inset(0 0 ${coveredHeight}px 0)`;
+  heroPin.style.visibility = visibleBottom > 0 ? "visible" : "hidden";
 };
 
 setHeaderState();
-setHeroPinnedState();
+setHeroClipState();
 
 const setFloatingCtaState = (currentScrollY) => {
   if (!floatingCtaGroup) return;
@@ -37,7 +40,7 @@ window.addEventListener(
     const currentScrollY = window.scrollY;
 
     setHeaderState();
-    setHeroPinnedState();
+    setHeroClipState();
     setFloatingCtaState(currentScrollY);
 
     if (header && !mobileHeaderQuery.matches) {
@@ -49,6 +52,8 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+window.addEventListener("resize", setHeroClipState);
 
 menuToggle?.addEventListener("click", () => {
   if (!header) return;
