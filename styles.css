@@ -1742,7 +1742,7 @@ main > section.vmv-cta-section::before {
 
 #page-index .supporter-cta-photo .supporter-career-text {
   position: absolute;
-  top: 0;
+  top: -8%;
   right: auto;
   bottom: auto;
   left: -18%;
@@ -1767,7 +1767,7 @@ main > section.vmv-cta-section::before {
   }
 
   #page-index .supporter-cta-photo .supporter-career-text {
-    top: 5%;
+    top: 10%;
     right: auto;
     bottom: auto;
     left: -12%;
