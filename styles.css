@@ -3347,8 +3347,8 @@ textarea {
 
 @media (max-width: 720px) {
   .privacy-consent input {
-    width: 14.4px;
-    height: 14.4px;
+    width: 12px;
+    height: 12px;
   }
 }
 
