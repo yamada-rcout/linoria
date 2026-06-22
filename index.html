@@ -2567,6 +2567,17 @@ main > section.vmv-cta-section::before {
   gap: 18px;
 }
 
+.price-section.section-without-intro,
+.reviews-section.section-without-intro,
+.faq-section.section-without-intro {
+  grid-template-columns: 1fr;
+}
+
+.section-without-intro .price-summary-list,
+.price-section.section-without-intro > .section-link {
+  grid-column: 1;
+}
+
 .faq-group {
   display: grid;
   gap: 14px;
@@ -5342,11 +5353,9 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
     </div>
   </section>
 
-  <section id="price" class="content-section price-section">
+  <section id="price" class="content-section price-section section-without-intro">
     <div class="price-summary-copy">
       <p class="section-kicker">Plan / Price</p>
-      <h2>必要な分だけ、<br>わかりやすく</h2>
-      <p>無料相談から継続サポートまで。<br>あなたの状況や目的に合わせて、必要なサポートだけを選べます。</p>
     </div>
     <div class="price-summary-list">
       <article><h3>初回無料相談</h3><span>まずは話してみる</span><div class="price-summary-side"><p>～30minutes</p><strong>￥0</strong></div></article>
@@ -5356,11 +5365,9 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
     <a class="section-link" href="price.html">料金・利用方法を見る<span aria-hidden="true">→</span></a>
   </section>
 
-  <section class="content-section reviews-section">
+  <section class="content-section reviews-section section-without-intro">
     <div class="reviews-copy">
       <p class="section-kicker">Reviews</p>
-      <h2>安心して、<br>一歩を踏み出せるように</h2>
-      <p>実際にご相談いただいた方からいただいたご感想を紹介します。</p>
     </div>
     <div class="review-card-list" aria-label="クチコミ一覧">
       <article class="review-card"><span>Review 01</span><h3>頭の中が整理されて、前向きになれました。</h3><p>「辞めたい」という気持ちだけで相談しましたが、無理に転職を勧められることはありませんでした。話を聞いてもらううちに考えが整理され、自分にとって納得できる選択肢が見えてきました。</p><div class="review-profile"><small>30代</small><small>小学校教員</small></div></article>
@@ -5372,11 +5379,9 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
     <p class="reviews-note">※掲載しているお声には、Linoria立ち上げ前に提供していた前身サービスでご相談いただいた方のご感想も含まれています。</p>
   </section>
 
-  <section id="faq" class="content-section faq-section">
+  <section id="faq" class="content-section faq-section section-without-intro">
     <div class="faq-copy">
       <p class="section-kicker">FAQ</p>
-      <h2>信頼される、<br>透明なサービスに</h2>
-      <p>利用方法や料金、サポート内容について、事前に可能な限りお伝えします。不安や疑問があれば、お気軽にご相談ください。</p>
     </div>
     <div class="faq-summary-panel">
       <div class="faq-list">
