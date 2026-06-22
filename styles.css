@@ -5641,4 +5641,8 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article:nth-child
     content: none;
     display: none;
   }
+
+  body.site-orbit-theme #page-index .supporter-section .section-kicker {
+    font-size: clamp(2.75rem, 4.4vw, 4.75rem) !important;
+  }
 }
