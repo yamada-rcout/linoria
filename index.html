@@ -6288,6 +6288,112 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
   content: none !important;
   display: none !important;
 }
+
+/* Editorial TOP ABOUT composition */
+#page-index .top-about-section {
+  display: block;
+}
+
+#page-index .top-about-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(54px, 8vw, 104px);
+}
+
+#page-index .top-about-header .section-kicker {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+#page-index .top-about-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+  gap: clamp(52px, 8vw, 112px);
+  align-items: start;
+}
+
+#page-index .top-about-title h2 {
+  margin: 0 0 42px;
+  font-size: clamp(1.9rem, 3.2vw, 3.15rem);
+  line-height: 1.45;
+}
+
+#page-index .top-about-title h2 span {
+  color: var(--blue);
+}
+
+#page-index .top-about-title .section-link {
+  margin-top: 0;
+}
+
+#page-index .top-about-content {
+  max-width: none;
+  padding-left: clamp(34px, 4vw, 64px);
+  border-left: 1px solid var(--line);
+}
+
+#page-index .top-about-content article {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 16px;
+  padding: 0 0 30px;
+  margin: 0 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+#page-index .top-about-content article:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+#page-index .top-about-content article > span {
+  color: var(--blue);
+  font-size: 0.84rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+#page-index .top-about-content article p {
+  margin: 0;
+  color: var(--text);
+  line-height: 2;
+}
+
+@media (max-width: 720px) {
+  #page-index .top-about-header {
+    margin-bottom: 46px;
+  }
+
+  #page-index .top-about-main {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  #page-index .top-about-title h2 {
+    margin-bottom: 28px;
+    font-size: 1.7rem;
+  }
+
+  #page-index .top-about-content {
+    padding-top: 30px;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  #page-index .top-about-content article {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+  }
+}
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -6338,15 +6444,19 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
   </section>
 
   <section id="about" class="content-section top-about-section">
-    <div class="top-about-title">
+    <header class="top-about-header">
       <p class="section-kicker">About</p>
-    </div>
-    <div class="top-about-content">
-      <h2>元教員による、<br>教員のための<br>キャリア伴走サービス</h2>
-      <p>Linoriaは、現役教員の方がこれからの働き方や生き方を整理するためのキャリアサポートです。</p>
-      <p>転職を前提にせず、まずは対話を通して、今の悩みや気持ちを言葉にするところから始めます。</p>
-      <p>必要に応じて、転職・独立・働き方の見直しに向けた準備もサポートします。</p>
-      <a class="section-link" href="about.html">Linoriaについて見る<span aria-hidden="true">→</span></a>
+    </header>
+    <div class="top-about-main">
+      <div class="top-about-title">
+        <h2>元教員による、<br>教員のための<br><span>キャリア伴走サービス</span></h2>
+        <a class="section-link" href="about.html">Linoriaについて見る<span aria-hidden="true">→</span></a>
+      </div>
+      <div class="top-about-content">
+        <article><span>01</span><p>Linoriaは、現役教員の方がこれからの働き方や生き方を整理するためのキャリアサポートです。</p></article>
+        <article><span>02</span><p>転職を前提にせず、まずは対話を通して、今の悩みや気持ちを言葉にするところから始めます。</p></article>
+        <article><span>03</span><p>必要に応じて、転職・独立・働き方の見直しに向けた準備もサポートします。</p></article>
+      </div>
     </div>
   </section>
 
