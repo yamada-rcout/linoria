@@ -127,10 +127,6 @@ a {
   content: none;
 }
 
-.site-header.is-hidden {
-  transform: translateY(calc(-100% - 18px));
-}
-
 .brand-symbol {
   display: block;
   color: var(--blue);
@@ -6018,6 +6014,107 @@ body.site-orbit-theme #page-index .reason-section .reason-grid h3 {
     font-size: 22px;
   }
 }
+
+/* Desktop hamburger navigation */
+@media (min-width: 721px) {
+  .menu-toggle {
+    display: grid;
+    align-content: center;
+    cursor: pointer;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: grid;
+    width: min(320px, calc(100vw - 32px));
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    border: 0 solid var(--line);
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 18px 40px rgba(17, 17, 17, 0.08);
+    transition: max-height 220ms ease, opacity 160ms ease, visibility 160ms ease;
+  }
+
+  .nav a {
+    padding: 14px 22px;
+    border-top: 1px solid var(--line);
+  }
+
+  .nav a::after {
+    display: none;
+  }
+
+  .site-header.is-menu-open .nav {
+    max-height: 420px;
+    visibility: visible;
+    opacity: 1;
+    border-width: 1px;
+  }
+}
+
+/* Split header: logo panel + menu panel */
+.site-header {
+  align-items: flex-start;
+  min-height: 62px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.site-header .brand {
+  display: grid;
+  align-content: center;
+  min-height: 62px;
+  padding: 0 26px;
+  border: 1px solid rgba(0, 87, 217, 0.12);
+  border-left: 3px solid var(--blue);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 7px 7px 0 rgba(52, 201, 255, 0.1);
+  backdrop-filter: blur(14px);
+}
+
+.site-header .menu-toggle {
+  flex: 0 0 auto;
+  width: 62px;
+  height: 62px;
+  padding: 20px;
+  border: 1px solid rgba(0, 87, 217, 0.14);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 7px 7px 0 rgba(52, 201, 255, 0.1);
+  backdrop-filter: blur(14px);
+}
+
+.site-header .nav {
+  top: 100%;
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    min-height: 46px;
+    padding: 0;
+  }
+
+  .site-header .brand {
+    height: 46px;
+    min-height: 46px;
+    padding: 0 14px;
+    border-left-width: 2px;
+    box-shadow: 5px 5px 0 rgba(52, 201, 255, 0.1);
+  }
+
+  .site-header .menu-toggle {
+    width: 46px;
+    height: 46px;
+    padding: 13px;
+    box-shadow: 5px 5px 0 rgba(52, 201, 255, 0.1);
+  }
+}
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -6764,19 +6861,9 @@ window.addEventListener('scroll', () => {
   setHeroScrollContentState();
   setFloatingCtaState(currentScrollY);
 
-  if (!header) return;
-  if (!mobileHeaderQuery.matches) {
-    header.classList.remove('is-hidden','is-menu-open');
-    menuToggle?.setAttribute('aria-expanded', 'false');
-    lastScrollY = currentScrollY;
-    return;
-  }
-
-  const isMenuOpen = header.classList.contains('is-menu-open');
-  if (isMenuOpen || currentScrollY < 24 || currentScrollY < lastScrollY) {
-    header.classList.remove('is-hidden');
-  } else if (currentScrollY > lastScrollY + 8) {
-    header.classList.add('is-hidden');
+  if (header && !mobileHeaderQuery.matches) {
+      header.classList.remove('is-menu-open');
+      menuToggle?.setAttribute('aria-expanded', 'false');
   }
   lastScrollY = currentScrollY;
 }, {passive: true});
@@ -6786,7 +6873,20 @@ menuToggle?.addEventListener('click', () => {
   const isOpen = header.classList.toggle('is-menu-open');
   menuToggle.setAttribute('aria-expanded', String(isOpen));
   menuToggle.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
-  header.classList.remove('is-hidden');
+});
+
+menuToggle?.addEventListener('pointerenter', () => {
+  if (!header || mobileHeaderQuery.matches) return;
+  header.classList.add('is-menu-open');
+  menuToggle.setAttribute('aria-expanded', 'true');
+  menuToggle.setAttribute('aria-label', 'メニューを閉じる');
+});
+
+header?.addEventListener('pointerleave', () => {
+  if (mobileHeaderQuery.matches) return;
+  header.classList.remove('is-menu-open');
+  menuToggle?.setAttribute('aria-expanded', 'false');
+  menuToggle?.setAttribute('aria-label', 'メニューを開く');
 });
 
 document.addEventListener('pointerdown', (event) => {

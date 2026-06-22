@@ -40,20 +40,9 @@ window.addEventListener(
     setHeroPinnedState();
     setFloatingCtaState(currentScrollY);
 
-    if (!header) return;
-    if (!mobileHeaderQuery.matches) {
-      header.classList.remove("is-hidden", "is-menu-open");
-      menuToggle?.setAttribute("aria-expanded", "false");
-      lastScrollY = currentScrollY;
-      return;
-    }
-
-    const isMenuOpen = header.classList.contains("is-menu-open");
-
-    if (isMenuOpen || currentScrollY < 24 || currentScrollY < lastScrollY) {
-      header.classList.remove("is-hidden");
-    } else if (currentScrollY > lastScrollY + 8) {
-      header.classList.add("is-hidden");
+    if (header && !mobileHeaderQuery.matches) {
+        header.classList.remove("is-menu-open");
+        menuToggle?.setAttribute("aria-expanded", "false");
     }
 
     lastScrollY = currentScrollY;
@@ -67,7 +56,20 @@ menuToggle?.addEventListener("click", () => {
   const isOpen = header.classList.toggle("is-menu-open");
   menuToggle.setAttribute("aria-expanded", String(isOpen));
   menuToggle.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
-  header.classList.remove("is-hidden");
+});
+
+menuToggle?.addEventListener("pointerenter", () => {
+  if (!header || mobileHeaderQuery.matches) return;
+  header.classList.add("is-menu-open");
+  menuToggle.setAttribute("aria-expanded", "true");
+  menuToggle.setAttribute("aria-label", "メニューを閉じる");
+});
+
+header?.addEventListener("pointerleave", () => {
+  if (mobileHeaderQuery.matches) return;
+  header.classList.remove("is-menu-open");
+  menuToggle?.setAttribute("aria-expanded", "false");
+  menuToggle?.setAttribute("aria-label", "メニューを開く");
 });
 
 document.addEventListener("pointerdown", (event) => {
