@@ -6394,6 +6394,33 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
     margin-bottom: 24px;
   }
 }
+
+/* Shared desktop content shell */
+@media (min-width: 981px) {
+  :root {
+    --desktop-shell-max: 1248px;
+    --desktop-shell-gutter: clamp(56px, 6.7vw, 108px);
+    --desktop-shell-edge: max(
+      var(--desktop-shell-gutter),
+      calc((100vw - var(--desktop-shell-max)) / 2)
+    );
+  }
+
+  main > section:not(.hero),
+  .site-footer {
+    padding-right: var(--desktop-shell-edge) !important;
+    padding-left: var(--desktop-shell-edge) !important;
+  }
+
+  .site-header {
+    margin-right: var(--desktop-shell-edge);
+    margin-left: var(--desktop-shell-edge);
+  }
+
+  .floating-cta-group {
+    right: var(--desktop-shell-edge);
+  }
+}
     </style>
 </head>
 <body class="site-orbit-theme">
