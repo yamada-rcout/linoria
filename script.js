@@ -122,7 +122,7 @@ const submitButton = contactForm?.querySelector('button[type="submit"]');
 const requiredContactFields = contactForm
   ? Array.from(contactForm.querySelectorAll('[required]'))
   : [];
-const revealTargets = document.querySelectorAll(
+const revealTargets = Array.from(document.querySelectorAll(
   [
     ".hero-inner",
     "main > section.content-section",
@@ -132,6 +132,7 @@ const revealTargets = document.querySelectorAll(
     ".support-link-copy",
     ".support-link-panel",
     ".issue-grid article",
+    "#page-index .reason-section .reason-grid",
     ".supporter-cta-copy",
     ".supporter-cta-photo",
     ".price-summary-copy",
@@ -147,7 +148,7 @@ const revealTargets = document.querySelectorAll(
     ".feature-item",
     ".flow-list li"
   ].join(", ")
-);
+)).filter((target) => !target.matches("#page-index .reason-section .reason-grid article"));
 
 revealTargets.forEach((target) => target.classList.add("reveal-item"));
 

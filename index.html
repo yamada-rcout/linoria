@@ -6262,6 +6262,21 @@ body.site-orbit-theme #page-index .reason-section .reason-grid h3 {
     object-position: 50% 34%;
   }
 }
+
+/* FEATURES section-wide background */
+body.site-orbit-theme #page-index main > section.reason-section {
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+body.site-orbit-theme #page-index .reason-section .reason-grid article {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.js #page-index .reason-section .reason-grid article {
+  opacity: 1;
+  transform: none;
+}
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -6865,9 +6880,9 @@ function initProcessAnimation() {
 }
 
 function initReveal() {
-  const revealTargets = document.querySelectorAll(
+  const revealTargets = Array.from(document.querySelectorAll(
     ['.hero-inner','main > section.content-section','.about-section','.vmv-cta-copy','.section-head',
-     '.support-link-copy','.support-link-panel','.issue-grid article',
+     '.support-link-copy','.support-link-panel','.issue-grid article','#page-index .reason-section .reason-grid',
      '.supporter-cta-copy','.supporter-cta-photo','.price-summary-copy',
      '.price-summary-list','.price-section > .section-link','.reviews-copy','.review-card',
      '.faq-copy',
@@ -6879,7 +6894,7 @@ function initReveal() {
      '#page-vmv .content-section',
      '#page-partners .content-section','#page-partners .message-section',
      '#page-legal .content-section','#page-privacy .content-section','#page-terms .content-section'].join(', ')
-  );
+  )).filter(target => !target.matches('#page-index .reason-section .reason-grid article'));
   
   revealTargets.forEach(t => t.classList.add('reveal-item'));
   
