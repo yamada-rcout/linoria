@@ -5834,22 +5834,30 @@ body.site-orbit-theme #page-index .reason-section .reason-grid h3 {
 
 @media (max-width: 720px) {
   .site-header {
-    min-height: 46px;
+    --mobile-header-block-height: 50px;
+    min-height: var(--mobile-header-block-height);
     padding: 0;
   }
 
   .site-header .brand {
-    height: 46px;
-    min-height: 46px;
+    box-sizing: border-box;
+    height: var(--mobile-header-block-height) !important;
+    min-height: var(--mobile-header-block-height) !important;
+    max-height: var(--mobile-header-block-height) !important;
     padding: 0 14px;
+    margin: 0;
     border-left-width: 2px;
     box-shadow: 5px 5px 0 rgba(52, 201, 255, 0.1);
   }
 
   .site-header .menu-toggle {
-    width: 46px;
-    height: 46px;
-    padding: 13px;
+    box-sizing: border-box;
+    width: var(--mobile-header-block-height);
+    height: var(--mobile-header-block-height) !important;
+    min-height: var(--mobile-header-block-height) !important;
+    max-height: var(--mobile-header-block-height) !important;
+    padding: 15px;
+    margin: 0;
     box-shadow: 5px 5px 0 rgba(52, 201, 255, 0.1);
   }
 }
