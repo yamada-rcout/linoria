@@ -2121,6 +2121,46 @@ main > section.vmv-cta-section::before {
   transform-origin: center top;
 }
 
+      #page-index .supporter-cta-photo {
+        padding-top: clamp(100px, 34%, 150px);
+      }
+
+      #page-index .supporter-cta-photo .supporter-career-text {
+        position: absolute;
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: -18%;
+        z-index: 20;
+        display: block;
+        width: 95%;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+  border: 0;
+  box-shadow: none;
+  clip-path: none;
+  transform: rotate(3deg);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+      @media (max-width: 720px) {
+        #page-index .supporter-cta-photo {
+          padding-top: 36%;
+        }
+
+        #page-index .supporter-cta-photo .supporter-career-text {
+          top: 5%;
+          right: auto;
+          bottom: auto;
+          left: -12%;
+          width: 100%;
+          transform: rotate(1.5deg);
+        }
+}
+
 .supporter-photo {
   position: relative;
   min-height: clamp(360px, 45vw, 560px);
@@ -5438,6 +5478,7 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
     </div>
     <div class="supporter-cta-photo" aria-label="サポーター写真">
           <img src="assets/supporter-profile-2026.png" alt="Linoriaのサポーター" loading="lazy" decoding="async">
+          <img class="supporter-career-text" src="assets/supporter-career-text.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
     </div>
   </section>
 

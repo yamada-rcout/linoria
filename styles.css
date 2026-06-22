@@ -1736,6 +1736,46 @@ main > section.vmv-cta-section::before {
   transform-origin: center top;
 }
 
+#page-index .supporter-cta-photo {
+  padding-top: clamp(100px, 34%, 150px);
+}
+
+#page-index .supporter-cta-photo .supporter-career-text {
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: -18%;
+  z-index: 20;
+  display: block;
+  width: 95%;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+  border: 0;
+  box-shadow: none;
+  clip-path: none;
+  transform: rotate(3deg);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  #page-index .supporter-cta-photo {
+    padding-top: 36%;
+  }
+
+  #page-index .supporter-cta-photo .supporter-career-text {
+    top: 5%;
+    right: auto;
+    bottom: auto;
+    left: -12%;
+    width: 100%;
+    transform: rotate(1.5deg);
+  }
+}
+
 .supporter-photo {
   position: relative;
   min-height: clamp(360px, 45vw, 560px);
