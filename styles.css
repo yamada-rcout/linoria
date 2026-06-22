@@ -2591,6 +2591,39 @@ main > section.vmv-cta-section::before {
   line-height: 1.45;
 }
 
+#page-index .price-summary-list article::before {
+  grid-row: 1;
+}
+
+#page-index .price-summary-list h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  align-self: center;
+}
+
+#page-index .price-summary-list h3 .price-plan-duration {
+  display: inline-flex;
+  align-items: center;
+  grid-column: auto;
+  padding: 4px 9px;
+  border: 1px solid rgba(0, 87, 217, 0.18);
+  border-radius: 999px;
+  background: rgba(0, 87, 217, 0.07);
+  color: var(--blue);
+  font-size: 12px !important;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+#page-index .price-summary-side {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .price-plan-fee {
   color: var(--ink);
   font-size: clamp(1.65rem, 2.45vw, 2.25rem);
@@ -2813,6 +2846,13 @@ main > section.vmv-cta-section::before {
   top: 112px;
 }
 
+@media (min-width: 981px) {
+  #page-index .faq-copy {
+    position: static;
+    top: auto;
+  }
+}
+
 .faq-copy h2 {
   max-width: 520px;
 }
@@ -2892,6 +2932,10 @@ main > section.vmv-cta-section::before {
 
 .faq-list details[open]::before {
   transform: scaleY(1);
+}
+
+.faq-section--plain-open .faq-list details[open] {
+  background: transparent;
 }
 
 .faq-list summary {
@@ -4895,6 +4939,60 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
   line-height: 1.35;
 }
 
+#page-index .review-card-list {
+  gap: 0;
+}
+
+#page-index .review-card {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+#page-index .review-card + .review-card {
+  border-left: 1px solid rgba(0, 87, 217, 0.18);
+}
+
+#page-index .review-card:first-child {
+  padding-left: 0;
+}
+
+#page-index .review-card:last-child {
+  padding-right: 0;
+}
+
+#page-index .review-card::before {
+  content: none;
+}
+
+#page-index .review-card > span,
+#page-index .review-profile small {
+  padding: 0;
+  background: transparent;
+}
+
+#page-index .review-profile {
+  padding-top: 0;
+  border-top: 0;
+}
+
+@media (min-width: 721px) {
+  #page-index .review-card-list {
+    display: flex;
+    align-items: stretch;
+    padding-bottom: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #page-index .review-card {
+    flex: 0 0 calc(100% / 3);
+    scroll-snap-align: start;
+  }
+}
+
 @media (max-width: 720px) {
   body.site-orbit-theme #page-index .vmv-kicker-link {
     font-size: var(--section-title-size-mobile) !important;
@@ -4906,5 +5004,48 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
 
   body.site-orbit-theme .site-footer .footer-copyright {
     font-size: 10px !important;
+  }
+
+  body.site-orbit-theme #page-index {
+    --mobile-section-flow-gap: 24px;
+  }
+
+  body.site-orbit-theme #page-index main > section:is(
+    .reason-section,
+    .supporter-section,
+    .price-section,
+    .reviews-section,
+    .faq-section
+  ) {
+    gap: var(--mobile-section-flow-gap);
+  }
+
+  body.site-orbit-theme #page-index :is(
+    .section-head,
+    .supporter-cta-copy,
+    .price-summary-copy,
+    .reviews-copy,
+    .faq-copy
+  ) > .section-kicker {
+    margin: 0;
+  }
+
+  body.site-orbit-theme #page-index .supporter-cta-copy {
+    gap: var(--mobile-section-flow-gap);
+  }
+
+  body.site-orbit-theme #page-index .faq-summary-panel {
+    gap: var(--mobile-section-flow-gap);
+  }
+
+  body.site-orbit-theme #page-index :is(
+    .supporter-cta-meta,
+    .supporter-cta-copy .section-link,
+    .price-summary-copy,
+    .price-section > .section-link,
+    .reviews-note
+  ) {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
