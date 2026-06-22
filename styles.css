@@ -4939,6 +4939,10 @@ body.site-orbit-theme #page-index .vmv-kicker-link {
   line-height: 1.35;
 }
 
+body.site-orbit-theme #page-index main > section.vmv-cta-section {
+  align-items: center;
+}
+
 #page-index .review-card-list {
   gap: 0;
 }
