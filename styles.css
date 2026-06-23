@@ -15,7 +15,7 @@
 /* Unified mobile-first center stage on desktop */
 @media (min-width: 981px) {
   :root {
-    --center-stage-width: 560px;
+    --center-stage-width: 500px;
     --center-stage-padding: 22px;
   }
 
@@ -6491,7 +6491,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
 /* Unified mobile-first center stage — final override */
 @media (min-width: 981px) {
   :root {
-    --center-stage-width: 560px;
+    --center-stage-width: 500px;
     --center-stage-padding: 22px;
   }
 
