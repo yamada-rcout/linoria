@@ -221,6 +221,16 @@
   }
 }
 
+/* Shadow-free presentation for the three editorial sections */
+#page-index .reason-section,
+#page-index .reason-section *,
+#page-index .price-section,
+#page-index .price-section *,
+#page-index .reviews-section,
+#page-index .reviews-section * {
+  box-shadow: none !important;
+}
+
 /* One-column section architecture across every page */
 @media (min-width: 981px) {
   body > [id^="page-"],
