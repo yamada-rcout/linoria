@@ -7232,6 +7232,12 @@ html body.site-orbit-theme #page-index main > section.price-section {
     position: relative;
   }
 
+  #page-index .hero-pin {
+    contain: paint;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
   #page-index .top-about-section::after {
     content: "";
     position: absolute;

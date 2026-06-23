@@ -7,6 +7,8 @@ const heroSection = document.querySelector("#page-index .hero");
 const heroPin = document.querySelector("#page-index .hero-pin");
 const mobileHeaderQuery = window.matchMedia("(max-width: 720px)");
 let lastScrollY = window.scrollY;
+let scrollFrame = 0;
+let lastHeroCoveredHeight = -1;
 
 const setHeaderState = () => {
   if (!header) return;
@@ -16,7 +18,9 @@ const setHeaderState = () => {
 const setHeroClipState = () => {
   if (!heroSection || !heroPin) return;
   const visibleBottom = Math.max(0, Math.min(window.innerHeight, heroSection.getBoundingClientRect().bottom));
-  const coveredHeight = Math.max(0, window.innerHeight - visibleBottom);
+  const coveredHeight = Math.round(Math.max(0, window.innerHeight - visibleBottom));
+  if (coveredHeight === lastHeroCoveredHeight) return;
+  lastHeroCoveredHeight = coveredHeight;
   heroPin.style.clipPath = `inset(0 0 ${coveredHeight}px 0)`;
   heroPin.style.visibility = visibleBottom > 0 ? "visible" : "hidden";
 };
@@ -37,18 +41,22 @@ const setFloatingCtaState = (currentScrollY) => {
 window.addEventListener(
   "scroll",
   () => {
-    const currentScrollY = window.scrollY;
+    if (scrollFrame) return;
+    scrollFrame = window.requestAnimationFrame(() => {
+      const currentScrollY = window.scrollY;
 
-    setHeaderState();
-    setHeroClipState();
-    setFloatingCtaState(currentScrollY);
+      setHeaderState();
+      setHeroClipState();
+      setFloatingCtaState(currentScrollY);
 
-    if (header && !mobileHeaderQuery.matches) {
+      if (header && !mobileHeaderQuery.matches) {
         header.classList.remove("is-menu-open");
         menuToggle?.setAttribute("aria-expanded", "false");
-    }
+      }
 
-    lastScrollY = currentScrollY;
+      lastScrollY = currentScrollY;
+      scrollFrame = 0;
+    });
   },
   { passive: true }
 );
