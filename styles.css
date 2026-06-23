@@ -7211,7 +7211,11 @@ html body.site-orbit-theme #page-index main > section.price-section {
 }
 
 #page-index .top-about-main {
-  gap: 24px !important;
+  gap: 12px !important;
+}
+
+#page-index .top-about-title h2 {
+  margin-bottom: 0 !important;
 }
 
 #page-index .top-about-content {
