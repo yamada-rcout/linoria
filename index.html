@@ -8531,6 +8531,27 @@ html body.site-orbit-theme #page-index .price-section .price-summary-list > arti
   background: rgba(255, 255, 255, 0.88) !important;
 }
 
+/* VMV image at full strength, with a left-side readability gradient. */
+html body.site-orbit-theme #page-index main > section.vmv-cta-section {
+  background: url("assets/vmv-tokyo-skyline.jpg") center / cover no-repeat !important;
+}
+
+html body.site-orbit-theme #page-index main > section.vmv-cta-section::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.72) 34%,
+    rgba(255, 255, 255, 0.2) 68%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
+  pointer-events: none;
+}
+
     </style>
 </head>
 <body class="site-orbit-theme">
