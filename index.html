@@ -8474,6 +8474,63 @@ html body.site-orbit-theme #page-index .supporter-section + .price-section {
   margin-top: -1px !important;
 }
 
+/* TOP consultation flow */
+html body.site-orbit-theme #page-index .consultation-flow-section {
+  position: relative;
+  margin-top: -1px !important;
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list li {
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  min-height: 0;
+  padding: 18px 20px;
+  border: 2px solid rgba(0, 87, 217, 0.2);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: none;
+}
+
+html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list li:not(:last-child)::after {
+  top: auto;
+  right: auto;
+  bottom: -20px;
+  left: 28px;
+  width: 1px;
+  height: 20px;
+}
+
+html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list li:not(:last-child)::before {
+  top: auto;
+  right: auto;
+  bottom: -20px;
+  left: 24px;
+  transform: rotate(135deg);
+}
+
+html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list strong {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  white-space: normal;
+}
+
+/* Keep PLAN cards above the decorative section graphics, like FAQ. */
+html body.site-orbit-theme #page-index .price-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+html body.site-orbit-theme #page-index .price-section .price-summary-list > article {
+  background: rgba(255, 255, 255, 0.88) !important;
+}
+
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -8572,6 +8629,19 @@ html body.site-orbit-theme #page-index .supporter-section + .price-section {
       <article><h3>伴走プラン<span class="price-plan-duration">30日</span></h3><p class="price-plan-caption">継続して行動まで進めたい方へ</p><div class="price-summary-side"><strong>￥9,800</strong></div></article>
     </div>
     <a class="section-link" href="price.html">プラン・料金を見る<span aria-hidden="true">→</span></a>
+  </section>
+
+  <section id="flow" class="content-section price-flow-section consultation-flow-section section-flow" aria-labelledby="top-flow-title">
+    <div class="section-heading-block">
+      <p class="section-kicker">Flow</p>
+      <h2 id="top-flow-title">相談の流れ</h2>
+    </div>
+    <ol class="price-flow-list section-first-content" aria-label="相談の流れ">
+      <li><span>01</span><strong>LINEまたはメールでお問い合わせ</strong></li>
+      <li><span>02</span><strong>ご希望に合わせて日程を調整</strong></li>
+      <li><span>03</span><strong>初回無料相談で悩みや状況を整理</strong></li>
+      <li><span>04</span><strong>必要に応じてサポートプランをご案内</strong></li>
+    </ol>
   </section>
 
   <section class="content-section reviews-section section-flow">
@@ -9081,20 +9151,11 @@ function initProcessAnimation() {
 
 function initReveal() {
   const revealTargets = Array.from(document.querySelectorAll(
-    ['.hero-inner','main > section.content-section','.about-section','.vmv-cta-copy','.section-head',
-     '.support-link-copy','.support-link-panel','.issue-grid article','#page-index .reason-section .reason-grid',
-     '.supporter-cta-copy','.supporter-cta-photo','.price-summary-copy',
-     '.price-summary-list','.price-section > .section-link','.reviews-copy','.review-card',
-     '.faq-copy',
-     '.faq-summary-panel','.message-section > *','.contact-section > *',
-     '.feature-item','.flow-list li',
-     '.about-intro-2col','.about-detail-compare','.about-for-you','.about-cta-row',
-     '.about-intro-copy','.about-intro-right','.about-compare-table-wrap',
-     '.about-for-you-copy','.about-for-you-list',
-     '#page-vmv .content-section',
-     '#page-partners .content-section','#page-partners .message-section',
-     '#page-legal .content-section','#page-privacy .content-section','#page-terms .content-section'].join(', ')
-  )).filter(target => !target.matches('#page-index .reason-section .reason-grid article'));
+    ['.hero-inner', 'main > section > *', 'main > section :is(article, li, details)'].join(', ')
+  )).filter(target =>
+    !target.matches('[aria-hidden="true"], script, style') &&
+    !target.closest('footer')
+  );
   
   revealTargets.forEach(t => t.classList.add('reveal-item'));
   

@@ -133,30 +133,13 @@ const requiredContactFields = contactForm
 const revealTargets = Array.from(document.querySelectorAll(
   [
     ".hero-inner",
-    "main > section.content-section",
-    ".about-section",
-    ".vmv-cta-copy",
-    ".section-head",
-    ".support-link-copy",
-    ".support-link-panel",
-    ".issue-grid article",
-    "#page-index .reason-section .reason-grid",
-    ".supporter-cta-copy",
-    ".supporter-cta-photo",
-    ".price-summary-copy",
-    ".price-summary-list",
-    ".price-section > .section-link",
-    ".faq-copy",
-    ".faq-summary-panel",
-    ".message-section > *",
-    ".contact-section > *",
-    "body.page-about main > section.content-section > *",
-    "body.page-supporter main > section.content-section > *",
-    "body.page-price main > section.content-section > *",
-    ".feature-item",
-    ".flow-list li"
+    "main > section > *",
+    "main > section :is(article, li, details)"
   ].join(", ")
-)).filter((target) => !target.matches("#page-index .reason-section .reason-grid article"));
+)).filter((target) =>
+  !target.matches('[aria-hidden="true"], script, style') &&
+  !target.closest("footer")
+);
 
 revealTargets.forEach((target) => target.classList.add("reveal-item"));
 

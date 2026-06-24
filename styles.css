@@ -8263,3 +8263,60 @@ html body.site-orbit-theme::after {
 html body.site-orbit-theme #page-index .supporter-section + .price-section {
   margin-top: -1px !important;
 }
+
+/* TOP consultation flow */
+html body.site-orbit-theme #page-index .consultation-flow-section {
+  position: relative;
+  margin-top: -1px !important;
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list li {
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  min-height: 0;
+  padding: 18px 20px;
+  border: 2px solid rgba(0, 87, 217, 0.2);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: none;
+}
+
+html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list li:not(:last-child)::after {
+  top: auto;
+  right: auto;
+  bottom: -20px;
+  left: 28px;
+  width: 1px;
+  height: 20px;
+}
+
+html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list li:not(:last-child)::before {
+  top: auto;
+  right: auto;
+  bottom: -20px;
+  left: 24px;
+  transform: rotate(135deg);
+}
+
+html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list strong {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  white-space: normal;
+}
+
+/* Keep PLAN cards above the decorative section graphics, like FAQ. */
+html body.site-orbit-theme #page-index .price-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+html body.site-orbit-theme #page-index .price-section .price-summary-list > article {
+  background: rgba(255, 255, 255, 0.88) !important;
+}
