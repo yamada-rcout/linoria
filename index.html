@@ -98,6 +98,18 @@ button[type="submit"],
   border-top: 0 !important;
 }
 
+#page-index .top-about-cta,
+#page-index .supporter-bottom-cta,
+#page-index .price-section > .section-link {
+  background: var(--blue) !important;
+}
+
+#page-index .top-about-cta:hover,
+#page-index .supporter-bottom-cta:hover,
+#page-index .price-section > .section-link:hover {
+  background: var(--blue-dark) !important;
+}
+
 #page-index .price-summary-list article:first-child {
   border-top: 0 !important;
 }
@@ -5403,7 +5415,7 @@ body.site-orbit-theme #page-index .supporter-cta-meta {
 
 body.site-orbit-theme #page-index main > section.reason-section {
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 0;
 }
 
 body.site-orbit-theme #page-index .reason-section .reason-grid {
@@ -5433,7 +5445,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article + article
 
 @media (max-width: 720px), (min-width: 981px) {
   body.site-orbit-theme #page-index main > section.reason-section {
-    gap: 20px;
+    gap: 0;
   }
 
   body.site-orbit-theme #page-index .reason-section .reason-grid {
@@ -5995,7 +6007,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article:nth-child
 @media (min-width: 981px) {
   body.site-orbit-theme #page-index main > section.reason-section {
     grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
-    gap: clamp(52px, 7vw, 96px);
+    gap: 0;
     align-items: start;
   }
 
@@ -6456,7 +6468,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: clamp(54px, 8vw, 104px);
+  margin-bottom: 0;
 }
 
 #page-index .top-about-header .section-kicker {
@@ -6525,7 +6537,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
 
 @media (max-width: 720px), (min-width: 981px) {
   #page-index .top-about-header {
-    margin-bottom: 46px;
+    margin-bottom: 0;
   }
 
   #page-index .top-about-main {
@@ -6704,7 +6716,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
   }
 
   #page-index .top-about-header {
-    margin-bottom: 46px;
+    margin-bottom: 0;
   }
 
   #page-index .top-about-main {
@@ -6740,7 +6752,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
 
   body.site-orbit-theme #page-index main > section.reason-section {
     grid-template-columns: 1fr !important;
-    gap: 30px !important;
+    gap: 0 !important;
   }
 
   body.site-orbit-theme #page-index .reason-section .reason-grid article,
@@ -6990,6 +7002,33 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
 
 #page-index .top-about-main {
   gap: 12px !important;
+}
+
+#page-index .top-about-header,
+#page-index .reason-section .section-head {
+  margin-bottom: 0 !important;
+}
+
+#page-index .reviews-copy {
+  margin-bottom: 28px !important;
+}
+
+html body.site-orbit-theme #page-index main > section.reason-section,
+html body.site-orbit-theme #page-index main > section.reviews-section {
+  gap: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .reason-grid article:first-child {
+  padding-top: 0 !important;
+}
+
+#page-index .supporter-cta-copy {
+  gap: 28px !important;
+}
+
+#page-index .price-section,
+#page-index .faq-section {
+  gap: 28px !important;
 }
 
 #page-index .top-about-title h2 {
@@ -7262,7 +7301,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
 }
 
 #page-index .top-about-header {
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 #page-index .top-about-main {
@@ -7290,7 +7329,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
 }
 
 #page-index .reason-section .section-head {
-  margin-bottom: 42px;
+  margin-bottom: 0;
 }
 
 #page-index .reason-grid {
@@ -7338,7 +7377,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
 }
 
 #page-index .reason-section .section-head {
-  margin-bottom: 18px !important;
+  margin-bottom: 0 !important;
 }
 
 #page-index .reason-grid article,
@@ -7425,7 +7464,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
   padding: 0 24px;
   border: 0;
   border-radius: var(--radius-pill);
-  background: #168edc !important;
+  background: var(--blue) !important;
   color: #ffffff;
   font-size: 0.88rem;
   font-weight: 900;
@@ -7436,7 +7475,7 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
 }
 
 #page-index .supporter-bottom-cta:hover {
-  background: #0f72bd;
+  background: var(--blue-dark) !important;
   transform: translateY(-2px);
 }
 
@@ -7503,6 +7542,127 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
   line-height: 1.75;
 }
 
+#page-index .price-summary-list article,
+#page-index .price-summary-list article:first-child {
+  position: relative;
+  width: 100%;
+  min-height: 118px;
+  padding: 24px !important;
+  overflow: hidden;
+  border: 0 !important;
+}
+
+#page-index .price-summary-list article:nth-child(1) {
+  justify-self: stretch;
+  border: 2px solid rgba(0, 87, 217, 0.24) !important;
+  border-radius: 28px;
+  background: transparent !important;
+}
+
+#page-index .price-summary-list article:nth-child(2) {
+  justify-self: stretch;
+  border: 2px solid rgba(0, 87, 217, 0.24) !important;
+  border-radius: 28px;
+  background: transparent !important;
+}
+
+#page-index .price-summary-list article:nth-child(3) {
+  justify-self: stretch;
+  border: 2px solid rgba(0, 87, 217, 0.24) !important;
+  border-radius: 28px;
+  background: transparent !important;
+}
+
+#page-index .price-section > .section-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 280px);
+  min-height: 52px;
+  margin: 10px auto 0;
+  padding: 0 24px;
+  border: 0 !important;
+  border-radius: var(--radius-pill);
+  background: #20bfa9;
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+
+#page-index .price-summary-side {
+  right: 24px !important;
+}
+
+#page-index .price-summary-list article:nth-child(1) .price-plan-duration {
+  border-color: rgba(52, 201, 255, 0.58);
+  background: rgba(52, 201, 255, 0.1);
+  color: #087eb5;
+}
+
+#page-index .price-summary-list article:nth-child(2) .price-plan-duration {
+  border-color: rgba(32, 191, 169, 0.52);
+  background: rgba(32, 191, 169, 0.09);
+  color: #138d7d;
+}
+
+#page-index .price-summary-list article:nth-child(3) .price-plan-duration {
+  border-color: rgba(242, 182, 50, 0.58);
+  background: rgba(255, 216, 74, 0.12);
+  color: #9b7200;
+}
+
+#page-index .price-summary-list .price-plan-duration {
+  border-color: rgba(0, 87, 217, 0.24) !important;
+  background: rgba(0, 87, 217, 0.07) !important;
+  color: var(--blue) !important;
+}
+
+#page-index .price-section > .section-link:hover {
+  background: #159f8d;
+  transform: translateY(-2px);
+}
+
+#page-index .price-section > .section-link span {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  #page-index .price-section {
+    position: relative;
+  }
+
+  #page-index .price-section::before {
+    content: "";
+    position: absolute;
+    top: 56px;
+    right: 24px;
+    width: 17px;
+    height: 17px;
+    border-radius: 5px;
+    background: #f28b62;
+    opacity: 0.17;
+    pointer-events: none;
+    transform: rotate(28deg);
+  }
+
+  #page-index .price-section::after {
+    content: "";
+    position: absolute;
+    bottom: 42px;
+    left: -5px;
+    width: 38px;
+    height: 33px;
+    background: #34c9d5;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    opacity: 0.1;
+    pointer-events: none;
+    transform: rotate(-20deg);
+  }
+}
+
 #page-index .reviews-section {
   background: #ffffff;
 }
@@ -7541,6 +7701,168 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
   margin-top: 28px;
   font-size: 0.72rem;
   line-height: 1.8;
+}
+
+html body.site-orbit-theme #page-index .reviews-section .reviews-note {
+  margin-top: 32px !important;
+}
+
+/* TOP FAQ cards */
+html body.site-orbit-theme #page-index .faq-section .faq-list {
+  gap: 12px;
+  border-top: 0;
+}
+
+html body.site-orbit-theme #page-index .faq-section .faq-list details,
+html body.site-orbit-theme #page-index .faq-section .faq-list details[open] {
+  overflow: hidden;
+  border: 2px solid rgba(0, 87, 217, 0.18);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: none;
+}
+
+html body.site-orbit-theme #page-index .faq-section .faq-list details::before {
+  top: 12px;
+  bottom: 12px;
+  left: 0;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+}
+
+html body.site-orbit-theme #page-index .faq-section .faq-list summary {
+  padding: 18px 18px;
+}
+
+html body.site-orbit-theme #page-index .faq-section .faq-list p {
+  padding: 0 50px 20px 58px;
+}
+
+html body.site-orbit-theme #page-index .faq-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+html body.site-orbit-theme #page-index .faq-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+html body.site-orbit-theme #page-index .faq-section::before,
+html body.site-orbit-theme #page-index .faq-section::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+html body.site-orbit-theme #page-index .faq-section::before {
+  top: 72px;
+  right: 24px;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  background: #ffd84a;
+  opacity: 0.2;
+  transform: rotate(28deg);
+}
+
+html body.site-orbit-theme #page-index .faq-section::after {
+  bottom: 90px;
+  left: 10px;
+  width: 28px;
+  height: 25px;
+  background: #20bfa9;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  opacity: 0.12;
+  transform: rotate(-18deg);
+}
+
+@media (min-width: 981px) {
+  html body.site-orbit-theme #page-index .faq-section::before,
+  html body.site-orbit-theme #page-index .faq-section::after {
+    content: none;
+    display: none;
+  }
+}
+
+html body.site-orbit-theme #page-index .faq-summary-panel > .section-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 280px);
+  min-height: 52px;
+  margin: 28px auto 0;
+  padding: 0 24px;
+  border: 0 !important;
+  border-radius: var(--radius-pill);
+  background: var(--blue) !important;
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+html body.site-orbit-theme #page-index .faq-summary-panel > .section-link:hover {
+  background: var(--blue-dark) !important;
+  transform: translateY(-2px);
+}
+
+html body.site-orbit-theme #page-index .faq-summary-panel > .section-link span {
+  display: none;
+}
+
+#page-index .review-card-list {
+  gap: 14px !important;
+  padding-bottom: 0;
+  background: none !important;
+}
+
+#page-index .review-card,
+#page-index .review-card + .review-card {
+  min-height: 340px;
+  padding: 22px 20px 26px !important;
+  border: 2px solid rgba(0, 87, 217, 0.2) !important;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.42) !important;
+}
+
+@media (max-width: 980px) {
+  #page-index .reviews-section {
+    position: relative;
+  }
+
+  #page-index .reviews-section::before {
+    content: "";
+    position: absolute;
+    top: 66px;
+    left: 26px;
+    width: 13px;
+    height: 13px;
+    border-radius: 4px;
+    background: #ffd84a;
+    opacity: 0.2;
+    pointer-events: none;
+    transform: rotate(32deg);
+  }
+
+  #page-index .reviews-section::after {
+    content: "";
+    position: absolute;
+    right: -4px;
+    bottom: 54px;
+    width: 30px;
+    height: 26px;
+    background: #20bfa9;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    opacity: 0.1;
+    pointer-events: none;
+    transform: rotate(18deg);
+  }
 }
 
 #page-index .faq-section {
@@ -7782,6 +8104,376 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
   column-gap: 0 !important;
 }
 
+/* Shared section surface opacity: 92% */
+html body.site-orbit-theme main > section:not(.hero):not(.vmv-cta-section),
+html body.site-orbit-theme .about-section,
+html body.site-orbit-theme .content-section,
+html body.site-orbit-theme .message-section,
+html body.site-orbit-theme .contact-section,
+html body.site-orbit-theme .site-footer {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+html body.site-orbit-theme #page-index main > section.reason-section {
+  background-color: rgba(238, 247, 255, 0.92) !important;
+}
+
+html body.site-orbit-theme #page-index main > section.price-section,
+html body.site-orbit-theme #page-index main > section.faq-section {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* One shared vertical flow controls every TOP title-to-content gap */
+#page-index {
+  --section-title-content-gap: 16px;
+}
+
+html body.site-orbit-theme #page-index main > section.section-flow {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  row-gap: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .section-heading-block {
+  display: block;
+  flex: 0 0 auto;
+  margin: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .section-heading-block .section-kicker {
+  margin: 0 !important;
+}
+
+html body.site-orbit-theme #page-index main > section.section-flow > .section-heading-block + .section-first-content {
+  position: relative !important;
+  top: auto !important;
+  margin-top: var(--section-title-content-gap) !important;
+  padding-top: 0 !important;
+  transform: none !important;
+}
+
+html body.site-orbit-theme #page-index .reviews-section .reviews-note {
+  margin-top: 32px !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-cta-meta + .supporter-cta-photo {
+  margin-top: 24px !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-cta-photo + .supporter-bottom-cta {
+  margin-top: 32px !important;
+}
+
+/* Global section-heading rhythm: every page, every viewport */
+html body.site-orbit-theme {
+  --global-section-heading-gap: 24px;
+}
+
+html body.site-orbit-theme main section .section-kicker {
+  margin: 0 !important;
+}
+
+/* Remove title-only wrapper boxes so every section shares one real gap. */
+html body.site-orbit-theme main section > :is(div, header):has(> .section-kicker:only-child) {
+  display: contents !important;
+}
+
+/* Title-only wrapper structure. */
+html body.site-orbit-theme main > section:has(> :is(div, header):has(> .section-kicker:only-child)) {
+  row-gap: var(--global-section-heading-gap) !important;
+}
+
+/* Direct-title and same-wrapper structures. */
+html body.site-orbit-theme main > section:has(> .section-kicker),
+html body.site-orbit-theme main section :is(div, header):has(> .section-kicker + *) {
+  row-gap: 0 !important;
+}
+
+html body.site-orbit-theme main > section > .section-kicker + *,
+html body.site-orbit-theme main section :is(div, header) > .section-kicker + * {
+  margin-top: var(--global-section-heading-gap) !important;
+}
+
+/* TOP uses the same global rhythm. */
+html body.site-orbit-theme #page-index main > section.section-flow {
+  gap: var(--global-section-heading-gap) !important;
+  row-gap: var(--global-section-heading-gap) !important;
+}
+
+html body.site-orbit-theme #page-index .section-first-content,
+html body.site-orbit-theme #page-index .reviews-section .reviews-note,
+html body.site-orbit-theme #page-index .supporter-cta-meta + .supporter-cta-photo,
+html body.site-orbit-theme #page-index .supporter-cta-photo + .supporter-bottom-cta {
+  margin-top: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .reason-grid > article:first-child {
+  top: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  transform: none !important;
+}
+
+/* Rebuilt FEATURES: isolated from every legacy reason-grid rule */
+html body.site-orbit-theme #page-index main > section.features-section-v2 {
+  position: relative;
+  display: block !important;
+  overflow: hidden;
+  background-color: rgba(238, 247, 255, 0.92) !important;
+}
+
+html body.site-orbit-theme #page-index .features-section-v2 > .section-kicker {
+  display: block;
+  margin: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .features-list-v2 {
+  display: grid;
+  gap: 0;
+  margin: var(--global-section-heading-gap) 0 0 !important;
+  padding: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .features-item-v2 {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  margin: 0;
+  padding: 18px 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+html body.site-orbit-theme #page-index .features-item-v2:first-child {
+  padding-top: 0;
+}
+
+html body.site-orbit-theme #page-index .features-item-v2 + .features-item-v2 {
+  border-top: 1px solid rgba(0, 87, 217, 0.12);
+}
+
+html body.site-orbit-theme #page-index .features-item-v2 > span {
+  color: var(--blue);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+}
+
+html body.site-orbit-theme #page-index .features-item-v2 h3 {
+  width: fit-content;
+  margin: 0 0 10px;
+  padding: 0 2px 2px;
+  background: linear-gradient(transparent 62%, rgba(52, 201, 255, 0.28) 62%);
+  font-size: 1.12rem;
+  line-height: 1.55;
+}
+
+html body.site-orbit-theme #page-index .features-item-v2 p {
+  margin: 0;
+  color: #4e545a;
+  line-height: 1.95;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme #page-index .features-section-v2::before,
+  html body.site-orbit-theme #page-index .features-section-v2::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+  }
+
+  html body.site-orbit-theme #page-index .features-section-v2::before {
+    top: 92px;
+    right: -6px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50% 8px 50% 50%;
+    background: #34c9d5;
+    opacity: 0.15;
+    transform: rotate(35deg);
+  }
+
+  html body.site-orbit-theme #page-index .features-section-v2::after {
+    bottom: 62px;
+    left: 20px;
+    width: 20px;
+    height: 18px;
+    background: #ffd84a;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    opacity: 0.22;
+    transform: rotate(-12deg);
+  }
+}
+
+
+/* FINAL canonical title-to-content spacing: all pages and viewports */
+html body.site-orbit-theme {
+  --section-heading-gap: 24px;
+}
+
+html body.site-orbit-theme main section .section-kicker {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body.site-orbit-theme main > section:has(> :is(div, header):has(> .section-kicker:only-child)) {
+  row-gap: 0 !important;
+}
+
+html body.site-orbit-theme main section > :is(div, header):has(> .section-kicker:only-child) {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+}
+
+html body.site-orbit-theme main > section:has(> :is(div, header):has(> .section-kicker:only-child)) > * {
+  margin-top: 0 !important;
+}
+
+html body.site-orbit-theme main > section:has(> :is(div, header):has(> .section-kicker:only-child)) > * + * {
+  margin-top: var(--section-heading-gap) !important;
+}
+
+html body.site-orbit-theme main section :is(div, header):has(> .section-kicker + *) {
+  row-gap: 0 !important;
+}
+
+html body.site-orbit-theme main section :is(div, header) > .section-kicker + *,
+html body.site-orbit-theme main > section > .section-kicker + * {
+  margin-top: var(--section-heading-gap) !important;
+}
+
+html body.site-orbit-theme #page-index main > section.section-flow {
+  gap: 0 !important;
+  row-gap: 0 !important;
+}
+
+html body.site-orbit-theme #page-index main > section.section-flow > * {
+  margin-top: 0 !important;
+}
+
+html body.site-orbit-theme #page-index main > section.section-flow > * + * {
+  margin-top: var(--section-heading-gap) !important;
+}
+
+html body.site-orbit-theme #page-index .features-list-v2 {
+  margin-top: var(--section-heading-gap) !important;
+}
+
+
+/* FINAL section-content-to-CTA spacing: all pages and viewports */
+html body.site-orbit-theme {
+  --section-content-cta-gap: 32px;
+}
+
+html body.site-orbit-theme main .faq-summary-panel:has(> .section-link) {
+  gap: 0 !important;
+  row-gap: 0 !important;
+}
+
+html body.site-orbit-theme main :is(
+  .top-about-cta,
+  .supporter-bottom-cta,
+  .price-section > .section-link,
+  .faq-summary-panel > .section-link,
+  .supporter-profile-link,
+  .price-plan-cta,
+  .price-flow-cta,
+  .thanks-section > .section-link
+) {
+  margin-top: var(--section-content-cta-gap) !important;
+}
+
+
+/* Visual CTA-gap correction for the transformed SUPPORTER image */
+html body.site-orbit-theme #page-index .supporter-cta-photo + .supporter-bottom-cta {
+  margin-top: calc(var(--section-content-cta-gap) + 44px) !important;
+}
+
+@media (min-width: 981px) {
+  html body.site-orbit-theme #page-index .supporter-cta-photo + .supporter-bottom-cta {
+    margin-top: calc(var(--section-content-cta-gap) + 28px) !important;
+  }
+}
+
+
+/* Keep the REVIEWS note visually separate from the card carousel. */
+html body.site-orbit-theme #page-index .reviews-section .reviews-note {
+  margin-top: 40px !important;
+}
+
+/* PLAN cards occupy the full central/mobile content width. */
+html body.site-orbit-theme #page-index .price-section .price-summary-list {
+  grid-column: 1 / -1 !important;
+  justify-self: stretch !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  box-sizing: border-box;
+}
+
+html body.site-orbit-theme #page-index .price-section .price-summary-list > article {
+  justify-self: stretch !important;
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box;
+}
+
+/* One shared edge treatment for the page canvas and footer. */
+html body.site-orbit-theme {
+  --stage-edge-line: rgba(0, 87, 217, 0.12);
+  --stage-edge-shadow:
+    -8px 0 24px rgba(0, 63, 158, 0.07),
+    8px 0 24px rgba(0, 63, 158, 0.07);
+}
+
+html body.site-orbit-theme > :is([id^="page-"], main, .site-footer) {
+  box-sizing: border-box;
+  border-right: 0;
+  border-left: 0;
+  box-shadow: none !important;
+}
+
+/* A viewport-level rail keeps the shadow visible even when page content is clipped. */
+html body.site-orbit-theme::after {
+  content: "";
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: calc(100% - 2px);
+  box-sizing: border-box;
+  border-right: 1px solid var(--stage-edge-line);
+  border-left: 1px solid var(--stage-edge-line);
+  box-shadow: var(--stage-edge-shadow);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+@media (min-width: 981px) {
+  html body.site-orbit-theme::after {
+    left: calc((100vw - var(--center-stage-width)) / 2);
+    width: var(--center-stage-width);
+    transform: none;
+  }
+}
+
+/* Prevent a sub-pixel transparency seam between adjacent TOP sections. */
+html body.site-orbit-theme #page-index .supporter-section + .price-section {
+  margin-top: -1px !important;
+}
+
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -7831,11 +8523,11 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
     </div>
   </section>
 
-  <section id="about" class="content-section top-about-section">
-    <header class="top-about-header">
+  <section id="about" class="content-section top-about-section section-flow">
+    <header class="top-about-header section-heading-block">
       <p class="section-kicker">About</p>
     </header>
-    <div class="top-about-main">
+    <div class="top-about-main section-first-content">
       <div class="top-about-title">
         <h2>元教員による、<br>教員のための<br><span>キャリア伴走サービス</span></h2>
       </div>
@@ -7848,23 +8540,21 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
     <a class="top-about-cta" href="about.html">サービス詳細を見る</a>
   </section>
 
-  <section class="content-section reason-section">
-    <div class="section-head">
-      <p class="section-kicker">Features</p>
-    </div>
-    <div class="issue-grid reason-grid">
-      <article><span>01</span><h3>中立的立場での整理と支援</h3><p>転職ありきではなく、続ける・転職する・働き方を見直すなど、あなたに合う選択肢を一緒に見つけ、実行まで広くご支援します。</p></article>
-      <article><span>02</span><h3>現実的なプラン設計</h3><p>教員・企業・独立を経験しているサポーターだからこそ、現実的な選択肢を広く見渡せます。</p></article>
-      <article><span>03</span><h3>相談しやすく続けやすい</h3><p>料金は完全明確化。短期・中期・長期と、ご自身に合わせてご相談いただけるため、忙しい先生でも無理なく利用できます。</p></article>
+  <section class="content-section features-section-v2">
+    <p class="section-kicker">Features</p>
+    <div class="features-list-v2">
+      <article class="features-item-v2"><span>01</span><div><h3>中立的立場での整理と支援</h3><p>転職ありきではなく、続ける・転職する・働き方を見直すなど、あなたに合う選択肢を一緒に見つけ、実行まで広くご支援します。</p></div></article>
+      <article class="features-item-v2"><span>02</span><div><h3>現実的なプラン設計</h3><p>教員・企業・独立を経験しているサポーターだからこそ、現実的な選択肢を広く見渡せます。</p></div></article>
+      <article class="features-item-v2"><span>03</span><div><h3>相談しやすく続けやすい</h3><p>料金は完全明確化。短期・中期・長期と、ご自身に合わせてご相談いただけるため、忙しい先生でも無理なく利用できます。</p></div></article>
     </div>
   </section>
 
-  <section id="supporter" class="content-section supporter-section">
+  <section id="supporter" class="content-section supporter-section section-flow">
 
-    <div class="supporter-cta-copy">
+    <div class="supporter-cta-copy section-heading-block">
       <p class="section-kicker">Supporter</p>
-      <p class="supporter-cta-meta">元教員・リクルート出身・起業経験者</p>
     </div>
+    <p class="supporter-cta-meta section-first-content">元教員・リクルート出身・起業経験者</p>
     <div class="supporter-cta-photo" aria-label="サポーター写真">
           <img src="assets/supporter-profile-2026.png" alt="Linoriaのサポーター" loading="lazy" decoding="async">
           <img class="supporter-career-text" src="assets/supporter-career-text.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
@@ -7872,11 +8562,11 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
     <a class="supporter-bottom-cta" href="message.html">サポーター紹介を見る</a>
   </section>
 
-  <section id="price" class="content-section price-section">
-    <div class="price-summary-copy">
+  <section id="price" class="content-section price-section section-flow">
+    <div class="price-summary-copy section-heading-block">
       <p class="section-kicker">Plan / Price</p>
     </div>
-    <div class="price-summary-list">
+    <div class="price-summary-list section-first-content">
       <article><h3>初回無料相談<span class="price-plan-duration">30分</span></h3><p class="price-plan-caption">まずは気軽に話したい方へ</p><div class="price-summary-side"><strong>￥0</strong></div></article>
       <article><h3>キャリア整理相談<span class="price-plan-duration">1時間</span></h3><p class="price-plan-caption">悩みと選択肢を整理したい方へ</p><div class="price-summary-side"><strong>￥3,980</strong></div></article>
       <article><h3>伴走プラン<span class="price-plan-duration">30日</span></h3><p class="price-plan-caption">継続して行動まで進めたい方へ</p><div class="price-summary-side"><strong>￥9,800</strong></div></article>
@@ -7884,11 +8574,11 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
     <a class="section-link" href="price.html">プラン・料金を見る<span aria-hidden="true">→</span></a>
   </section>
 
-  <section class="content-section reviews-section">
-    <div class="reviews-copy">
+  <section class="content-section reviews-section section-flow">
+    <div class="reviews-copy section-heading-block">
       <p class="section-kicker">Reviews</p>
     </div>
-    <div class="review-card-list" aria-label="クチコミ一覧">
+    <div class="review-card-list section-first-content" aria-label="クチコミ一覧">
       <article class="review-card"><span>01</span><h3>頭の中が整理されて、前向きになれました。</h3><p>「辞めたい」という気持ちだけで相談しましたが、無理に転職を勧められることはありませんでした。話を聞いてもらううちに考えが整理され、自分にとって納得できる選択肢が見えてきました。</p><div class="review-profile"><small>30代</small><small>小学校教員</small></div></article>
       <article class="review-card"><span>02</span><h3>単発で気軽に相談できるのがありがたかったです。</h3><p>いきなり高額なサービスを契約するのは不安でしたが、単発相談があったので安心して利用できました。価格も良心的で、最初の一歩を踏み出しやすかったです。</p><div class="review-profile"><small>20代</small><small>中学校教員</small></div></article>
       <article class="review-card"><span>03</span><h3>経験者だからこその言葉に説得力がありました。</h3><p>教員だけでなく民間企業や独立も経験されているので、幅広い視点からアドバイスをいただけました。知識も豊富で、とても信頼できるサポートでした。</p><div class="review-profile"><small>30代</small><small>高校教員</small></div></article>
@@ -7898,11 +8588,11 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
     <p class="reviews-note">※掲載しているお声には、Linoria立ち上げ前に提供していた前身サービスでご相談いただいた方のご感想も含まれています。</p>
   </section>
 
-  <section id="faq" class="content-section faq-section faq-section--plain-open">
-    <div class="faq-copy">
+  <section id="faq" class="content-section faq-section faq-section--plain-open section-flow">
+    <div class="faq-copy section-heading-block">
       <p class="section-kicker">FAQ</p>
     </div>
-    <div class="faq-summary-panel">
+    <div class="faq-summary-panel section-first-content">
       <div class="faq-list">
         <details><summary>転職するか決めていなくても相談できますか？</summary><p>はい。Linoriaは転職を前提としたサービスではありません。現職継続、転職、起業・独立など、さまざまな選択肢を一緒に整理します。</p></details>
         <details><summary>考えを整理できていなくても相談できますか？</summary><p>もちろんです。言葉にしきれていない悩みや迷いも、対話を通して一緒に整理していきます。</p></details>
