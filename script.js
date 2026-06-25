@@ -140,7 +140,7 @@ const revealTargets = Array.from(document.querySelectorAll(
 )).filter((target) =>
   !target.matches('[aria-hidden="true"], script, style') &&
   !target.closest("footer") &&
-  !target.closest(".legal-section, .page-faq, .page-contact, #page-legal, #page-privacy, #page-terms, #page-faq, #page-contact")
+  !target.closest(".legal-section, .page-contact, #page-legal, #page-privacy, #page-terms, #page-contact")
 );
 
 revealTargets.forEach((target) => target.classList.add("reveal-item"));

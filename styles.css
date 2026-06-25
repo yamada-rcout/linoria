@@ -8475,8 +8475,8 @@ html body.site-orbit-theme :is(#page-legal, #page-privacy, #page-terms) main * {
   transition: none !important;
 }
 
-html body.site-orbit-theme:is(.page-faq, .page-contact) main *,
-html body.site-orbit-theme :is(#page-faq, #page-contact) main * {
+html body.site-orbit-theme.page-contact main *,
+html body.site-orbit-theme #page-contact main * {
   animation: none !important;
   transition: none !important;
 }
@@ -8706,4 +8706,140 @@ html.js body.site-orbit-theme #page-index :is(
     content: none !important;
     display: none !important;
   }
+}
+
+/* FINAL FAQ page: same card accordion and basic reveal as TOP */
+html body.site-orbit-theme.page-faq .faq-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+html body.site-orbit-theme.page-faq .faq-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+html body.site-orbit-theme.page-faq .faq-summary-panel,
+html body.site-orbit-theme.page-faq .faq-groups,
+html body.site-orbit-theme.page-faq .faq-group,
+html body.site-orbit-theme.page-faq .faq-list {
+  width: 100%;
+}
+
+html body.site-orbit-theme.page-faq .faq-groups {
+  gap: 34px;
+}
+
+html body.site-orbit-theme.page-faq .faq-group {
+  gap: 14px;
+}
+
+html body.site-orbit-theme.page-faq .faq-group-title {
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
+  letter-spacing: 0.08em;
+}
+
+html body.site-orbit-theme.page-faq .faq-list {
+  gap: 12px;
+  border-top: 0;
+}
+
+html body.site-orbit-theme.page-faq .faq-list details,
+html body.site-orbit-theme.page-faq .faq-list details[open] {
+  overflow: hidden;
+  border: 2px solid rgba(0, 87, 217, 0.18);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: none;
+  transition:
+    border-color 220ms ease,
+    background 220ms ease;
+}
+
+html body.site-orbit-theme.page-faq .faq-list details::before {
+  top: 12px;
+  bottom: 12px;
+  left: 0;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+}
+
+html body.site-orbit-theme.page-faq .faq-list details[open] {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(0, 87, 217, 0.22);
+}
+
+html body.site-orbit-theme.page-faq .faq-list summary {
+  padding: 18px 18px;
+}
+
+html body.site-orbit-theme.page-faq .faq-list p {
+  max-width: none;
+  padding: 0 50px 20px 58px;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme.page-faq .faq-section::before,
+  html body.site-orbit-theme.page-faq .faq-section::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  html body.site-orbit-theme.page-faq .faq-section::before {
+    top: 78px;
+    right: 22px;
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    background: #ffd84a;
+    opacity: 0.16;
+    transform: rotate(28deg);
+  }
+
+  html body.site-orbit-theme.page-faq .faq-section::after {
+    bottom: 74px;
+    left: 12px;
+    width: 28px;
+    height: 25px;
+    background: #20bfa9;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    opacity: 0.1;
+    transform: rotate(-18deg);
+  }
+}
+
+/* FAQ page reveal: keep the same basic fade-in motion as TOP. */
+html.js body.site-orbit-theme.page-faq main .reveal-item {
+  opacity: 0 !important;
+  transform: translateY(26px) !important;
+  transition:
+    opacity 720ms ease,
+    transform 720ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 720ms ease,
+    border-color 220ms ease,
+    background 220ms ease !important;
+}
+
+html.js body.site-orbit-theme.page-faq main .reveal-item.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* FINAL CONTACT spacing: align title-to-content gap with TOP sections. */
+html body.site-orbit-theme.page-contact .contact-section {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 0 !important;
+  row-gap: 0 !important;
+}
+
+html body.site-orbit-theme.page-contact .contact-section > * {
+  margin-top: 0 !important;
+}
+
+html body.site-orbit-theme.page-contact .contact-section > * + * {
+  margin-top: var(--section-heading-gap, 24px) !important;
 }
