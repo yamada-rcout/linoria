@@ -2675,19 +2675,28 @@ main > section.vmv-cta-section::before {
 .supporter-profile-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 6px 10px;
+  grid-column: 1 / -1;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .supporter-profile-list li {
-  padding: 8px 12px;
-  background: var(--soft);
+  display: inline;
+  padding: 0;
+  background: transparent;
   color: var(--muted);
-  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  font-size: clamp(0.72rem, 0.95vw, 0.82rem);
   font-weight: 500;
-  line-height: 1.8;
+  line-height: 1.9;
+  white-space: nowrap;
+}
+
+.supporter-profile-list li:not(:last-child)::after {
+  content: " /";
+  color: rgba(78, 84, 90, 0.45);
+  margin-left: 10px;
 }
 
 .supporter-message-section {
@@ -8842,4 +8851,29 @@ html body.site-orbit-theme.page-contact .contact-section > * {
 
 html body.site-orbit-theme.page-contact .contact-section > * + * {
   margin-top: var(--section-heading-gap, 24px) !important;
+}
+
+/* FINAL supporter license: keep it as one subtle horizontal line. */
+html body.site-orbit-theme.page-supporter .supporter-profile-list {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 0 !important;
+  grid-column: 1 / -1 !important;
+  align-items: center !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+html body.site-orbit-theme.page-supporter .supporter-profile-list li {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex: 0 0 auto !important;
+  font-size: clamp(9px, 1.9vw, 10.5px) !important;
+  line-height: 1.6 !important;
+  letter-spacing: -0.04em !important;
+  white-space: nowrap !important;
+}
+
+html body.site-orbit-theme.page-supporter .supporter-profile-list li:not(:last-child)::after {
+  margin: 0 6px !important;
 }
