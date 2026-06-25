@@ -7851,14 +7851,14 @@ html body.site-orbit-theme #page-index .reason-grid article:first-child {
   body.site-orbit-theme #page-index .review-card-list {
     display: flex !important;
     align-items: stretch;
-    gap: 0;
+    gap: 16px;
     overflow-x: auto !important;
     overflow-y: hidden;
     scroll-snap-type: x mandatory !important;
   }
 
   body.site-orbit-theme #page-index .review-card {
-    flex: 0 0 calc(100% - 36px) !important;
+    flex: 0 0 86% !important;
     width: auto !important;
     min-width: 0;
     min-height: auto;
@@ -8200,6 +8200,20 @@ html body.site-orbit-theme #page-index .supporter-cta-photo + .supporter-bottom-
 /* Keep the REVIEWS note visually separate from the card carousel. */
 html body.site-orbit-theme #page-index .reviews-section .reviews-note {
   margin-top: 40px !important;
+}
+
+/* Make the TOP reviews carousel visibly continue from the first fade-in. */
+html body.site-orbit-theme #page-index .review-card-list {
+  display: flex !important;
+  gap: 16px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+}
+
+html body.site-orbit-theme #page-index .review-card {
+  flex: 0 0 72% !important;
+  width: auto !important;
+  scroll-snap-align: start;
 }
 
 /* PLAN cards occupy the full central/mobile content width. */
