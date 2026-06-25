@@ -172,7 +172,7 @@ const updateScrollProgress = (element) => {
 };
 
 const scrollProgressTargets = document.querySelectorAll(
-  ".about-process-steps, .about-compare-table-wrap, .price-summary-list"
+  ".about-process-steps, .about-compare-table-wrap, .price-summary-list, #page-index .consultation-flow-section .price-flow-list"
 );
 
 scrollProgressTargets.forEach((target) => {
