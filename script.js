@@ -134,7 +134,8 @@ const revealTargets = Array.from(document.querySelectorAll(
   [
     ".hero-inner",
     "main > section > *",
-    "main > section :is(article, li, details)"
+    "main > section :is(article, li, details)",
+    "#page-index :is(.top-about-cta, .supporter-bottom-cta, .price-section > .section-link, .faq-summary-panel > .section-link)"
   ].join(", ")
 )).filter((target) =>
   !target.matches('[aria-hidden="true"], script, style') &&

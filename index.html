@@ -8617,6 +8617,41 @@ html body.site-orbit-theme #page-index main > section.vmv-cta-section {
   }
 }
 
+/* FINAL TOP CTA reveal animation: shared timing and movement. */
+html.js body.site-orbit-theme #page-index :is(
+  .top-about-cta,
+  .supporter-bottom-cta,
+  .price-section > .section-link,
+  .faq-summary-panel > .section-link
+).reveal-item {
+  opacity: 0 !important;
+  transform: translate3d(0, 18px, 0) !important;
+  transition:
+    opacity 680ms ease,
+    transform 680ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 180ms ease !important;
+  transition-delay: 0ms !important;
+}
+
+html.js body.site-orbit-theme #page-index :is(
+  .top-about-cta,
+  .supporter-bottom-cta,
+  .price-section > .section-link,
+  .faq-summary-panel > .section-link
+).reveal-item.is-visible {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+html.js body.site-orbit-theme #page-index :is(
+  .top-about-cta,
+  .supporter-bottom-cta,
+  .price-section > .section-link,
+  .faq-summary-panel > .section-link
+).reveal-item.is-visible:hover {
+  transform: translateY(-2px) !important;
+}
+
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -9237,7 +9272,12 @@ function initProcessAnimation() {
 
 function initReveal() {
   const revealTargets = Array.from(document.querySelectorAll(
-    ['.hero-inner', 'main > section > *', 'main > section :is(article, li, details)'].join(', ')
+    [
+      '.hero-inner',
+      'main > section > *',
+      'main > section :is(article, li, details)',
+      '#page-index :is(.top-about-cta, .supporter-bottom-cta, .price-section > .section-link, .faq-summary-panel > .section-link)'
+    ].join(', ')
   )).filter(target =>
     !target.matches('[aria-hidden="true"], script, style') &&
     !target.closest('footer') &&
