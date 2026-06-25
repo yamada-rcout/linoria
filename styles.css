@@ -3214,7 +3214,7 @@ main > section.vmv-cta-section::before {
 .faq-group-title {
   margin: 0;
   color: var(--blue);
-  font-size: 0.92rem;
+  font-size: clamp(1.08rem, 2.2vw, 1.28rem);
   font-weight: 900;
   letter-spacing: 0.14em;
   cursor: pointer;
@@ -4889,7 +4889,7 @@ button:disabled:hover {
     align-items: center;
     padding: 17px 16px;
     color: var(--blue);
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 0.12em;
   }
 
@@ -8051,7 +8051,7 @@ html body.site-orbit-theme #page-index .features-item-v2:first-child {
 }
 
 html body.site-orbit-theme #page-index .features-item-v2 + .features-item-v2 {
-  border-top: 1px solid rgba(0, 87, 217, 0.12);
+  border-top: 0;
 }
 
 html body.site-orbit-theme #page-index .features-item-v2 > span {
