@@ -8612,6 +8612,26 @@ html body.site-orbit-theme :is(#page-faq, #page-contact) main * {
   transition: none !important;
 }
 
+/* FINAL section vertical rhythm: spacing is controlled by padding, not forced section height. */
+html body.site-orbit-theme {
+  --section-block-space: clamp(46px, 5.1vw, 67px);
+  --section-block-space-mobile: 38px;
+}
+
+html body.site-orbit-theme main > section:not(.hero) {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-top: var(--section-block-space) !important;
+  padding-bottom: var(--section-block-space) !important;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme main > section:not(.hero) {
+    padding-top: var(--section-block-space-mobile) !important;
+    padding-bottom: var(--section-block-space-mobile) !important;
+  }
+}
+
     </style>
 </head>
 <body class="site-orbit-theme">
