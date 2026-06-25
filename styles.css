@@ -8341,3 +8341,25 @@ html body.site-orbit-theme #page-index main > section.vmv-cta-section::before {
   ) !important;
   pointer-events: none;
 }
+
+/* Policy pages use a fully opaque reading surface. */
+html body.site-orbit-theme:has(main > section.legal-section) main,
+html body.site-orbit-theme main > section.legal-section,
+html body.site-orbit-theme :is(#page-legal, #page-privacy, #page-terms),
+html body.site-orbit-theme :is(#page-legal, #page-privacy, #page-terms) main,
+html body.site-orbit-theme :is(#page-legal, #page-privacy, #page-terms) main > section {
+  background: #ffffff !important;
+  background-image: none !important;
+}
+
+html body.site-orbit-theme:has(main > section.legal-section) main *,
+html body.site-orbit-theme :is(#page-legal, #page-privacy, #page-terms) main * {
+  animation: none !important;
+  transition: none !important;
+}
+
+html body.site-orbit-theme:is(.page-faq, .page-contact) main *,
+html body.site-orbit-theme :is(#page-faq, #page-contact) main * {
+  animation: none !important;
+  transition: none !important;
+}

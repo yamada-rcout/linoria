@@ -8552,6 +8552,28 @@ html body.site-orbit-theme #page-index main > section.vmv-cta-section::before {
   pointer-events: none;
 }
 
+/* Policy pages use a fully opaque reading surface. */
+html body.site-orbit-theme:has(main > section.legal-section) main,
+html body.site-orbit-theme main > section.legal-section,
+html body.site-orbit-theme :is(#page-legal, #page-privacy, #page-terms),
+html body.site-orbit-theme :is(#page-legal, #page-privacy, #page-terms) main,
+html body.site-orbit-theme :is(#page-legal, #page-privacy, #page-terms) main > section {
+  background: #ffffff !important;
+  background-image: none !important;
+}
+
+html body.site-orbit-theme:has(main > section.legal-section) main *,
+html body.site-orbit-theme :is(#page-legal, #page-privacy, #page-terms) main * {
+  animation: none !important;
+  transition: none !important;
+}
+
+html body.site-orbit-theme:is(.page-faq, .page-contact) main *,
+html body.site-orbit-theme :is(#page-faq, #page-contact) main * {
+  animation: none !important;
+  transition: none !important;
+}
+
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -9175,7 +9197,8 @@ function initReveal() {
     ['.hero-inner', 'main > section > *', 'main > section :is(article, li, details)'].join(', ')
   )).filter(target =>
     !target.matches('[aria-hidden="true"], script, style') &&
-    !target.closest('footer')
+    !target.closest('footer') &&
+    !target.closest('.legal-section, .page-faq, .page-contact, #page-legal, #page-privacy, #page-terms, #page-faq, #page-contact')
   );
   
   revealTargets.forEach(t => t.classList.add('reveal-item'));
