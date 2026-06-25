@@ -9506,3 +9506,11 @@ html {
 .price-detail-check-list li::before {
   content: "✓";
 }
+
+.price-detail-list-note {
+  padding-left: 0 !important;
+}
+
+.price-detail-list-note::before {
+  content: none !important;
+}
