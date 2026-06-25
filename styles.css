@@ -8335,6 +8335,30 @@ html body.site-orbit-theme #page-index .price-section .price-summary-list > arti
   background: rgba(255, 255, 255, 0.88) !important;
 }
 
+/* FINAL shared section-to-section spacing: about 60% of the previous baseline. */
+html body.site-orbit-theme {
+  --section-block-space: clamp(46px, 5.1vw, 67px);
+  --section-block-space-mobile: 38px;
+}
+
+html body.site-orbit-theme main > section:not(.hero) {
+  padding-top: var(--section-block-space) !important;
+  padding-bottom: var(--section-block-space) !important;
+}
+
+html body.site-orbit-theme main > section.vmv-cta-section {
+  padding-top: var(--section-block-space) !important;
+  padding-bottom: var(--section-block-space) !important;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme main > section:not(.hero),
+  html body.site-orbit-theme main > section.vmv-cta-section {
+    padding-top: var(--section-block-space-mobile) !important;
+    padding-bottom: var(--section-block-space-mobile) !important;
+  }
+}
+
 /* VMV image at full strength, with a left-side readability gradient. */
 html body.site-orbit-theme #page-index main > section.vmv-cta-section {
   background: url("assets/vmv-tokyo-skyline.jpg") center / cover no-repeat !important;
