@@ -8586,7 +8586,7 @@ html body.site-orbit-theme {
   --section-block-space-mobile: 34px;
 }
 
-html body.site-orbit-theme :is(main, #page-index main, [id^="page-"] main) > section:not(.hero) {
+html body.site-orbit-theme :is(main, #page-index main, [id^="page-"] main) > section:not(.hero):not(.vmv-cta-section) {
   min-height: 0 !important;
   height: auto !important;
   margin-top: 0 !important;
@@ -8596,9 +8596,24 @@ html body.site-orbit-theme :is(main, #page-index main, [id^="page-"] main) > sec
 }
 
 @media (max-width: 980px) {
-  html body.site-orbit-theme :is(main, #page-index main, [id^="page-"] main) > section:not(.hero) {
+  html body.site-orbit-theme :is(main, #page-index main, [id^="page-"] main) > section:not(.hero):not(.vmv-cta-section) {
     padding-top: var(--section-block-space-mobile) !important;
     padding-bottom: var(--section-block-space-mobile) !important;
+  }
+}
+
+html body.site-orbit-theme main > section.vmv-cta-section,
+html body.site-orbit-theme #page-index main > section.vmv-cta-section {
+  min-height: 330px !important;
+  height: auto !important;
+  padding: clamp(42px, 5vw, 72px) clamp(20px, 5vw, 72px) !important;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme main > section.vmv-cta-section,
+  html body.site-orbit-theme #page-index main > section.vmv-cta-section {
+    min-height: 240px !important;
+    padding: 38px 18px !important;
   }
 }
 
