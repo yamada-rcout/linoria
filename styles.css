@@ -7967,7 +7967,7 @@ html body.site-orbit-theme #page-index .supporter-cta-photo + .supporter-bottom-
 
 /* Global section-heading rhythm: every page, every viewport */
 html body.site-orbit-theme {
-  --global-section-heading-gap: 24px;
+  --global-section-heading-gap: 16px;
 }
 
 html body.site-orbit-theme main section .section-kicker {
@@ -8113,7 +8113,7 @@ html body.site-orbit-theme #page-index .features-item-v2 p {
 
 /* FINAL canonical title-to-content spacing: all pages and viewports */
 html body.site-orbit-theme {
-  --section-heading-gap: 24px;
+  --section-heading-gap: 16px;
 }
 
 html body.site-orbit-theme main section .section-kicker {
@@ -9144,6 +9144,55 @@ html body.site-orbit-theme.page-contact .contact-section > * + * {
     background-position: 14% 78% !important;
     background-repeat: no-repeat !important;
   }
+
+  html body.site-orbit-theme.page-price main > section {
+    background-position: 92% 96% !important;
+    background-size: 18px 18px !important;
+  }
+
+  html body.site-orbit-theme.page-price main > section::before {
+    top: auto !important;
+    right: 18px !important;
+    bottom: 18px !important;
+    left: auto !important;
+    opacity: 0.08 !important;
+  }
+
+  html body.site-orbit-theme.page-price main > section::after {
+    top: 18px !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 16px !important;
+    opacity: 0.1 !important;
+  }
+
+  html body.site-orbit-theme.page-price main > section:nth-of-type(2n)::before {
+    top: 14px !important;
+    right: 18px !important;
+    bottom: auto !important;
+    left: auto !important;
+  }
+
+  html body.site-orbit-theme.page-price main > section:nth-of-type(2n)::after {
+    top: auto !important;
+    right: auto !important;
+    bottom: 16px !important;
+    left: 18px !important;
+  }
+
+  html body.site-orbit-theme.page-price main > section:nth-of-type(3n)::before {
+    top: auto !important;
+    right: 16px !important;
+    bottom: 20px !important;
+    left: auto !important;
+  }
+
+  html body.site-orbit-theme.page-price main > section:nth-of-type(3n)::after {
+    top: 18px !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 18px !important;
+  }
 }
 
 /* FINAL VMV mobile decorations: small shapes only on smartphone layouts. */
@@ -9270,4 +9319,190 @@ html body.site-orbit-theme.page-contact .contact-section > * + * {
     opacity: 0.12;
     pointer-events: none;
   }
+}
+
+/* FINAL price page restructure: overview table and individual plan sections. */
+html {
+  scroll-padding-top: 90px;
+}
+
+.price-overview-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.price-overview-intro {
+  display: grid;
+  gap: 0;
+}
+
+.price-overview-intro .section-title {
+  margin: 0;
+}
+
+.price-overview-intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 2;
+}
+
+.price-quick-table {
+  display: grid;
+  gap: 14px;
+  margin-top: var(--section-heading-gap, 24px);
+}
+
+.price-quick-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 14px;
+  min-height: 112px;
+  padding: 18px 24px;
+  color: var(--ink);
+  text-decoration: none;
+  border: 2px solid rgba(0, 87, 217, 0.22);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.price-quick-card strong {
+  font-size: 1.03rem;
+  line-height: 1.35;
+  align-self: center;
+}
+
+.price-quick-card span:not(.price-quick-number) {
+  color: var(--blue);
+  font-size: 0.94rem;
+  font-weight: 900;
+  align-self: center;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.price-quick-card small {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.price-quick-card em {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0.04em;
+}
+
+.price-quick-card em::after {
+  content: "↓";
+  font-size: 0.9rem;
+}
+
+.price-detail-section {
+  display: grid;
+  gap: 0;
+}
+
+.price-detail-head {
+  display: grid;
+  gap: 12px;
+}
+
+.price-detail-head .section-title {
+  margin: 0;
+}
+
+.price-detail-body {
+  display: grid;
+  gap: 18px;
+  margin-top: var(--section-heading-gap, 24px);
+}
+
+.price-detail-lead {
+  display: grid;
+  gap: 14px;
+}
+
+.price-detail-lead p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.95;
+}
+
+.price-detail-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.price-detail-list div {
+  display: grid;
+  gap: 8px;
+  padding: 10px 0;
+}
+
+.price-detail-list dt {
+  margin: 0;
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.price-detail-list dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+.price-detail-list dd :is(p, ul) {
+  margin: 0;
+}
+
+.price-detail-list dd p + p {
+  margin-top: 12px;
+}
+
+.price-detail-list dd ul {
+  display: grid;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.price-detail-list dd li {
+  position: relative;
+  margin: 0;
+  padding-left: 1.25em;
+}
+
+.price-detail-bullet-list li::before,
+.price-detail-check-list li::before {
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 900;
+}
+
+.price-detail-bullet-list li::before {
+  content: "・";
+}
+
+.price-detail-check-list li::before {
+  content: "✓";
 }
