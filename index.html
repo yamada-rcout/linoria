@@ -30,6 +30,11 @@
 </script>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preload" as="image" href="assets/hero-teacher-v2.jpg" fetchpriority="high">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="apple-touch-icon" href="assets/favicon.png">
   <title>Linoria｜教員専門のキャリア相談・転職・独立サポート</title>
@@ -41,19 +46,72 @@
     <meta property="og:title" content="Linoria｜教員専門のキャリア相談・転職・独立サポート">
     <meta property="og:description" content="Linoriaは、教員の転職だけでなく、自己理解・現職継続・独立まで幅広く伴走するキャリアサポートサービスです。元教員・リクルート出身・起業経験者が、一人ひとりの納得できる選択を支援します。">
     <meta property="og:url" content="https://linoria.jp/">
-    <meta property="og:image" content="https://linoria.jp/assets/vmv-tokyo-skyline.jpg">
+    <meta property="og:image" content="https://linoria.jp/assets/og-image.png">
+    <meta property="og:image:secure_url" content="https://linoria.jp/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Linoria｜教員専門のキャリア相談サービス">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Linoria｜教員専門のキャリア相談・転職・独立サポート">
+    <meta name="twitter:description" content="教員の転職だけでなく、自己理解・現職継続・独立まで幅広く伴走するキャリアサポートサービスです。">
+    <meta name="twitter:image" content="https://linoria.jp/assets/og-image.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Linoria",
-    "url": "https://linoria.jp/",
-    "description": "現役教員専門のキャリアサポート。現職継続、転職、起業・独立など複数の選択肢を整理し、納得できる一歩を支援します。",
-    "areaServed": "JP",
-    "availableLanguage": "ja",
-    "sameAs": [
-      "https://line.me/R/ti/p/@434cidql"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://linoria.jp/#organization",
+        "name": "Linoria",
+        "url": "https://linoria.jp/",
+        "logo": "https://linoria.jp/assets/favicon.png",
+        "sameAs": [
+          "https://line.me/R/ti/p/@434cidql"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://linoria.jp/#website",
+        "name": "Linoria",
+        "url": "https://linoria.jp/",
+        "inLanguage": "ja",
+        "publisher": {
+          "@id": "https://linoria.jp/#organization"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://linoria.jp/#service",
+        "name": "Linoria",
+        "url": "https://linoria.jp/",
+        "serviceType": "教員向けキャリア相談・キャリアサポート",
+        "description": "現役教員専門のキャリアサポート。現職継続、転職、起業・独立など複数の選択肢を整理し、納得できる一歩を支援します。",
+        "areaServed": "JP",
+        "availableLanguage": "ja",
+        "provider": {
+          "@id": "https://linoria.jp/#organization"
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "初回無料相談",
+            "price": "0",
+            "priceCurrency": "JPY"
+          },
+          {
+            "@type": "Offer",
+            "name": "キャリア整理相談",
+            "price": "3980",
+            "priceCurrency": "JPY"
+          },
+          {
+            "@type": "Offer",
+            "name": "伴走プラン",
+            "price": "9800",
+            "priceCurrency": "JPY"
+          }
+        ]
+      }
     ]
   }
   </script>
@@ -8760,11 +8818,19 @@ html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-li
   width: 96px !important;
   height: 96px !important;
   border-radius: 24px !important;
-  background: url("assets/flow-step-consultation.png") center / contain no-repeat !important;
+  background: url("assets/flow-step-temp.png") center / contain no-repeat !important;
   box-shadow: none !important;
 }
 
 html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list li:nth-child(4)::before {
+  width: 96px !important;
+  height: 96px !important;
+  border-radius: 24px !important;
+  background: url("assets/flow-step-consultation.png") center / contain no-repeat !important;
+  box-shadow: none !important;
+}
+
+html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list li:nth-child(5)::before {
   width: 96px !important;
   height: 96px !important;
   border-radius: 24px !important;
@@ -8786,9 +8852,12 @@ html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-li
 html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list strong {
   order: 2 !important;
   display: block !important;
-  width: 100% !important;
+  width: calc(100% + 18px) !important;
   margin: 0 !important;
+  max-width: none !important;
   text-align: center !important;
+  font-size: 1.02rem !important;
+  line-height: 1.55 !important;
 }
 
 /* FINAL section vertical rhythm: spacing is controlled by padding, not forced section height. */
@@ -8906,7 +8975,7 @@ html.js body.site-orbit-theme #page-index :is(
           </h1>
         </div>
         <figure class="hero-portrait">
-          <img src="assets/hero-teacher-v2.jpg" alt="教室に立つ女性教員">
+          <img src="assets/hero-teacher-v2.jpg" alt="教室に立つ女性教員" width="1017" height="1017" fetchpriority="high" decoding="async">
         </figure>
       </div>
     </div>
@@ -8970,8 +9039,9 @@ html.js body.site-orbit-theme #page-index :is(
     <ol class="price-flow-list section-first-content" aria-label="相談の流れ">
       <li><span>01</span><strong>LINEまたはメールでお問い合わせ</strong></li>
       <li><span>02</span><strong>ご希望に合わせて日程を調整</strong></li>
-      <li><span>03</span><strong>初回無料相談で悩みや状況を整理</strong></li>
-      <li><span>04</span><strong>必要に応じてサポートプランをご案内</strong></li>
+      <li><span>03</span><strong>事前ヒアリングと質問への回答</strong></li>
+      <li><span>04</span><strong>初回無料相談で悩みや状況を整理</strong></li>
+      <li><span>05</span><strong>必要に応じてサポートプランをご案内</strong></li>
     </ol>
   </section>
 

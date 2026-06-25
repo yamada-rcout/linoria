@@ -8550,11 +8550,19 @@ html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-li
   width: 96px !important;
   height: 96px !important;
   border-radius: 24px !important;
-  background: url("assets/flow-step-consultation.png") center / contain no-repeat !important;
+  background: url("assets/flow-step-temp.png") center / contain no-repeat !important;
   box-shadow: none !important;
 }
 
 html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list li:nth-child(4)::before {
+  width: 96px !important;
+  height: 96px !important;
+  border-radius: 24px !important;
+  background: url("assets/flow-step-consultation.png") center / contain no-repeat !important;
+  box-shadow: none !important;
+}
+
+html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list li:nth-child(5)::before {
   width: 96px !important;
   height: 96px !important;
   border-radius: 24px !important;
@@ -8576,9 +8584,12 @@ html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-li
 html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-list strong {
   order: 2 !important;
   display: block !important;
-  width: 100% !important;
+  width: calc(100% + 18px) !important;
   margin: 0 !important;
+  max-width: none !important;
   text-align: center !important;
+  font-size: 1.02rem !important;
+  line-height: 1.55 !important;
 }
 
 /* FINAL section vertical rhythm: spacing is controlled by padding, not forced section height. */
