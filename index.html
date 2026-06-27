@@ -9656,12 +9656,12 @@ const setHeaderState = () => {
 
 const setHeroClipState = () => {
   if (!heroSection || !heroPin) return;
-  const visibleBottom = Math.max(0, Math.min(window.innerHeight, heroSection.getBoundingClientRect().bottom));
-  const coveredHeight = Math.round(Math.max(0, window.innerHeight - visibleBottom));
-  if (coveredHeight === lastHeroCoveredHeight) return;
-  lastHeroCoveredHeight = coveredHeight;
-  heroPin.style.clipPath = `inset(0 0 ${coveredHeight}px 0)`;
-  heroPin.style.visibility = visibleBottom > 0 ? 'visible' : 'hidden';
+  const visibleBottom = Math.max(0, heroSection.getBoundingClientRect().bottom);
+  const isVisible = visibleBottom > 0;
+  if ((isVisible ? 0 : 1) === lastHeroCoveredHeight) return;
+  lastHeroCoveredHeight = isVisible ? 0 : 1;
+  heroPin.style.clipPath = 'none';
+  heroPin.style.visibility = isVisible ? 'visible' : 'hidden';
 };
 
 setHeaderState();
