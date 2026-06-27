@@ -8574,7 +8574,7 @@ html.js body.site-orbit-theme #page-index :is(
   }
 
   html body.site-orbit-theme #page-index .hero-pin::before {
-    top: 34px;
+    top: 10px;
     transform: translateX(-32%);
   }
 
