@@ -9542,6 +9542,24 @@ html body.site-orbit-theme #page-index main > section.top-about-section::before 
   display: none !important;
 }
 
+/* FINAL hero scroll behavior: hero is no longer fixed or clipped. */
+html body.site-orbit-theme #page-index .hero {
+  min-height: auto !important;
+}
+
+html body.site-orbit-theme #page-index .hero-pin {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: 100% !important;
+  min-height: 100svh !important;
+  transform: none !important;
+  clip-path: none !important;
+  visibility: visible !important;
+}
+
 html body.site-orbit-theme #page-index main > section.top-about-section > * {
   position: relative;
   z-index: 1;
@@ -9558,5 +9576,10 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
   html body.site-orbit-theme #page-index main > section.top-about-section::before {
     content: none !important;
     display: none !important;
+  }
+
+  html body.site-orbit-theme #page-index .hero-pin {
+    min-height: 100svh !important;
+    padding: 76px 20px 58px !important;
   }
 }
