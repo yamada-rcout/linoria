@@ -8970,6 +8970,42 @@ html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link) {
   text-decoration: none !important;
 }
 
+html body.site-orbit-theme #page-index main > section:not(.hero) {
+  position: relative;
+  z-index: 4;
+}
+
+/* TOP transition: ABOUT is the cover surface that naturally hides the fixed hero. */
+html body.site-orbit-theme #page-index main > section.top-about-section {
+  isolation: isolate;
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  background-blend-mode: normal !important;
+}
+
+html body.site-orbit-theme #page-index main > section.top-about-section::before {
+  content: none !important;
+  display: none !important;
+}
+
+html body.site-orbit-theme #page-index main > section.top-about-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme #page-index main > section.top-about-section {
+    background:
+      radial-gradient(circle at 108% 18%, transparent 0 66px, rgba(0, 87, 217, 0.09) 67px 69px, transparent 70px),
+      radial-gradient(circle at 12% 91%, rgba(255, 224, 74, 0.32) 0 13px, transparent 14px),
+      rgba(255, 255, 255, 0.92) !important;
+  }
+
+  html body.site-orbit-theme #page-index main > section.top-about-section::before {
+    content: none !important;
+    display: none !important;
+  }
+}
+
 
 
     </style>
@@ -9644,6 +9680,7 @@ const menuToggle = document.querySelector('.menu-toggle');
 const floatingCtaGroup = document.querySelector('.floating-cta-group');
 const heroSection = document.querySelector('#page-index .hero');
 const heroPin = document.querySelector('#page-index .hero-pin');
+const topAboutSection = document.querySelector('#page-index .top-about-section');
 const mobileHeaderQuery = window.matchMedia('(max-width: 720px)');
 let lastScrollY = window.scrollY;
 let scrollFrame = 0;
@@ -9656,12 +9693,14 @@ const setHeaderState = () => {
 
 const setHeroClipState = () => {
   if (!heroSection || !heroPin) return;
-  const visibleBottom = Math.max(0, heroSection.getBoundingClientRect().bottom);
-  const isVisible = visibleBottom > 0;
-  if ((isVisible ? 0 : 1) === lastHeroCoveredHeight) return;
-  lastHeroCoveredHeight = isVisible ? 0 : 1;
-  heroPin.style.clipPath = 'none';
-  heroPin.style.visibility = isVisible ? 'visible' : 'hidden';
+  const heroBottom = heroSection.getBoundingClientRect().bottom;
+  const aboutTop = topAboutSection ? topAboutSection.getBoundingClientRect().top : window.innerHeight;
+  const coveredHeight = Math.round(Math.max(0, window.innerHeight - aboutTop));
+  const shouldShowHero = heroBottom > 0;
+  if (coveredHeight === lastHeroCoveredHeight && shouldShowHero) return;
+  lastHeroCoveredHeight = coveredHeight;
+  heroPin.style.clipPath = `inset(0 0 ${coveredHeight}px 0)`;
+  document.body.classList.toggle('hero-pin-hidden', !shouldShowHero);
 };
 
 setHeaderState();

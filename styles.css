@@ -9524,3 +9524,39 @@ html body.site-orbit-theme #page-index .price-summary-list article::after {
   content: none !important;
   display: none !important;
 }
+
+html body.site-orbit-theme #page-index main > section:not(.hero) {
+  position: relative;
+  z-index: 4;
+}
+
+/* TOP transition: ABOUT is the cover surface that naturally hides the fixed hero. */
+html body.site-orbit-theme #page-index main > section.top-about-section {
+  isolation: isolate;
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  background-blend-mode: normal !important;
+}
+
+html body.site-orbit-theme #page-index main > section.top-about-section::before {
+  content: none !important;
+  display: none !important;
+}
+
+html body.site-orbit-theme #page-index main > section.top-about-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme #page-index main > section.top-about-section {
+    background:
+      radial-gradient(circle at 108% 18%, transparent 0 66px, rgba(0, 87, 217, 0.09) 67px 69px, transparent 70px),
+      radial-gradient(circle at 12% 91%, rgba(255, 224, 74, 0.32) 0 13px, transparent 14px),
+      rgba(255, 255, 255, 0.92) !important;
+  }
+
+  html body.site-orbit-theme #page-index main > section.top-about-section::before {
+    content: none !important;
+    display: none !important;
+  }
+}
