@@ -8556,8 +8556,36 @@ html.js body.site-orbit-theme #page-index :is(
 @media (max-width: 980px) {
   html body.site-orbit-theme #page-index .hero-pin::before,
   html body.site-orbit-theme #page-index .hero-pin::after {
-    content: none !important;
-    display: none !important;
+    content: "Linoria Career for Teachers";
+    position: absolute;
+    left: 50%;
+    z-index: 0;
+    display: block !important;
+    width: max-content;
+    color: rgba(0, 87, 217, 0.06);
+    font-family: var(--font-en, inherit);
+    font-size: clamp(42px, 15vw, 72px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  html body.site-orbit-theme #page-index .hero-pin::before {
+    top: 24px;
+    transform: translateX(-32%);
+  }
+
+  html body.site-orbit-theme #page-index .hero-pin::after {
+    bottom: 28px;
+    transform: translateX(-64%);
+  }
+
+  html body.site-orbit-theme #page-index .hero-inner {
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -9479,4 +9507,20 @@ html body.site-orbit-theme.page-price .price-detail-head + .price-detail-body {
 /* VMV page: enlarge gap from English title to Japanese heading. */
 html body.site-orbit-theme.page-vmv .vmv-hero-section > .section-kicker + .section-title {
   margin-top: 32px !important;
+}
+
+/* TOP PLAN cards: show duration/time in the former price position, unified blue design. */
+html body.site-orbit-theme #page-index .price-summary-side strong {
+  font-size: 1.05rem !important;
+  color: var(--blue) !important;
+}
+
+html body.site-orbit-theme #page-index .price-summary-list article {
+  overflow: hidden;
+  border-color: rgba(0, 87, 217, 0.24) !important;
+}
+
+html body.site-orbit-theme #page-index .price-summary-list article::after {
+  content: none !important;
+  display: none !important;
 }
