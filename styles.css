@@ -678,7 +678,6 @@ main > section.content-section.faq-section,
 }
 
 .section-kicker {
-  margin: 0 0 16px;
   color: var(--blue);
   font-size: 0.82rem;
   font-weight: 900;
@@ -5393,16 +5392,6 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
     gap: var(--mobile-section-flow-gap);
   }
 
-  body.site-orbit-theme #page-index :is(
-    .section-head,
-    .supporter-cta-copy,
-    .price-summary-copy,
-    .reviews-copy,
-    .faq-copy
-  ) > .section-kicker {
-    margin: 0;
-  }
-
   body.site-orbit-theme #page-index .supporter-cta-copy {
     gap: var(--mobile-section-flow-gap);
   }
@@ -5873,7 +5862,6 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article:nth-child
   }
 
   body.site-orbit-theme #page-index .reason-section .section-kicker {
-    margin: 0;
     background: linear-gradient(135deg, #003f9e 0%, var(--blue) 52%, #34c9ff 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -6427,7 +6415,6 @@ html body.site-orbit-theme #page-index main > section.price-section {
 }
 
 #page-index .top-about-header .section-kicker {
-  margin: 0;
   font-size: 0.82rem;
   font-weight: 900;
   line-height: 1;
@@ -6445,7 +6432,6 @@ html body.site-orbit-theme #page-index main > section.price-section {
 #page-index .top-about-title h2 {
   margin: 0 0 42px;
   font-size: clamp(1.9rem, 3.2vw, 3.15rem);
-  line-height: 1.45;
 }
 
 #page-index .top-about-title h2 span {
@@ -6791,8 +6777,6 @@ html body.site-orbit-theme #page-index main > section.price-section {
 #page-index .section-kicker {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin: 0;
   color: var(--blue);
   font-size: 0.78rem;
   font-weight: 900;
@@ -6928,7 +6912,6 @@ html body.site-orbit-theme #page-index main > section.price-section {
 #page-index .top-about-title h2 {
   margin: 0 0 30px;
   font-size: 2rem;
-  line-height: 1.55;
 }
 
 #page-index .top-about-content {
@@ -7920,39 +7903,6 @@ html body.site-orbit-theme #page-index main > section.faq-section {
   background-color: rgba(255, 255, 255, 0.92) !important;
 }
 
-/* One shared vertical flow controls every TOP title-to-content gap */
-#page-index {
-  --section-title-content-gap: 16px;
-}
-
-html body.site-orbit-theme #page-index main > section.section-flow {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: stretch !important;
-  gap: 0 !important;
-  row-gap: 0 !important;
-}
-
-html body.site-orbit-theme #page-index .section-heading-block {
-  display: block;
-  flex: 0 0 auto;
-  margin: 0 !important;
-  min-height: 0 !important;
-  padding: 0 !important;
-}
-
-html body.site-orbit-theme #page-index .section-heading-block .section-kicker {
-  margin: 0 !important;
-}
-
-html body.site-orbit-theme #page-index main > section.section-flow > .section-heading-block + .section-first-content {
-  position: relative !important;
-  top: auto !important;
-  margin-top: var(--section-title-content-gap) !important;
-  padding-top: 0 !important;
-  transform: none !important;
-}
-
 html body.site-orbit-theme #page-index .reviews-section .reviews-note {
   margin-top: 32px !important;
 }
@@ -7965,56 +7915,6 @@ html body.site-orbit-theme #page-index .supporter-cta-photo + .supporter-bottom-
   margin-top: 32px !important;
 }
 
-/* Global section-heading rhythm: every page, every viewport */
-html body.site-orbit-theme {
-  --global-section-heading-gap: 16px;
-}
-
-html body.site-orbit-theme main section .section-kicker {
-  margin: 0 !important;
-}
-
-/* Remove title-only wrapper boxes so every section shares one real gap. */
-html body.site-orbit-theme main section > :is(div, header):has(> .section-kicker:only-child) {
-  display: contents !important;
-}
-
-/* Title-only wrapper structure. */
-html body.site-orbit-theme main > section:has(> :is(div, header):has(> .section-kicker:only-child)) {
-  row-gap: var(--global-section-heading-gap) !important;
-}
-
-/* Direct-title and same-wrapper structures. */
-html body.site-orbit-theme main > section:has(> .section-kicker),
-html body.site-orbit-theme main section :is(div, header):has(> .section-kicker + *) {
-  row-gap: 0 !important;
-}
-
-html body.site-orbit-theme main > section > .section-kicker + *,
-html body.site-orbit-theme main section :is(div, header) > .section-kicker + * {
-  margin-top: var(--global-section-heading-gap) !important;
-}
-
-/* TOP uses the same global rhythm. */
-html body.site-orbit-theme #page-index main > section.section-flow {
-  gap: var(--global-section-heading-gap) !important;
-  row-gap: var(--global-section-heading-gap) !important;
-}
-
-html body.site-orbit-theme #page-index .section-first-content,
-html body.site-orbit-theme #page-index .reviews-section .reviews-note,
-html body.site-orbit-theme #page-index .supporter-cta-meta + .supporter-cta-photo,
-html body.site-orbit-theme #page-index .supporter-cta-photo + .supporter-bottom-cta {
-  margin-top: 0 !important;
-}
-
-html body.site-orbit-theme #page-index .reason-grid > article:first-child {
-  top: 0 !important;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  transform: none !important;
-}
-
 /* Rebuilt FEATURES: isolated from every legacy reason-grid rule */
 html body.site-orbit-theme #page-index main > section.features-section-v2 {
   position: relative;
@@ -8025,13 +7925,11 @@ html body.site-orbit-theme #page-index main > section.features-section-v2 {
 
 html body.site-orbit-theme #page-index .features-section-v2 > .section-kicker {
   display: block;
-  margin: 0 !important;
 }
 
 html body.site-orbit-theme #page-index .features-list-v2 {
   display: grid;
   gap: 0;
-  margin: var(--global-section-heading-gap) 0 0 !important;
   padding: 0 !important;
 }
 
@@ -8109,61 +8007,6 @@ html body.site-orbit-theme #page-index .features-item-v2 p {
     opacity: 0.22;
     transform: rotate(-12deg);
   }
-}
-
-/* FINAL canonical title-to-content spacing: all pages and viewports */
-html body.site-orbit-theme {
-  --section-heading-gap: 16px;
-}
-
-html body.site-orbit-theme main section .section-kicker {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-html body.site-orbit-theme main > section:has(> :is(div, header):has(> .section-kicker:only-child)) {
-  row-gap: 0 !important;
-}
-
-html body.site-orbit-theme main section > :is(div, header):has(> .section-kicker:only-child) {
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  min-height: 0 !important;
-}
-
-html body.site-orbit-theme main > section:has(> :is(div, header):has(> .section-kicker:only-child)) > * {
-  margin-top: 0 !important;
-}
-
-html body.site-orbit-theme main > section:has(> :is(div, header):has(> .section-kicker:only-child)) > * + * {
-  margin-top: var(--section-heading-gap) !important;
-}
-
-html body.site-orbit-theme main section :is(div, header):has(> .section-kicker + *) {
-  row-gap: 0 !important;
-}
-
-html body.site-orbit-theme main section :is(div, header) > .section-kicker + *,
-html body.site-orbit-theme main > section > .section-kicker + * {
-  margin-top: var(--section-heading-gap) !important;
-}
-
-html body.site-orbit-theme #page-index main > section.section-flow {
-  gap: 0 !important;
-  row-gap: 0 !important;
-}
-
-html body.site-orbit-theme #page-index main > section.section-flow > * {
-  margin-top: 0 !important;
-}
-
-html body.site-orbit-theme #page-index main > section.section-flow > * + * {
-  margin-top: var(--section-heading-gap) !important;
-}
-
-html body.site-orbit-theme #page-index .features-list-v2 {
-  margin-top: var(--section-heading-gap) !important;
 }
 
 /* FINAL section-content-to-CTA spacing: all pages and viewports */
@@ -8293,7 +8136,6 @@ html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-li
   grid-auto-flow: column;
   grid-auto-columns: minmax(210px, 74%);
   gap: 14px;
-  margin-top: var(--section-heading-gap) !important;
   padding: 0 0 20px;
   overflow-x: auto;
   overflow-y: hidden;
@@ -8743,7 +8585,7 @@ html body.site-orbit-theme.page-faq .faq-groups {
 }
 
 html body.site-orbit-theme.page-faq .faq-group {
-  gap: 14px;
+  gap: 7px;
 }
 
 html body.site-orbit-theme.page-faq .faq-group-title {
@@ -8837,22 +8679,6 @@ html.js body.site-orbit-theme.page-faq main .reveal-item {
 html.js body.site-orbit-theme.page-faq main .reveal-item.is-visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
-}
-
-/* FINAL CONTACT spacing: align title-to-content gap with TOP sections. */
-html body.site-orbit-theme.page-contact .contact-section {
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 0 !important;
-  row-gap: 0 !important;
-}
-
-html body.site-orbit-theme.page-contact .contact-section > * {
-  margin-top: 0 !important;
-}
-
-html body.site-orbit-theme.page-contact .contact-section > * + * {
-  margin-top: var(--section-heading-gap, 24px) !important;
 }
 
 /* FINAL mobile page decorations: TOP and legal pages are excluded. */
@@ -9351,7 +9177,6 @@ html {
 .price-quick-table {
   display: grid;
   gap: 14px;
-  margin-top: var(--section-heading-gap, 24px);
 }
 
 .price-quick-card {
@@ -9425,7 +9250,6 @@ html {
 .price-detail-body {
   display: grid;
   gap: 18px;
-  margin-top: var(--section-heading-gap, 24px);
 }
 
 .price-detail-lead {
@@ -9513,4 +9337,146 @@ html {
 
 .price-detail-list-note::before {
   content: none !important;
+}
+
+/* DIAGNOSTIC RESET: section titles only.
+   Temporarily remove all visual styling from English section titles so we can
+   identify which sections are still affected by legacy rules. */
+html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link) {
+  display: block;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: normal;
+  line-height: normal;
+  text-decoration: none;
+  text-transform: none;
+  transform: none;
+}
+
+html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link)::before,
+html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link)::after {
+  content: none;
+  display: none;
+}
+
+/* TOP SUPPORTER: keep the intended visual order: title, meta, photo, CTA. */
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-copy {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-meta {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-photo {
+  grid-column: 1 !important;
+  grid-row: 3 !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-bottom-cta {
+  grid-column: 1 !important;
+  grid-row: 4 !important;
+}
+
+/* TOP spacing adjustment: visually match title-to-content gap to REVIEWS. */
+html body.site-orbit-theme #page-index .top-about-header {
+  margin-bottom: 24px !important;
+}
+
+html body.site-orbit-theme #page-index .features-section-v2 > .section-kicker {
+  margin-bottom: 42px !important;
+}
+
+html body.site-orbit-theme #page-index .faq-section {
+  gap: 30px !important;
+}
+
+/* TOP ABOUT body rhythm: reduce paragraph gaps and match heading-to-body gap. */
+html body.site-orbit-theme #page-index .top-about-title {
+  margin-bottom: 22px !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-title h2 {
+  margin-bottom: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-content {
+  gap: 22px !important;
+  padding-top: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-content article,
+html body.site-orbit-theme #page-index .top-about-content article:last-child {
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* TOP SUPPORTER rhythm: tighten meta-to-photo and match photo-to-CTA to ABOUT CTA. */
+html body.site-orbit-theme #page-index .supporter-cta-meta + .supporter-cta-photo {
+  margin-top: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-cta-photo + .supporter-bottom-cta {
+  margin-top: 28px !important;
+}
+
+/* TOP PLAN rhythm: reduce the gap from the plan cards to the CTA. */
+html body.site-orbit-theme #page-index .price-section {
+  gap: 28px !important;
+}
+
+html body.site-orbit-theme #page-index .price-section > .section-link {
+  margin-top: 0 !important;
+}
+
+/* Restore section title design across all pages after the reset pass. */
+html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link) {
+  display: block !important;
+  width: fit-content;
+  margin-top: 0;
+  color: var(--blue) !important;
+  font-size: 0.82rem !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+/* Policy pages: give the English title more room before the Japanese title. */
+html body.site-orbit-theme main > section.legal-section > .section-kicker + .section-title {
+  margin-top: 34px !important;
+}
+
+/* FAQ page: reduce gap from English title to first group title. */
+html body.site-orbit-theme.page-faq .faq-section {
+  gap: 14px !important;
+}
+
+/* PLAN / PRICE page: enlarge gap from English title to the overview text. */
+html body.site-orbit-theme.page-price .price-overview-section > .section-kicker + .price-overview-intro {
+  margin-top: 28px !important;
+}
+
+html body.site-orbit-theme.page-price .price-overview-intro + .price-quick-table {
+  margin-top: 24px !important;
+}
+
+html body.site-orbit-theme.page-price .price-detail-section > .section-kicker + .price-detail-head {
+  margin-top: 22px !important;
+}
+
+html body.site-orbit-theme.page-price .price-detail-head + .price-detail-body {
+  margin-top: 22px !important;
+}
+
+/* VMV page: enlarge gap from English title to Japanese heading. */
+html body.site-orbit-theme.page-vmv .vmv-hero-section > .section-kicker + .section-title {
+  margin-top: 32px !important;
 }

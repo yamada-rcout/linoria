@@ -135,6 +135,7 @@ const revealTargets = Array.from(document.querySelectorAll(
     ".hero-inner",
     "main > section > *",
     "main > section :is(article, li, details)",
+    "body.page-price .price-detail-list > div",
     "#page-index :is(.top-about-cta, .supporter-bottom-cta, .price-section > .section-link, .faq-summary-panel > .section-link)"
   ].join(", ")
 )).filter((target) =>

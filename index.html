@@ -838,7 +838,6 @@ main > section.content-section.faq-section,
 }
 
 .section-kicker {
-  margin: 0 0 16px;
   color: var(--blue);
   font-size: 0.82rem;
   font-weight: 900;
@@ -3346,7 +3345,6 @@ button:hover {
 }
 
 .about-intro-copy .section-kicker {
-  margin: 0 0 20px;
   color: var(--blue);
 }
 
@@ -5166,7 +5164,6 @@ button:hover {
 
   .about-intro-copy .section-kicker {
     font-size: 12px;
-    margin-bottom: 12px;
   }
 
   .about-intro-copy p:not(.section-kicker) {
@@ -5592,16 +5589,6 @@ body.site-orbit-theme #page-index main > section.vmv-cta-section {
     .faq-section
   ) {
     gap: var(--mobile-section-flow-gap);
-  }
-
-  body.site-orbit-theme #page-index :is(
-    .section-head,
-    .supporter-cta-copy,
-    .price-summary-copy,
-    .reviews-copy,
-    .faq-copy
-  ) > .section-kicker {
-    margin: 0;
   }
 
   body.site-orbit-theme #page-index .supporter-cta-copy {
@@ -6077,7 +6064,6 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article:nth-child
   }
 
   body.site-orbit-theme #page-index .reason-section .section-kicker {
-    margin: 0;
     background: linear-gradient(135deg, #003f9e 0%, var(--blue) 52%, #34c9ff 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -6530,7 +6516,6 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
 }
 
 #page-index .top-about-header .section-kicker {
-  margin: 0;
   font-size: 0.82rem;
   font-weight: 900;
   line-height: 1;
@@ -6548,7 +6533,6 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
 #page-index .top-about-title h2 {
   margin: 0 0 42px;
   font-size: clamp(1.9rem, 3.2vw, 3.15rem);
-  line-height: 1.45;
 }
 
 #page-index .top-about-title h2 span {
@@ -7228,8 +7212,6 @@ html body.site-orbit-theme #page-index .reason-grid article:first-child {
 #page-index .section-kicker {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin: 0;
   color: var(--blue);
   font-size: 0.78rem;
   font-weight: 900;
@@ -7365,7 +7347,6 @@ html body.site-orbit-theme #page-index .reason-grid article:first-child {
 #page-index .top-about-title h2 {
   margin: 0 0 30px;
   font-size: 2rem;
-  line-height: 1.55;
 }
 
 #page-index .top-about-content {
@@ -8173,39 +8154,6 @@ html body.site-orbit-theme #page-index main > section.faq-section {
   background-color: rgba(255, 255, 255, 0.92) !important;
 }
 
-/* One shared vertical flow controls every TOP title-to-content gap */
-#page-index {
-  --section-title-content-gap: 16px;
-}
-
-html body.site-orbit-theme #page-index main > section.section-flow {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: stretch !important;
-  gap: 0 !important;
-  row-gap: 0 !important;
-}
-
-html body.site-orbit-theme #page-index .section-heading-block {
-  display: block;
-  flex: 0 0 auto;
-  margin: 0 !important;
-  min-height: 0 !important;
-  padding: 0 !important;
-}
-
-html body.site-orbit-theme #page-index .section-heading-block .section-kicker {
-  margin: 0 !important;
-}
-
-html body.site-orbit-theme #page-index main > section.section-flow > .section-heading-block + .section-first-content {
-  position: relative !important;
-  top: auto !important;
-  margin-top: var(--section-title-content-gap) !important;
-  padding-top: 0 !important;
-  transform: none !important;
-}
-
 html body.site-orbit-theme #page-index .reviews-section .reviews-note {
   margin-top: 32px !important;
 }
@@ -8218,56 +8166,6 @@ html body.site-orbit-theme #page-index .supporter-cta-photo + .supporter-bottom-
   margin-top: 32px !important;
 }
 
-/* Global section-heading rhythm: every page, every viewport */
-html body.site-orbit-theme {
-  --global-section-heading-gap: 24px;
-}
-
-html body.site-orbit-theme main section .section-kicker {
-  margin: 0 !important;
-}
-
-/* Remove title-only wrapper boxes so every section shares one real gap. */
-html body.site-orbit-theme main section > :is(div, header):has(> .section-kicker:only-child) {
-  display: contents !important;
-}
-
-/* Title-only wrapper structure. */
-html body.site-orbit-theme main > section:has(> :is(div, header):has(> .section-kicker:only-child)) {
-  row-gap: var(--global-section-heading-gap) !important;
-}
-
-/* Direct-title and same-wrapper structures. */
-html body.site-orbit-theme main > section:has(> .section-kicker),
-html body.site-orbit-theme main section :is(div, header):has(> .section-kicker + *) {
-  row-gap: 0 !important;
-}
-
-html body.site-orbit-theme main > section > .section-kicker + *,
-html body.site-orbit-theme main section :is(div, header) > .section-kicker + * {
-  margin-top: var(--global-section-heading-gap) !important;
-}
-
-/* TOP uses the same global rhythm. */
-html body.site-orbit-theme #page-index main > section.section-flow {
-  gap: var(--global-section-heading-gap) !important;
-  row-gap: var(--global-section-heading-gap) !important;
-}
-
-html body.site-orbit-theme #page-index .section-first-content,
-html body.site-orbit-theme #page-index .reviews-section .reviews-note,
-html body.site-orbit-theme #page-index .supporter-cta-meta + .supporter-cta-photo,
-html body.site-orbit-theme #page-index .supporter-cta-photo + .supporter-bottom-cta {
-  margin-top: 0 !important;
-}
-
-html body.site-orbit-theme #page-index .reason-grid > article:first-child {
-  top: 0 !important;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  transform: none !important;
-}
-
 /* Rebuilt FEATURES: isolated from every legacy reason-grid rule */
 html body.site-orbit-theme #page-index main > section.features-section-v2 {
   position: relative;
@@ -8278,13 +8176,11 @@ html body.site-orbit-theme #page-index main > section.features-section-v2 {
 
 html body.site-orbit-theme #page-index .features-section-v2 > .section-kicker {
   display: block;
-  margin: 0 !important;
 }
 
 html body.site-orbit-theme #page-index .features-list-v2 {
   display: grid;
   gap: 0;
-  margin: var(--global-section-heading-gap) 0 0 !important;
   padding: 0 !important;
 }
 
@@ -8364,61 +8260,6 @@ html body.site-orbit-theme #page-index .features-item-v2 p {
   }
 }
 
-
-/* FINAL canonical title-to-content spacing: all pages and viewports */
-html body.site-orbit-theme {
-  --section-heading-gap: 24px;
-}
-
-html body.site-orbit-theme main section .section-kicker {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-html body.site-orbit-theme main > section:has(> :is(div, header):has(> .section-kicker:only-child)) {
-  row-gap: 0 !important;
-}
-
-html body.site-orbit-theme main section > :is(div, header):has(> .section-kicker:only-child) {
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  min-height: 0 !important;
-}
-
-html body.site-orbit-theme main > section:has(> :is(div, header):has(> .section-kicker:only-child)) > * {
-  margin-top: 0 !important;
-}
-
-html body.site-orbit-theme main > section:has(> :is(div, header):has(> .section-kicker:only-child)) > * + * {
-  margin-top: var(--section-heading-gap) !important;
-}
-
-html body.site-orbit-theme main section :is(div, header):has(> .section-kicker + *) {
-  row-gap: 0 !important;
-}
-
-html body.site-orbit-theme main section :is(div, header) > .section-kicker + *,
-html body.site-orbit-theme main > section > .section-kicker + * {
-  margin-top: var(--section-heading-gap) !important;
-}
-
-html body.site-orbit-theme #page-index main > section.section-flow {
-  gap: 0 !important;
-  row-gap: 0 !important;
-}
-
-html body.site-orbit-theme #page-index main > section.section-flow > * {
-  margin-top: 0 !important;
-}
-
-html body.site-orbit-theme #page-index main > section.section-flow > * + * {
-  margin-top: var(--section-heading-gap) !important;
-}
-
-html body.site-orbit-theme #page-index .features-list-v2 {
-  margin-top: var(--section-heading-gap) !important;
-}
 
 
 /* FINAL section-content-to-CTA spacing: all pages and viewports */
@@ -8550,7 +8391,6 @@ html body.site-orbit-theme #page-index .consultation-flow-section .price-flow-li
   grid-auto-flow: column;
   grid-auto-columns: minmax(210px, 74%);
   gap: 14px;
-  margin-top: var(--section-heading-gap) !important;
   padding: 0 0 20px;
   overflow-x: auto;
   overflow-y: hidden;
@@ -8976,6 +8816,118 @@ html.js body.site-orbit-theme #page-index :is(
   }
 }
 
+/* DIAGNOSTIC RESET: section titles only.
+   Temporarily remove all visual styling from English section titles so we can
+   identify which sections are still affected by legacy rules. */
+html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link) {
+  display: block;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: normal;
+  line-height: normal;
+  text-decoration: none;
+  text-transform: none;
+  transform: none;
+}
+
+html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link)::before,
+html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link)::after {
+  content: none;
+  display: none;
+}
+
+/* TOP SUPPORTER: keep the intended visual order: title, meta, photo, CTA. */
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-copy {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-meta {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-photo {
+  grid-column: 1 !important;
+  grid-row: 3 !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-bottom-cta {
+  grid-column: 1 !important;
+  grid-row: 4 !important;
+}
+
+/* TOP spacing adjustment: visually match title-to-content gap to REVIEWS. */
+html body.site-orbit-theme #page-index .top-about-header {
+  margin-bottom: 24px !important;
+}
+
+html body.site-orbit-theme #page-index .features-section-v2 > .section-kicker {
+  margin-bottom: 42px !important;
+}
+
+html body.site-orbit-theme #page-index .faq-section {
+  gap: 30px !important;
+}
+
+/* TOP ABOUT body rhythm: reduce paragraph gaps and match heading-to-body gap. */
+html body.site-orbit-theme #page-index .top-about-title {
+  margin-bottom: 22px !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-title h2 {
+  margin-bottom: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-content {
+  gap: 22px !important;
+  padding-top: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-content article,
+html body.site-orbit-theme #page-index .top-about-content article:last-child {
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* TOP SUPPORTER rhythm: tighten meta-to-photo and match photo-to-CTA to ABOUT CTA. */
+html body.site-orbit-theme #page-index .supporter-cta-meta + .supporter-cta-photo {
+  margin-top: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-cta-photo + .supporter-bottom-cta {
+  margin-top: 28px !important;
+}
+
+/* TOP PLAN rhythm: reduce the gap from the plan cards to the CTA. */
+html body.site-orbit-theme #page-index .price-section {
+  gap: 28px !important;
+}
+
+html body.site-orbit-theme #page-index .price-section > .section-link {
+  margin-top: 0 !important;
+}
+
+/* Restore section title design across all pages after the reset pass. */
+html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link) {
+  display: block !important;
+  width: fit-content;
+  margin-top: 0;
+  color: var(--blue) !important;
+  font-size: 0.82rem !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+
+
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -9026,18 +8978,16 @@ html.js body.site-orbit-theme #page-index :is(
   </section>
 
   <section id="about" class="content-section top-about-section section-flow">
-    <header class="top-about-header section-heading-block">
+    <header class="top-about-header">
       <p class="section-kicker">About</p>
     </header>
-    <div class="top-about-main section-first-content">
-      <div class="top-about-title">
-        <h2>元教員による、<br>教員のための<br><span>キャリア伴走サービス</span></h2>
-      </div>
-      <div class="top-about-content">
-        <article><span>01</span><p>Linoriaは、現役教員の方のキャリアに関する悩みを整理し、方向性の明確化から具体的な行動まで伴走するキャリアサポートです。</p></article>
-        <article><span>02</span><p>転職を前提にせず、まずは対話を通して、今の悩みや気持ちを言葉にするところから始めます。</p></article>
-        <article><span>03</span><p>必要に応じて、転職・独立・働き方の見直しに向けた準備もサポートします。</p></article>
-      </div>
+    <div class="top-about-title">
+      <h2>元教員による、<br>教員のための<br><span>キャリア伴走サービス</span></h2>
+    </div>
+    <div class="top-about-content">
+      <article><span>01</span><p>Linoriaは、現役教員の方のキャリアに関する悩みを整理し、方向性の明確化から具体的な行動まで伴走するキャリアサポートです。</p></article>
+      <article><span>02</span><p>転職を前提にせず、まずは対話を通して、今の悩みや気持ちを言葉にするところから始めます。</p></article>
+      <article><span>03</span><p>必要に応じて、転職・独立・働き方の見直しに向けた準備もサポートします。</p></article>
     </div>
     <a class="top-about-cta" href="about.html">サービス詳細を見る</a>
   </section>
@@ -9053,10 +9003,10 @@ html.js body.site-orbit-theme #page-index :is(
 
   <section id="supporter" class="content-section supporter-section section-flow">
 
-    <div class="supporter-cta-copy section-heading-block">
+    <div class="supporter-cta-copy">
       <p class="section-kicker">Supporter</p>
     </div>
-    <p class="supporter-cta-meta section-first-content">元教員・リクルート出身・起業経験者</p>
+    <p class="supporter-cta-meta">元教員・リクルート出身・起業経験者</p>
     <div class="supporter-cta-photo" aria-label="サポーター写真">
           <img src="assets/supporter-profile-2026.png" alt="Linoriaのサポーター" loading="lazy" decoding="async">
           <img class="supporter-career-text" src="assets/supporter-career-text.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
@@ -9065,10 +9015,10 @@ html.js body.site-orbit-theme #page-index :is(
   </section>
 
   <section id="price" class="content-section price-section section-flow">
-    <div class="price-summary-copy section-heading-block">
+    <div class="price-summary-copy">
       <p class="section-kicker">Plan / Price</p>
     </div>
-    <div class="price-summary-list section-first-content">
+    <div class="price-summary-list">
       <article><h3>初回無料相談<span class="price-plan-duration">30分</span></h3><p class="price-plan-caption">まずは気軽に話したい方へ</p><div class="price-summary-side"><strong>￥0</strong></div></article>
       <article><h3>キャリア整理相談<span class="price-plan-duration">1時間</span></h3><p class="price-plan-caption">悩みと選択肢を整理したい方へ</p><div class="price-summary-side"><strong>￥3,980</strong></div></article>
       <article><h3>伴走プラン<span class="price-plan-duration">30日</span></h3><p class="price-plan-caption">継続して行動まで進めたい方へ</p><div class="price-summary-side"><strong>￥9,800</strong></div></article>
@@ -9077,10 +9027,10 @@ html.js body.site-orbit-theme #page-index :is(
   </section>
 
   <section id="flow" class="content-section price-flow-section consultation-flow-section section-flow" aria-labelledby="top-flow-title">
-    <div class="section-heading-block">
+    <div>
       <p class="section-kicker">Flow</p>
     </div>
-    <ol class="price-flow-list section-first-content" aria-label="相談の流れ">
+    <ol class="price-flow-list" aria-label="相談の流れ">
       <li><span>01</span><strong>LINEまたはメールでお問い合わせ</strong></li>
       <li><span>02</span><strong>ご希望に合わせて日程を調整</strong></li>
       <li><span>03</span><strong>事前ヒアリングと質問への回答</strong></li>
@@ -9090,10 +9040,10 @@ html.js body.site-orbit-theme #page-index :is(
   </section>
 
   <section class="content-section reviews-section section-flow">
-    <div class="reviews-copy section-heading-block">
+    <div class="reviews-copy">
       <p class="section-kicker">Reviews</p>
     </div>
-    <div class="review-card-list section-first-content" aria-label="クチコミ一覧">
+    <div class="review-card-list" aria-label="クチコミ一覧">
       <article class="review-card"><span>01</span><h3>頭の中が整理されて、前向きになれました。</h3><p>「辞めたい」という気持ちだけで相談しましたが、無理に転職を勧められることはありませんでした。話を聞いてもらううちに考えが整理され、自分にとって納得できる選択肢が見えてきました。</p><div class="review-profile"><small>30代</small><small>小学校教員</small></div></article>
       <article class="review-card"><span>02</span><h3>単発で気軽に相談できるのがありがたかったです。</h3><p>いきなり高額なサービスを契約するのは不安でしたが、単発相談があったので安心して利用できました。価格も良心的で、最初の一歩を踏み出しやすかったです。</p><div class="review-profile"><small>20代</small><small>中学校教員</small></div></article>
       <article class="review-card"><span>03</span><h3>経験者だからこその言葉に説得力がありました。</h3><p>教員だけでなく民間企業や独立も経験されているので、幅広い視点からアドバイスをいただけました。知識も豊富で、とても信頼できるサポートでした。</p><div class="review-profile"><small>30代</small><small>高校教員</small></div></article>
@@ -9104,10 +9054,10 @@ html.js body.site-orbit-theme #page-index :is(
   </section>
 
   <section id="faq" class="content-section faq-section faq-section--plain-open section-flow">
-    <div class="faq-copy section-heading-block">
+    <div class="faq-copy">
       <p class="section-kicker">FAQ</p>
     </div>
-    <div class="faq-summary-panel section-first-content">
+    <div class="faq-summary-panel">
       <div class="faq-list">
         <details><summary>転職するか決めていなくても相談できますか？</summary><p>はい。Linoriaは転職を前提としたサービスではありません。現職継続、転職、起業・独立など、さまざまな選択肢を一緒に整理します。</p></details>
         <details><summary>考えを整理できていなくても相談できますか？</summary><p>もちろんです。言葉にしきれていない悩みや迷いも、対話を通して一緒に整理していきます。</p></details>
