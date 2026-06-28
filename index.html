@@ -9122,6 +9122,71 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
   }
 }
 
+/* TOP ABOUT / FAQ: desktop follows the same single-column rhythm as mobile. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme #page-index main > section.top-about-section,
+  html body.site-orbit-theme #page-index main > section.faq-section {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 30px !important;
+    padding: 34px 20px !important;
+    align-items: start !important;
+  }
+
+  html body.site-orbit-theme #page-index main > section.top-about-section > *,
+  html body.site-orbit-theme #page-index main > section.faq-section > * {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme #page-index :is(
+    .top-about-header,
+    .top-about-title,
+    .top-about-content,
+    .top-about-cta,
+    .faq-copy,
+    .faq-summary-panel,
+    .faq-list
+  ) {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  html body.site-orbit-theme #page-index .top-about-content {
+    display: grid !important;
+    gap: 22px !important;
+  }
+
+  html body.site-orbit-theme #page-index .top-about-content article {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  html body.site-orbit-theme #page-index .top-about-content article > span {
+    display: none !important;
+  }
+
+  html body.site-orbit-theme #page-index .top-about-content article p {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme #page-index .faq-summary-panel,
+  html body.site-orbit-theme #page-index .faq-list {
+    display: grid !important;
+    gap: 12px !important;
+  }
+}
+
     </style>
 </head>
 <body class="site-orbit-theme">

@@ -9817,3 +9817,121 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
     gap: 14px !important;
   }
 }
+
+/* TOP ABOUT / FAQ: desktop should follow the same single-column rhythm as mobile. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme #page-index main > section.top-about-section,
+  html body.site-orbit-theme #page-index main > section.faq-section {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 30px !important;
+    padding: 34px 20px !important;
+    align-items: start !important;
+  }
+
+  html body.site-orbit-theme #page-index main > section.top-about-section > *,
+  html body.site-orbit-theme #page-index main > section.faq-section > * {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme #page-index :is(
+    .top-about-header,
+    .top-about-title,
+    .top-about-content,
+    .top-about-cta,
+    .faq-copy,
+    .faq-summary-panel,
+    .faq-list
+  ) {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  html body.site-orbit-theme #page-index .top-about-content {
+    display: grid !important;
+    gap: 22px !important;
+  }
+
+  html body.site-orbit-theme #page-index .top-about-content article {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  html body.site-orbit-theme #page-index .top-about-content article > span {
+    display: none !important;
+  }
+
+  html body.site-orbit-theme #page-index .top-about-content article p {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme #page-index .faq-summary-panel,
+  html body.site-orbit-theme #page-index .faq-list {
+    display: grid !important;
+    gap: 12px !important;
+  }
+}
+
+/* ABOUT / FAQ pages: desktop must visually match the mobile one-column structure. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme.page-about main > section.content-section,
+  html body.site-orbit-theme.page-faq main > section.content-section {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 30px !important;
+    padding: 34px 20px !important;
+    align-items: start !important;
+  }
+
+  html body.site-orbit-theme.page-about main > section.content-section > *,
+  html body.site-orbit-theme.page-faq main > section.content-section > * {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme.page-about :is(
+    .about-intro-copy,
+    .about-intro-right,
+    .support-link-copy,
+    .support-link-panel,
+    .about-compare-table-wrap,
+    .about-bottom-cta-buttons
+  ),
+  html body.site-orbit-theme.page-faq :is(
+    .faq-copy,
+    .faq-summary-panel,
+    .faq-groups,
+    .faq-group,
+    .faq-list
+  ) {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  html body.site-orbit-theme.page-faq .faq-groups {
+    display: grid !important;
+    gap: 34px !important;
+  }
+
+  html body.site-orbit-theme.page-faq .faq-group {
+    display: grid !important;
+    gap: 7px !important;
+  }
+}
