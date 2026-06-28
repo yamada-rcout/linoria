@@ -8987,6 +8987,61 @@ html body.site-orbit-theme #page-index main > section.top-about-section::before 
   display: none !important;
 }
 
+html body.site-orbit-theme #page-index .features-item-illustration {
+  display: block;
+  width: clamp(88px, 30vw, 122px);
+  height: auto;
+  margin: 14px 0 12px;
+  pointer-events: none;
+}
+
+@media (min-width: 981px) {
+  html body.site-orbit-theme #page-index .features-item-illustration {
+    width: 112px;
+  }
+}
+
+/* PC section-title rhythm: match the mobile visual gap from English title to content. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme {
+    --pc-section-title-content-gap: 42px;
+  }
+
+  html body.site-orbit-theme main .section-kicker {
+    margin-bottom: var(--pc-section-title-content-gap) !important;
+  }
+
+  html body.site-orbit-theme main .section-kicker + *,
+  html body.site-orbit-theme main .vmv-kicker-link + *,
+  html body.site-orbit-theme main .section-head + * {
+    margin-top: 0 !important;
+  }
+
+  html body.site-orbit-theme main .section-head,
+  html body.site-orbit-theme #page-index .top-about-header {
+    margin-bottom: var(--pc-section-title-content-gap) !important;
+  }
+
+  html body.site-orbit-theme #page-index .features-section-v2 > .section-kicker,
+  html body.site-orbit-theme #page-index .price-section > .section-head,
+  html body.site-orbit-theme #page-index .reviews-section > .section-kicker,
+  html body.site-orbit-theme #page-index .faq-section > .section-kicker {
+    margin-bottom: var(--pc-section-title-content-gap) !important;
+  }
+
+  html body.site-orbit-theme #page-index .faq-section,
+  html body.site-orbit-theme.page-faq .faq-section {
+    gap: var(--pc-section-title-content-gap) !important;
+  }
+
+  html body.site-orbit-theme.page-price .price-overview-section > .section-kicker + .price-overview-intro,
+  html body.site-orbit-theme.page-price .price-detail-section > .section-kicker + .price-detail-head,
+  html body.site-orbit-theme.page-vmv .vmv-hero-section > .section-kicker + .section-title,
+  html body.site-orbit-theme main > section.legal-section > .section-kicker + .section-title {
+    margin-top: 0 !important;
+  }
+}
+
 /* FINAL hero scroll behavior: hero is no longer fixed or clipped. */
 html body.site-orbit-theme #page-index .hero {
   min-height: auto !important;
@@ -9030,6 +9085,42 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
 }
 
 
+
+/* FINAL: desktop title rhythm uses the same one-column flow as mobile. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme {
+    --section-title-flow-gap: 30px;
+  }
+
+  html body.site-orbit-theme main > section:is(.content-section, .message-section, .contact-section) {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: var(--section-title-flow-gap) !important;
+    align-items: start !important;
+  }
+
+  html body.site-orbit-theme main :is(
+    .section-head,
+    .top-about-header,
+    .price-summary-copy,
+    .reviews-copy,
+    .faq-copy,
+    .supporter-cta-copy,
+    .about-intro-copy,
+    .about-for-you-copy,
+    .vmv-cta-copy
+  ) {
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link) {
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link) + * {
+    margin-top: var(--section-title-flow-gap) !important;
+  }
+}
 
     </style>
 </head>
@@ -9098,7 +9189,7 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
   <section class="content-section features-section-v2">
     <p class="section-kicker">Features</p>
     <div class="features-list-v2">
-      <article class="features-item-v2"><span>01</span><div><h3>中立的立場での整理と支援</h3><p>転職ありきではなく、続ける・転職する・働き方を見直すなど、あなたに合う選択肢を一緒に見つけ、実行まで広くご支援します。</p></div></article>
+      <article class="features-item-v2"><span>01</span><div><h3>中立的立場での整理と支援</h3><img class="features-item-illustration" src="assets/feature-neutral-support.svg" alt="" aria-hidden="true"><p>転職ありきではなく、続ける・転職する・働き方を見直すなど、あなたに合う選択肢を一緒に見つけ、実行まで広くご支援します。</p></div></article>
       <article class="features-item-v2"><span>02</span><div><h3>現実的なプラン設計</h3><p>教員・企業・独立を経験しているサポーターだからこそ、現実的な選択肢を広く見渡せます。</p></div></article>
       <article class="features-item-v2"><span>03</span><div><h3>相談しやすく続けやすい</h3><p>料金は完全明確化。短期・中期・長期と、ご自身に合わせてご相談いただけるため、忙しい先生でも無理なく利用できます。</p></div></article>
     </div>

@@ -9525,6 +9525,61 @@ html body.site-orbit-theme #page-index .price-summary-list article::after {
   display: none !important;
 }
 
+html body.site-orbit-theme #page-index .features-item-illustration {
+  display: block;
+  width: clamp(88px, 30vw, 122px);
+  height: auto;
+  margin: 14px 0 12px;
+  pointer-events: none;
+}
+
+@media (min-width: 981px) {
+  html body.site-orbit-theme #page-index .features-item-illustration {
+    width: 112px;
+  }
+}
+
+/* PC section-title rhythm: match the mobile visual gap from English title to content. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme {
+    --pc-section-title-content-gap: 42px;
+  }
+
+  html body.site-orbit-theme main .section-kicker {
+    margin-bottom: var(--pc-section-title-content-gap) !important;
+  }
+
+  html body.site-orbit-theme main .section-kicker + *,
+  html body.site-orbit-theme main .vmv-kicker-link + *,
+  html body.site-orbit-theme main .section-head + * {
+    margin-top: 0 !important;
+  }
+
+  html body.site-orbit-theme main .section-head,
+  html body.site-orbit-theme #page-index .top-about-header {
+    margin-bottom: var(--pc-section-title-content-gap) !important;
+  }
+
+  html body.site-orbit-theme #page-index .features-section-v2 > .section-kicker,
+  html body.site-orbit-theme #page-index .price-section > .section-head,
+  html body.site-orbit-theme #page-index .reviews-section > .section-kicker,
+  html body.site-orbit-theme #page-index .faq-section > .section-kicker {
+    margin-bottom: var(--pc-section-title-content-gap) !important;
+  }
+
+  html body.site-orbit-theme #page-index .faq-section,
+  html body.site-orbit-theme.page-faq .faq-section {
+    gap: var(--pc-section-title-content-gap) !important;
+  }
+
+  html body.site-orbit-theme.page-price .price-overview-section > .section-kicker + .price-overview-intro,
+  html body.site-orbit-theme.page-price .price-detail-section > .section-kicker + .price-detail-head,
+  html body.site-orbit-theme.page-vmv .vmv-hero-section > .section-kicker + .section-title,
+  html body.site-orbit-theme main > section.legal-section > .section-kicker + .section-title {
+    margin-top: 0 !important;
+  }
+}
+
 html body.site-orbit-theme #page-index main > section:not(.hero) {
   position: relative;
   z-index: 4;
@@ -9581,5 +9636,184 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
   html body.site-orbit-theme #page-index .hero-pin {
     min-height: 100svh !important;
     padding: 76px 20px 58px !important;
+  }
+}
+
+/* FINAL: desktop title rhythm uses the same one-column flow as mobile. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme {
+    --section-title-flow-gap: 30px;
+  }
+
+  html body.site-orbit-theme main > section:is(.content-section, .message-section, .contact-section) {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: var(--section-title-flow-gap) !important;
+    align-items: start !important;
+  }
+
+  html body.site-orbit-theme main :is(
+    .section-head,
+    .top-about-header,
+    .price-summary-copy,
+    .reviews-copy,
+    .faq-copy,
+    .supporter-cta-copy,
+    .about-intro-copy,
+    .about-for-you-copy,
+    .vmv-cta-copy
+  ) {
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link) {
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme main :is(.section-kicker, .vmv-kicker-link) + * {
+    margin-top: var(--section-title-flow-gap) !important;
+  }
+}
+
+/* ABOUT page: desktop must use the same single-column structure as mobile. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme.page-about main > section.content-section {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 30px !important;
+    align-items: start !important;
+  }
+
+  html body.site-orbit-theme.page-about main > section.content-section > * {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    max-width: 100% !important;
+  }
+
+  html body.site-orbit-theme.page-about :is(
+    .about-intro-copy,
+    .support-link-copy,
+    .about-intro-right,
+    .support-link-panel,
+    .about-compare-table-wrap,
+    .about-bottom-cta-buttons
+  ) {
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme.page-about .about-overview-cards {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* PLAN / PRICE page: desktop uses the exact same numeric layout baseline as mobile. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme.page-price main > section.content-section {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 30px !important;
+    padding: 34px 20px !important;
+    align-items: start !important;
+  }
+
+  html body.site-orbit-theme.page-price main > section.content-section > * {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    max-width: 100% !important;
+  }
+
+  html body.site-orbit-theme.page-price .price-overview-section,
+  html body.site-orbit-theme.page-price .price-detail-section {
+    gap: 30px !important;
+  }
+
+  html body.site-orbit-theme.page-price .price-overview-intro,
+  html body.site-orbit-theme.page-price .price-detail-head,
+  html body.site-orbit-theme.page-price .price-detail-body,
+  html body.site-orbit-theme.page-price .price-detail-lead {
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme.page-price .price-overview-section > .section-kicker + .price-overview-intro,
+  html body.site-orbit-theme.page-price .price-detail-section > .section-kicker + .price-detail-head {
+    margin-top: 0 !important;
+  }
+
+  html body.site-orbit-theme.page-price .price-overview-intro + .price-quick-table,
+  html body.site-orbit-theme.page-price .price-detail-head + .price-detail-body {
+    margin-top: 0 !important;
+  }
+
+  html body.site-orbit-theme.page-price .price-quick-table {
+    gap: 14px !important;
+  }
+
+  html body.site-orbit-theme.page-price .price-quick-card {
+    min-height: 112px !important;
+    padding: 18px 24px !important;
+  }
+}
+
+/* ABOUT / FAQ pages: desktop uses the same numeric layout as smartphone. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme:is(.page-about, .page-faq) main > section.content-section {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 30px !important;
+    padding: 34px 20px !important;
+    align-items: start !important;
+  }
+
+  html body.site-orbit-theme:is(.page-about, .page-faq) main > section.content-section > * {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    max-width: 100% !important;
+  }
+
+  html body.site-orbit-theme.page-about :is(
+    .about-intro-2col,
+    .support-link-section,
+    .about-detail-compare,
+    .about-bottom-cta,
+    .about-intro-right,
+    .support-link-panel,
+    .about-compare-table-wrap
+  ),
+  html body.site-orbit-theme.page-faq :is(
+    .faq-section,
+    .faq-summary-panel,
+    .faq-groups,
+    .faq-group,
+    .faq-list
+  ) {
+    gap: 30px !important;
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme.page-about :is(
+    .about-intro-copy,
+    .support-link-copy
+  ),
+  html body.site-orbit-theme.page-faq .faq-copy {
+    position: static !important;
+    top: auto !important;
+    margin: 0 !important;
+  }
+
+  html body.site-orbit-theme.page-faq .faq-groups {
+    gap: 34px !important;
+  }
+
+  html body.site-orbit-theme.page-faq .faq-group {
+    gap: 7px !important;
+  }
+
+  html body.site-orbit-theme.page-about .about-overview-cards {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body.site-orbit-theme.page-about .about-bottom-cta-buttons {
+    display: grid !important;
+    gap: 14px !important;
   }
 }
