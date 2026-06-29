@@ -1,4 +1,4 @@
-document.documentElement.classList.add("js");
+﻿document.documentElement.classList.add("js");
 
 const header = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
@@ -99,12 +99,11 @@ document.addEventListener("click", (event) => {
   if (!link || typeof window.gtag !== "function") return;
 
   const href = link.getAttribute("href") || "";
-  const isLineCta = href.includes("line.me/R/ti/p/@434cidql");
   const isContactCta = href.includes("contact.html") || href.startsWith("mailto:");
 
-  if (!isLineCta && !isContactCta) return;
+  if (!isContactCta) return;
 
-  window.gtag("event", isLineCta ? "line_cta_click" : "contact_cta_click", {
+  window.gtag("event", "contact_cta_click", {
     event_category: "engagement",
     event_label: link.textContent.trim(),
     link_url: href
@@ -212,3 +211,4 @@ contactForm?.addEventListener("submit", (event) => {
     formStatus.textContent = "送信しています。画面が切り替わるまでお待ちください。";
   }
 });
+

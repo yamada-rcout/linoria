@@ -951,7 +951,7 @@ h3 {
   border-radius: 50%;
   transform: rotate(var(--angle)) scaleX(var(--x)) scaleY(var(--y));
   transform-origin: center;
-  animation: geometryLine 6.4s ease-in-out infinite alternate;
+  animation: geometryArc 6.4s ease-in-out infinite alternate;
   animation-delay: var(--delay);
 }
 
@@ -3985,7 +3985,7 @@ button:disabled:hover {
   }
 }
 
-@keyframes geometryLine {
+@keyframes geometryArc {
   from {
     opacity: 0.28;
     transform: rotate(var(--angle)) scaleX(var(--x)) scaleY(var(--y));
@@ -7118,6 +7118,20 @@ html body.site-orbit-theme #page-index main > section.price-section {
 
 #page-index .supporter-cta-photo .supporter-career-text {
   top: 2% !important;
+}
+
+#page-index .supporter-cta-photo .supporter-career-text {
+  width: 80% !important;
+  max-width: 80% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+#page-index .supporter-section .supporter-cta-role {
+  color: var(--ink) !important;
+  font-size: 0.88rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
 }
 
 #page-index .supporter-bottom-cta {
@@ -10316,6 +10330,26 @@ html body.site-orbit-theme #page-index .top-about-break-photo img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+}
+
+/* TOP SUPPORTER final composition: smaller handwriting, stronger vertical title. */
+html body.site-orbit-theme #page-index .supporter-cta-photo .supporter-career-text {
+  top: 0 !important;
+  left: 39% !important;
+  width: 80% !important;
+  max-width: 80% !important;
+  transform: translateX(-50%) !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-role {
+  right: -26px !important;
+  color: var(--ink) !important;
+  font-size: 0.98rem !important;
+  font-weight: 900 !important;
+  line-height: 1.72 !important;
+  letter-spacing: 0.12em !important;
+  writing-mode: vertical-rl !important;
+  text-orientation: upright !important;
 }
 /* Policy pages: keep legal pages formal and text-focused. */
 html body.site-orbit-theme main > section.legal-section > .section-kicker {

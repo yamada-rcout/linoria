@@ -169,7 +169,7 @@ export default function ReservationForm({ slots }: ReservationFormProps) {
           </div>
         </div>
         <p className="lead compact">
-          内容を確認後、LINEまたはメールでご連絡します。Linoriaからの連絡をお待ちください。
+          &#20869;&#23481;&#12434;&#30906;&#35469;&#24460;&#12289;&#12513;&#12540;&#12523;&#12391;&#12372;&#36899;&#32097;&#12375;&#12414;&#12377;&#12290;Linoria&#12363;&#12425;&#12398;&#36899;&#32097;&#12434;&#12362;&#24453;&#12385;&#12367;&#12384;&#12373;&#12356;&#12290;
         </p>
         <button className="secondary-button" type="button" onClick={() => setCompletedReservation(null)}>
           続けて別の予約を送る
@@ -196,13 +196,7 @@ export default function ReservationForm({ slots }: ReservationFormProps) {
         </label>
       </div>
 
-      <label>
-        LINE表示名
-        <input name="lineDisplayName" placeholder="LINE上のお名前" />
-      </label>
-      <input name="lineUserId" type="hidden" />
-
-      <label>
+<label>
         希望プラン
         <select name="plan" defaultValue="initial_consultation" required>
           {planOptions.map((option) => (
@@ -216,7 +210,7 @@ export default function ReservationForm({ slots }: ReservationFormProps) {
       <fieldset className="slot-picker">
         <legend>現在予約可能な空き枠</legend>
         {slots.length === 0 ? (
-          <p className="slot-empty">現在予約可能な枠はありません。LINEからお問い合わせください。</p>
+          <p className="slot-empty">&#29694;&#22312;&#20104;&#32004;&#21487;&#33021;&#12394;&#26528;&#12399;&#12354;&#12426;&#12414;&#12379;&#12435;&#12290;&#12362;&#21839;&#12356;&#21512;&#12431;&#12379;&#12501;&#12457;&#12540;&#12512;&#12424;&#12426;&#12372;&#36899;&#32097;&#12367;&#12384;&#12373;&#12356;&#12290;</p>
         ) : (
           <div className="calendar-picker">
             <div className="calendar-toolbar">

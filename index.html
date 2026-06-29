@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -65,9 +65,7 @@
         "name": "Linoria",
         "url": "https://linoria.jp/",
         "logo": "https://linoria.jp/assets/favicon.png",
-        "sameAs": [
-          "https://line.me/R/ti/p/@434cidql"
-        ]
+        "sameAs": []
       },
       {
         "@type": "WebSite",
@@ -1322,7 +1320,7 @@ h3 {
   border-radius: 50%;
   transform: rotate(var(--angle)) scaleX(var(--x)) scaleY(var(--y));
   transform-origin: center;
-  animation: geometryLine 6.4s ease-in-out infinite alternate;
+  animation: geometryArc 6.4s ease-in-out infinite alternate;
   animation-delay: var(--delay);
 }
 
@@ -3902,7 +3900,7 @@ button:hover {
   }
 }
 
-@keyframes geometryLine {
+@keyframes geometryArc {
   from {
     opacity: 0.28;
     transform: rotate(var(--angle)) scaleX(var(--x)) scaleY(var(--y));
@@ -7555,6 +7553,20 @@ html body.site-orbit-theme #page-index .reason-grid article:first-child {
   top: 2% !important;
 }
 
+#page-index .supporter-cta-photo .supporter-career-text {
+  width: 80% !important;
+  max-width: 80% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+#page-index .supporter-section .supporter-cta-role {
+  color: var(--ink) !important;
+  font-size: 0.88rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+}
+
 #page-index .supporter-bottom-cta {
   margin-top: 24px;
 }
@@ -10044,6 +10056,26 @@ html body.site-orbit-theme #page-index .top-about-break-photo img {
   height: 100% !important;
   object-fit: cover !important;
 }
+
+/* TOP SUPPORTER final composition: smaller handwriting, stronger vertical title. */
+html body.site-orbit-theme #page-index .supporter-cta-photo .supporter-career-text {
+  top: 0 !important;
+  left: 39% !important;
+  width: 80% !important;
+  max-width: 80% !important;
+  transform: translateX(-50%) !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-role {
+  right: -26px !important;
+  color: var(--ink) !important;
+  font-size: 0.98rem !important;
+  font-weight: 900 !important;
+  line-height: 1.72 !important;
+  letter-spacing: 0.12em !important;
+  writing-mode: vertical-rl !important;
+  text-orientation: upright !important;
+}
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -10071,7 +10103,7 @@ html body.site-orbit-theme #page-index .top-about-break-photo img {
   <nav class="nav" id="site-nav" aria-label="メインナビゲーション"><a href="#top">TOP</a><a href="message.html">SUPPORTER</a><a href="price.html">PLAN / PRICE</a><a href="faq.html">FAQ</a><a href="contact.html">CONTACT</a></nav>
 </header>
 
-<div class="floating-cta-group" aria-label="お問い合わせ導線"><a class="floating-cta floating-cta--line" href="https://line.me/R/ti/p/@434cidql" target="_blank" rel="noopener">LINEで無料相談</a><a class="floating-cta floating-cta--mail" href="contact.html">メールで無料相談</a></div>
+<div class="floating-cta-group" aria-label="お問い合わせ導線"><a class="floating-cta floating-cta--mail" href="contact.html">メールで無料相談</a></div>
 
 <!-- INDEX PAGE -->
 <div id="page-index">
@@ -10146,7 +10178,7 @@ html body.site-orbit-theme #page-index .top-about-break-photo img {
       <p class="section-kicker">Flow</p>
     </div>
     <ol class="price-flow-list" aria-label="相談の流れ">
-      <li><span>01</span><strong>LINEまたはメールでお問い合わせ</strong></li>
+      <li><span>01</span><strong>メールでお問い合わせ</strong></li>
       <li><span>02</span><strong>ご希望に合わせて日程を調整</strong></li>
       <li><span>03</span><strong>事前ヒアリングと質問への回答</strong></li>
       <li><span>04</span><strong>初回無料相談で悩みや状況を整理</strong></li>
@@ -10177,7 +10209,6 @@ html body.site-orbit-theme #page-index .top-about-break-photo img {
         <details><summary>転職するか決めていなくても相談できますか？</summary><p>はい。Linoriaは転職を前提としたサービスではありません。現職継続、転職、起業・独立など、さまざまな選択肢を一緒に整理します。</p></details>
         <details><summary>考えを整理できていなくても相談できますか？</summary><p>もちろんです。言葉にしきれていない悩みや迷いも、対話を通して一緒に整理していきます。</p></details>
         <details><summary>無料相談後に、有料プランへ申し込む必要はありますか？</summary><p>いいえ、必要ありません。無料相談だけで終了していただくことも可能です。無理な勧誘は行いませんので、安心してご相談ください。</p></details>
-        <details><summary>LINEを使っていません。利用できますか？</summary><p>はい。LINEでのやり取りを推奨していますが、メールでのご連絡にも対応しています。</p></details>
         <details><summary>求人を紹介してもらえますか？</summary><p>いいえ。Linoriaは人材紹介サービスではありません。中立な立場でキャリア選択をサポートしています。</p></details>
       </div>
       <a class="section-link" href="faq.html">FAQを見る<span aria-hidden="true">→</span></a>
@@ -10798,12 +10829,11 @@ document.addEventListener('click', (event) => {
   if (!link || typeof window.gtag !== 'function') return;
 
   const href = link.getAttribute('href') || '';
-  const isLineCta = href.includes('line.me/R/ti/p/@434cidql');
   const isContactCta = href.includes('contact.html') || href.startsWith('mailto:');
 
-  if (!isLineCta && !isContactCta) return;
+  if (!isContactCta) return;
 
-  window.gtag('event', isLineCta ? 'line_cta_click' : 'contact_cta_click', {
+  window.gtag('event', 'contact_cta_click', {
     event_category: 'engagement',
     event_label: link.textContent.trim(),
     link_url: href
@@ -10821,3 +10851,5 @@ window.addEventListener('resize', () => {
 </script>
 </body>
 </html>
+
+

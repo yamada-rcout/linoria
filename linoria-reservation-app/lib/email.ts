@@ -33,7 +33,6 @@ export const sendAdminReservationNotification = async (input: AdminNotificationI
     "",
     `お名前: ${input.name}`,
     `メール: ${input.email}`,
-    `LINE表示名: ${input.lineDisplayName || "未入力"}`,
     `プラン: ${planLabels[input.plan]}`,
     `希望日時: ${slotLabel}`,
     "",

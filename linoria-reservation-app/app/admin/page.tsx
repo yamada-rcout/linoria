@@ -187,7 +187,6 @@ export default async function AdminPage() {
                       <td>
                         <strong>{reservation.name}</strong>
                         <span>{reservation.email}</span>
-                        {reservation.line_display_name ? <span>LINE: {reservation.line_display_name}</span> : null}
                       </td>
                       <td>
                         {reservation.available_slots
