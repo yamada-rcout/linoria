@@ -210,45 +210,27 @@ html body.site-orbit-theme #page-index main > section.price-section {
 /* Mobile geometric atmosphere */
 @media (max-width: 980px) {
   html body.site-orbit-theme #page-index main > section.top-about-section {
-    background:
-      radial-gradient(circle at 108% 18%, transparent 0 66px, rgba(0, 87, 217, 0.09) 67px 69px, transparent 70px),
-      radial-gradient(circle at 12% 91%, rgba(255, 224, 74, 0.32) 0 13px, transparent 14px),
-      rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
   }
 
   html body.site-orbit-theme #page-index main > section.reason-section {
-    background:
-      radial-gradient(circle at -7% 16%, rgba(52, 201, 255, 0.2) 0 44px, transparent 45px),
-      radial-gradient(circle at 92% 88%, rgba(0, 87, 217, 0.12) 0 9px, transparent 10px),
-      rgba(238, 247, 255, 0.95) !important;
+    background: rgba(238, 247, 255, 0.95) !important;
   }
 
   html body.site-orbit-theme #page-index main > section.supporter-section {
-    background:
-      radial-gradient(circle at 108% 28%, transparent 0 74px, rgba(52, 201, 255, 0.12) 75px 78px, transparent 79px),
-      radial-gradient(circle at 8% 82%, rgba(0, 87, 217, 0.1) 0 18px, transparent 19px),
-      rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
   }
 
   html body.site-orbit-theme #page-index main > section.price-section {
-    background:
-      radial-gradient(circle at -6% 72%, transparent 0 58px, rgba(0, 87, 217, 0.1) 59px 61px, transparent 62px),
-      radial-gradient(circle at 91% 12%, rgba(255, 224, 74, 0.34) 0 15px, transparent 16px),
-      rgba(245, 250, 255, 0.95) !important;
+    background: rgba(245, 250, 255, 0.95) !important;
   }
 
   html body.site-orbit-theme #page-index main > section.reviews-section {
-    background:
-      radial-gradient(circle at 106% 82%, rgba(52, 201, 255, 0.16) 0 46px, transparent 47px),
-      radial-gradient(circle at 7% 12%, rgba(0, 87, 217, 0.1) 0 8px, transparent 9px),
-      rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
   }
 
   html body.site-orbit-theme #page-index main > section.faq-section {
-    background:
-      radial-gradient(circle at -8% 20%, transparent 0 70px, rgba(0, 87, 217, 0.1) 71px 73px, transparent 74px),
-      radial-gradient(circle at 93% 91%, rgba(52, 201, 255, 0.18) 0 20px, transparent 21px),
-      rgba(238, 247, 255, 0.95) !important;
+    background: rgba(238, 247, 255, 0.95) !important;
   }
 
   .site-orbit-background,
@@ -7535,7 +7517,7 @@ html body.site-orbit-theme #page-index .reason-grid article:first-child {
 }
 
 #page-index .supporter-section .supporter-cta-photo {
-  padding-top: 30% !important;
+  padding-top: 21% !important;
 }
 
 #page-index .supporter-cta-photo .supporter-career-text {
@@ -9187,6 +9169,398 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
   }
 }
 
+/* TOP ABOUT: overlapping circular feature labels. */
+html body.site-orbit-theme #page-index .top-about-circles {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 0 2px !important;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+
+html body.site-orbit-theme #page-index .top-about-circle {
+  position: relative;
+  z-index: 1;
+  display: grid !important;
+  place-items: center;
+  width: min(46.5vw, 226px);
+  aspect-ratio: 1;
+  padding: 6px;
+  border: 3px solid rgba(0, 87, 217, 0.24);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: none;
+  color: var(--blue);
+  font-size: clamp(1rem, 3.15vw, 1.25rem);
+  font-weight: 900;
+  line-height: 1.45;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+html body.site-orbit-theme #page-index .top-about-circle-line {
+  white-space: nowrap;
+}
+
+html body.site-orbit-theme #page-index .top-about-circle-text {
+  display: block;
+  text-align: center;
+}
+
+html body.site-orbit-theme #page-index .top-about-illustration-wrap {
+  position: relative !important;
+  z-index: 0 !important;
+  width: min(46.4%, 192px) !important;
+  margin: -30px auto 0 !important;
+  padding: 0 !important;
+  background: none !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-illustration {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-circle + .top-about-circle {
+  z-index: 0;
+  margin-left: -3.5vw;
+  border-color: rgba(52, 201, 213, 0.42);
+  color: #087fbd;
+  box-shadow: none;
+}
+
+html body.site-orbit-theme #page-index .top-about-lead {
+  margin: 22px 0 0;
+  color: #22282f;
+  font-size: clamp(1.18rem, 4.4vw, 1.42rem);
+  font-weight: 900;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+html body.site-orbit-theme #page-index .top-about-lead span {
+  color: var(--blue);
+  font-weight: 900;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme #page-index .top-about-circle {
+    letter-spacing: 0.01em;
+  }
+}
+
+@media (min-width: 981px) {
+  html body.site-orbit-theme #page-index .top-about-circles {
+    justify-content: center;
+  }
+
+  html body.site-orbit-theme #page-index .top-about-circle {
+    width: min(46.5%, 226px);
+  }
+
+html body.site-orbit-theme #page-index .top-about-circle + .top-about-circle {
+  margin-left: -3.5%;
+}
+}
+
+/* Footer: keep the bottom breathing room compact on both desktop and mobile. */
+html body.site-orbit-theme .site-footer {
+  padding-bottom: 28px !important;
+}
+
+html body.site-orbit-theme .site-footer .footer-copyright {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme .site-footer {
+    padding-bottom: 22px !important;
+  }
+}
+
+/* Remove only the small scattered particles outside the hero. */
+html body.site-orbit-theme .site-orbit-background:not(.hero-orbit-scene) .site-orbit-particle {
+  display: none !important;
+}
+
+/* Remove section-level small scattered shapes only. */
+html body.site-orbit-theme #page-index :is(
+  .top-about-section,
+  .supporter-section,
+  .price-section,
+  .reviews-section,
+  .faq-section
+)::before,
+html body.site-orbit-theme #page-index :is(
+  .top-about-section,
+  .supporter-section,
+  .price-section,
+  .reviews-section,
+  .faq-section
+)::after {
+  content: none !important;
+  display: none !important;
+}
+
+html body.site-orbit-theme #page-index main > section.top-about-section::before,
+html body.site-orbit-theme #page-index main > section.top-about-section::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme main > section:not(.hero):not(.vmv-cta-section)::before,
+  html body.site-orbit-theme main > section:not(.hero):not(.vmv-cta-section)::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  html body.site-orbit-theme main > section:not(.hero):not(.vmv-cta-section) {
+    background-image: none !important;
+  }
+}
+
+/* TOP ABOUT feature cards. */
+html body.site-orbit-theme #page-index .top-about-features {
+  display: grid !important;
+  gap: 26px !important;
+  margin-top: 34px !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2 {
+  position: relative !important;
+  display: block !important;
+  padding: 17px 24px !important;
+  border: 0 !important;
+  border-radius: 20px !important;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(226, 244, 255, 0.92)) !important;
+  box-shadow: none !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2 > span {
+  position: static !important;
+  display: block !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 auto 16px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  color: var(--blue) !important;
+  font-size: 0.9rem !important;
+  font-weight: 900 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.16em !important;
+  text-align: center !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2 h3 {
+  width: auto !important;
+  margin: 0 0 18px !important;
+  padding: 0 !important;
+  background: none !important;
+  color: #101820 !important;
+  font-size: 1.22rem !important;
+  font-weight: 900 !important;
+  line-height: 1.65 !important;
+  text-align: center !important;
+  letter-spacing: 0.04em !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .features-item-illustration {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 150px !important;
+  margin: 0 0 20px !important;
+  padding: 22px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(217, 247, 245, 0.9)) !important;
+  object-fit: contain !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .feature-photo-illustration {
+  height: auto !important;
+  aspect-ratio: 8 / 5 !important;
+  padding: 10px !important;
+  border: 0 !important;
+  border-radius: 18px !important;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(217, 247, 245, 0.92)) !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: saturate(0.9) brightness(1.05) contrast(0.96) !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .feature-vmv-photo {
+  aspect-ratio: 8 / 5 !important;
+  height: auto !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2 p {
+  margin: 0 !important;
+  color: #363c42 !important;
+  font-size: 0.92rem !important;
+  font-weight: 500 !important;
+  line-height: 1.9 !important;
+  letter-spacing: 0.04em !important;
+}
+
+@media (min-width: 981px) {
+  html body.site-orbit-theme #page-index .top-about-features {
+    gap: 29px !important;
+  }
+
+  html body.site-orbit-theme #page-index .top-about-features .features-item-v2 {
+    padding: 0 !important;
+  }
+}
+
+/* Final guard: remove leftover small decorations from TOP ABOUT only. */
+html body.site-orbit-theme #page-index main > section.top-about-section {
+  background: rgba(255, 255, 255, 0.95) !important;
+  background-image: none !important;
+}
+
+html body.site-orbit-theme #page-index main > section.top-about-section::before,
+html body.site-orbit-theme #page-index main > section.top-about-section::after,
+html body.site-orbit-theme #page-index .top-about-features::before,
+html body.site-orbit-theme #page-index .top-about-features::after,
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2::before,
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Final TOP ABOUT emphasis text: make the key sentence visibly larger than body copy. */
+html body.site-orbit-theme #page-index .top-about-section > .top-about-lead {
+  font-size: clamp(1.155rem, 4.35vw, 1.395rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.85 !important;
+  letter-spacing: 0.045em !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-section > .top-about-lead span {
+  font-weight: 900 !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-break-photo {
+  position: relative !important;
+  width: 100% !important;
+  margin: 26px 0 0 !important;
+  padding: 8px !important;
+  border-radius: 24px !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(226, 244, 255, 0.72)) !important;
+  overflow: hidden !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-break-photo img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 18px !important;
+  object-fit: contain !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-break-photo + .top-about-features {
+  margin-top: 30px !important;
+}
+
+/* TOP SUPPORTER: soften the profile photo after removing the title/meta line. */
+html body.site-orbit-theme #page-index .supporter-cta-photo > img:not(.supporter-career-text) {
+  border-radius: 26px !important;
+  clip-path: none !important;
+  transform: translateY(30px) !important;
+  box-shadow: 0 18px 40px rgba(0, 87, 217, 0.08) !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-cta-photo::before {
+  border-radius: 22px !important;
+}
+
+/* TOP SUPPORTER: tighten the gap from the section title to the visual content. */
+html body.site-orbit-theme #page-index .supporter-section {
+  row-gap: 3px !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-copy {
+  margin-bottom: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-photo {
+  margin-top: -12px !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-role {
+  grid-column: 1 !important;
+  grid-row: 3 !important;
+  justify-self: center !important;
+  align-self: center !important;
+  z-index: 25 !important;
+  margin: 0 !important;
+  color: #101820 !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0.12em !important;
+  text-align: center !important;
+  writing-mode: vertical-rl !important;
+  text-orientation: mixed !important;
+  transform: translate(112px, 18px) !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-bottom-cta {
+  grid-row: 4 !important;
+  margin-top: 56px !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-cta-photo::before {
+  left: 18px !important;
+  right: -12px !important;
+  top: auto !important;
+  bottom: -36px !important;
+  height: 58% !important;
+  border-radius: 30px !important;
+  clip-path: none !important;
+  transform: rotate(-2deg) !important;
+}
+
+/* TOP VMV: make the visual band 1.2x taller and keep the skyline balanced. */
+html body.site-orbit-theme #page-index main > section.vmv-cta-section {
+  min-height: 396px !important;
+}
+
+html body.site-orbit-theme #page-index main > section.vmv-cta-section::before {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.72) 34%,
+      rgba(255, 255, 255, 0.2) 68%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url("assets/vmv-tokyo-skyline.jpg") center bottom / cover no-repeat !important;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme #page-index main > section.vmv-cta-section {
+    min-height: 288px !important;
+  }
+}
+
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -9211,10 +9585,10 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
     <span></span><span></span><span></span>
   </button>
-  <nav class="nav" id="site-nav" aria-label="メインナビゲーション"><a href="#top">TOP</a><a href="about.html">ABOUT</a><a href="message.html">SUPPORTER</a><a href="price.html">PLAN / PRICE</a><a href="faq.html">FAQ</a><a href="contact.html">CONTACT</a></nav>
+  <nav class="nav" id="site-nav" aria-label="メインナビゲーション"><a href="#top">TOP</a><a href="message.html">SUPPORTER</a><a href="price.html">PLAN / PRICE</a><a href="faq.html">FAQ</a><a href="contact.html">CONTACT</a></nav>
 </header>
 
-<div class="floating-cta-group" aria-label="お問い合わせ導線"><a class="floating-cta floating-cta--line" href="https://line.me/R/ti/p/@434cidql" target="_blank" rel="noopener">LINEで無料相談する</a><a class="floating-cta floating-cta--mail" href="contact.html">メールで問い合わせる</a></div>
+<div class="floating-cta-group" aria-label="お問い合わせ導線"><a class="floating-cta floating-cta--line" href="https://line.me/R/ti/p/@434cidql" target="_blank" rel="noopener">LINEで無料相談</a><a class="floating-cta floating-cta--mail" href="contact.html">メールで無料相談</a></div>
 
 <!-- INDEX PAGE -->
 <div id="page-index">
@@ -9237,26 +9611,24 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
   </section>
 
   <section id="about" class="content-section top-about-section section-flow">
-    <header class="top-about-header">
-      <p class="section-kicker">About</p>
-    </header>
     <div class="top-about-title">
-      <h2>元教員による、<br>教員のための<br><span>キャリア伴走サービス</span></h2>
+      <h2>元教員による、<br>現役教員に寄り添う<br><span>キャリア伴走サービス</span></h2>
     </div>
-    <div class="top-about-content">
-      <article><span>01</span><p>Linoriaは、現役教員の方のキャリアに関する悩みを整理し、方向性の明確化から具体的な行動まで伴走するキャリアサポートです。</p></article>
-      <article><span>02</span><p>転職を前提にせず、まずは対話を通して、今の悩みや気持ちを言葉にするところから始めます。</p></article>
-      <article><span>03</span><p>必要に応じて、転職・独立・働き方の見直しに向けた準備もサポートします。</p></article>
+    <div class="top-about-circles" aria-label="Linoriaの特徴">
+      <div class="top-about-circle"><span class="top-about-circle-text">教育現場への<br>理解</span></div>
+      <div class="top-about-circle"><span class="top-about-circle-text"><span class="top-about-circle-line">キャリアサポートの</span><br>実績</span></div>
     </div>
-    <a class="top-about-cta" href="about.html">サービス詳細を見る</a>
-  </section>
-
-  <section class="content-section features-section-v2">
-    <p class="section-kicker">Features</p>
-    <div class="features-list-v2">
-      <article class="features-item-v2"><span>01</span><div><h3>中立的立場での整理と支援</h3><img class="features-item-illustration" src="assets/feature-neutral-support.svg" alt="" aria-hidden="true"><p>転職ありきではなく、続ける・転職する・働き方を見直すなど、あなたに合う選択肢を一緒に見つけ、実行まで広くご支援します。</p></div></article>
-      <article class="features-item-v2"><span>02</span><div><h3>現実的なプラン設計</h3><p>教員・企業・独立を経験しているサポーターだからこそ、現実的な選択肢を広く見渡せます。</p></div></article>
-      <article class="features-item-v2"><span>03</span><div><h3>相談しやすく続けやすい</h3><p>料金は完全明確化。短期・中期・長期と、ご自身に合わせてご相談いただけるため、忙しい先生でも無理なく利用できます。</p></div></article>
+    <div class="top-about-illustration-wrap">
+      <img class="top-about-illustration" src="assets/about-supporter-illustration.jpg" alt="" loading="lazy" decoding="async">
+    </div>
+    <p class="top-about-lead">Linoriaは、<span>教育現場を知る元教員の視点</span>と、<span>キャリアサポートの経験</span>をもとに、先生一人ひとりが納得して働き方を選べるよう伴走するサービスです。</p>
+    <figure class="top-about-break-photo">
+      <img src="assets/about-consultation-break.png" alt="相談の様子" loading="lazy" decoding="async">
+    </figure>
+    <div class="features-list-v2 top-about-features">
+      <article class="features-item-v2"><span>POINT 01</span><div><h3>転職を前提としない</h3><p>転職を前提とせず、対話を通して自己理解から始め、続ける・転職するなど、あなたに合う選択肢を見つけ、実行まで広くサポートします。</p></div></article>
+      <article class="features-item-v2"><span>POINT 02</span><div><h3>経験豊富なサポーター</h3><p>教員・転職・独立を経験しているサポーターが伴走することで、現実的な選択肢を広く見渡すことができます。</p></div></article>
+      <article class="features-item-v2"><span>POINT 03</span><div><h3>相談のしやすさ</h3><p>コストも時間も負担のない、現役の先生に徹底的に寄り添った設計のため、忙しい先生でも無理なく利用できます。</p></div></article>
     </div>
   </section>
 
@@ -9265,11 +9637,11 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
     <div class="supporter-cta-copy">
       <p class="section-kicker">Supporter</p>
     </div>
-    <p class="supporter-cta-meta">元教員・リクルート出身・起業経験者</p>
     <div class="supporter-cta-photo" aria-label="サポーター写真">
           <img src="assets/supporter-profile-2026.png" alt="Linoriaのサポーター" loading="lazy" decoding="async">
           <img class="supporter-career-text" src="assets/supporter-career-text.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
     </div>
+    <p class="supporter-cta-role">元小学校教員・リクルート出身</p>
     <a class="supporter-bottom-cta" href="message.html">サポーター紹介を見る</a>
   </section>
 
@@ -9370,7 +9742,6 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
       </div>
       <a class="section-link supporter-profile-link" href="contact.html">相談してみる<span aria-hidden="true">→</span></a>
       <h2>教育現場を知る人が、<br>キャリアの隣に立つ</h2>
-      <p class="supporter-cta-meta">元教員・リクルート出身・起業経験者</p>
       <a class="section-link" href="contact.html">相談してみる<span aria-hidden="true">→</span></a>
     </div>
     <div class="supporter-cta-photo" aria-label="サポーター写真">
@@ -9735,12 +10106,12 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
     <span>Career Support for Teachers</span>
         <p>教員のキャリアを、もっと自由に</p>
   </div>
-  <div class="footer-navs"><nav class="footer-nav" aria-label="メニュー"><p>メニュー</p><a href="#top">TOP</a><a href="about.html">ABOUT</a><a href="message.html">SUPPORTER</a><a href="price.html">PLAN / PRICE</a><a href="faq.html">FAQ</a><a href="contact.html">CONTACT</a></nav><nav class="footer-nav footer-social-nav" aria-label="ソーシャル"><p>ソーシャル</p><a class="footer-instagram-link" href="https://www.instagram.com/linoria_official/" target="_blank" rel="noopener noreferrer" aria-label="Linoria公式Instagramを開く" title="Instagram"><svg class="footer-instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" class="footer-instagram-dot"></circle></svg></a></nav><nav class="footer-nav" aria-label="ポリシー"><p>ポリシー</p><a href="legal.html">特定商取引法に基づく表記</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></nav></div>
+  <div class="footer-navs"><nav class="footer-nav" aria-label="メニュー"><p>メニュー</p><a href="#top">TOP</a><a href="message.html">SUPPORTER</a><a href="price.html">PLAN / PRICE</a><a href="faq.html">FAQ</a><a href="contact.html">CONTACT</a></nav><nav class="footer-nav footer-social-nav" aria-label="ソーシャル"><p>ソーシャル</p><a class="footer-instagram-link" href="https://www.instagram.com/linoria_official/" target="_blank" rel="noopener noreferrer" aria-label="Linoria公式Instagramを開く" title="Instagram"><svg class="footer-instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" class="footer-instagram-dot"></circle></svg></a></nav><nav class="footer-nav" aria-label="ポリシー"><p>ポリシー</p><a href="legal.html">特定商取引法に基づく表記</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></nav></div>
       <small class="footer-copyright">&copy; 2026 Linoria. All Rights Reserved.</small>
 </footer>
 
 <script>
-const pages = ['index','message','price','faq','contact','vmv','legal','privacy','terms','partners','about'];
+const pages = ['index','message','price','faq','contact','vmv','legal','privacy','terms','partners'];
 let currentPage = 'index';
 
 function showPage(name, anchor) {

@@ -3028,7 +3028,7 @@ main > section.vmv-cta-section::before {
   font-size: 0.86rem;
   font-weight: 900;
   line-height: 1.35;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
   transition: transform 180ms ease, background 180ms ease;
 }
@@ -3471,7 +3471,7 @@ main > section.vmv-cta-section::before {
 
 .legal-list {
   max-width: 860px;
-  margin-top: 42px;
+  margin-top: 20px;
 }
 
 .legal-section h2 {
@@ -6296,45 +6296,27 @@ html body.site-orbit-theme #page-index main > section.price-section {
 /* Mobile geometric atmosphere */
 @media (max-width: 980px) {
   html body.site-orbit-theme #page-index main > section.top-about-section {
-    background:
-      radial-gradient(circle at 108% 18%, transparent 0 66px, rgba(0, 87, 217, 0.09) 67px 69px, transparent 70px),
-      radial-gradient(circle at 12% 91%, rgba(255, 224, 74, 0.32) 0 13px, transparent 14px),
-      rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
   }
 
   html body.site-orbit-theme #page-index main > section.reason-section {
-    background:
-      radial-gradient(circle at -7% 16%, rgba(52, 201, 255, 0.2) 0 44px, transparent 45px),
-      radial-gradient(circle at 92% 88%, rgba(0, 87, 217, 0.12) 0 9px, transparent 10px),
-      rgba(238, 247, 255, 0.95) !important;
+    background: rgba(238, 247, 255, 0.95) !important;
   }
 
   html body.site-orbit-theme #page-index main > section.supporter-section {
-    background:
-      radial-gradient(circle at 108% 28%, transparent 0 74px, rgba(52, 201, 255, 0.12) 75px 78px, transparent 79px),
-      radial-gradient(circle at 8% 82%, rgba(0, 87, 217, 0.1) 0 18px, transparent 19px),
-      rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
   }
 
   html body.site-orbit-theme #page-index main > section.price-section {
-    background:
-      radial-gradient(circle at -6% 72%, transparent 0 58px, rgba(0, 87, 217, 0.1) 59px 61px, transparent 62px),
-      radial-gradient(circle at 91% 12%, rgba(255, 224, 74, 0.34) 0 15px, transparent 16px),
-      rgba(245, 250, 255, 0.95) !important;
+    background: rgba(245, 250, 255, 0.95) !important;
   }
 
   html body.site-orbit-theme #page-index main > section.reviews-section {
-    background:
-      radial-gradient(circle at 106% 82%, rgba(52, 201, 255, 0.16) 0 46px, transparent 47px),
-      radial-gradient(circle at 7% 12%, rgba(0, 87, 217, 0.1) 0 8px, transparent 9px),
-      rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
   }
 
   html body.site-orbit-theme #page-index main > section.faq-section {
-    background:
-      radial-gradient(circle at -8% 20%, transparent 0 70px, rgba(0, 87, 217, 0.1) 71px 73px, transparent 74px),
-      radial-gradient(circle at 93% 91%, rgba(52, 201, 255, 0.18) 0 20px, transparent 21px),
-      rgba(238, 247, 255, 0.95) !important;
+    background: rgba(238, 247, 255, 0.95) !important;
   }
 
   .site-orbit-background,
@@ -7100,7 +7082,7 @@ html body.site-orbit-theme #page-index main > section.price-section {
 }
 
 #page-index .supporter-section .supporter-cta-photo {
-  padding-top: 30% !important;
+  padding-top: 21% !important;
 }
 
 #page-index .supporter-cta-photo .supporter-career-text {
@@ -8709,471 +8691,7 @@ html.js body.site-orbit-theme.page-faq main .reveal-item.is-visible {
   transform: translateY(0) !important;
 }
 
-/* FINAL mobile page decorations: TOP and legal pages are excluded. */
-@media (max-width: 980px) {
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-  }
 
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section::before,
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section::after {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section::before {
-    top: 76px;
-    right: 18px;
-    width: 18px;
-    height: 18px;
-    border-radius: 6px 50% 50% 50%;
-    background: #34c9d5;
-    opacity: 0.12;
-    transform: rotate(24deg);
-  }
-
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section::after {
-    bottom: 70px;
-    left: 14px;
-    width: 24px;
-    height: 21px;
-    background: #ffd84a;
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    opacity: 0.16;
-    transform: rotate(-16deg);
-  }
-
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section:nth-of-type(2n)::before {
-    top: 46px;
-    right: auto;
-    left: 22px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #0057d9;
-    opacity: 0.09;
-  }
-
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section:nth-of-type(2n)::after {
-    right: 22px;
-    bottom: 52px;
-    left: auto;
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    background: #20bfa9;
-    clip-path: none;
-    opacity: 0.1;
-    transform: rotate(18deg);
-  }
-
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section:nth-of-type(3n)::before {
-    top: 118px;
-    right: 26px;
-    width: 26px;
-    height: 26px;
-    border: 2px solid rgba(0, 87, 217, 0.14);
-    border-radius: 50%;
-    background: transparent;
-  }
-
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section:nth-of-type(3n)::after {
-    bottom: 94px;
-    left: 24px;
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-    background: #34c9ff;
-    clip-path: none;
-    opacity: 0.12;
-    transform: rotate(42deg);
-  }
-}
-
-/* FINAL mobile page decorations: page-by-page variation. */
-@media (max-width: 980px) {
-  html body.site-orbit-theme.page-about main > section:nth-of-type(1)::before {
-    top: 58px;
-    right: 28px;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: #34c9ff;
-    opacity: 0.13;
-    transform: none;
-  }
-
-  html body.site-orbit-theme.page-about main > section:nth-of-type(1)::after {
-    bottom: 84px;
-    left: 18px;
-    width: 18px;
-    height: 18px;
-    border-radius: 5px;
-    background: #ffd84a;
-    clip-path: none;
-    opacity: 0.18;
-    transform: rotate(18deg);
-  }
-
-  html body.site-orbit-theme.page-about main > section:nth-of-type(2)::before {
-    top: 96px;
-    left: 26px;
-    right: auto;
-    width: 28px;
-    height: 24px;
-    background: #20bfa9;
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    opacity: 0.11;
-    transform: rotate(-14deg);
-  }
-
-  html body.site-orbit-theme.page-supporter main > section:nth-of-type(1)::before {
-    top: 74px;
-    right: 22px;
-    width: 18px;
-    height: 18px;
-    border-radius: 6px 50% 50% 50%;
-    background: #20bfa9;
-    opacity: 0.12;
-    transform: rotate(32deg);
-  }
-
-  html body.site-orbit-theme.page-supporter main > section:nth-of-type(1)::after {
-    bottom: 118px;
-    left: 24px;
-    width: 24px;
-    height: 24px;
-    border: 2px solid rgba(0, 87, 217, 0.14);
-    border-radius: 50%;
-    background: transparent;
-    clip-path: none;
-    opacity: 1;
-    transform: none;
-  }
-
-  html body.site-orbit-theme.page-supporter main > section:nth-of-type(2)::before {
-    top: 44px;
-    left: 18px;
-    right: auto;
-    width: 14px;
-    height: 14px;
-    border-radius: 4px;
-    background: #ffd84a;
-    opacity: 0.2;
-    transform: rotate(24deg);
-  }
-
-  html body.site-orbit-theme.page-supporter main > section:nth-of-type(2)::after {
-    right: 20px;
-    bottom: 64px;
-    left: auto;
-    width: 20px;
-    height: 18px;
-    background: #34c9ff;
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    opacity: 0.14;
-    transform: rotate(16deg);
-  }
-
-  html body.site-orbit-theme.page-price main > section:nth-of-type(1)::before {
-    top: 54px;
-    right: 18px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #0057d9;
-    opacity: 0.08;
-    transform: none;
-  }
-
-  html body.site-orbit-theme.page-price main > section:nth-of-type(1)::after {
-    bottom: 86px;
-    left: 20px;
-    width: 22px;
-    height: 22px;
-    border-radius: 7px;
-    background: #34c9ff;
-    clip-path: none;
-    opacity: 0.11;
-    transform: rotate(-20deg);
-  }
-
-  html body.site-orbit-theme.page-price main > section:nth-of-type(2)::before {
-    top: 92px;
-    left: 18px;
-    right: auto;
-    width: 26px;
-    height: 23px;
-    background: #ffd84a;
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    opacity: 0.16;
-    transform: rotate(10deg);
-  }
-
-  html body.site-orbit-theme.page-faq main > section:nth-of-type(1)::before {
-    top: 50px;
-    right: 24px;
-    width: 16px;
-    height: 16px;
-    border-radius: 5px;
-    background: #ffd84a;
-    opacity: 0.18;
-    transform: rotate(28deg);
-  }
-
-  html body.site-orbit-theme.page-faq main > section:nth-of-type(1)::after {
-    bottom: 72px;
-    left: 16px;
-    width: 26px;
-    height: 23px;
-    background: #20bfa9;
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    opacity: 0.11;
-    transform: rotate(-18deg);
-  }
-
-  html body.site-orbit-theme.page-contact main > section:nth-of-type(1)::before {
-    top: 64px;
-    left: 22px;
-    right: auto;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #34c9ff;
-    opacity: 0.1;
-    transform: none;
-  }
-
-  html body.site-orbit-theme.page-contact main > section:nth-of-type(1)::after {
-    right: 22px;
-    bottom: 92px;
-    left: auto;
-    width: 18px;
-    height: 18px;
-    border-radius: 5px;
-    background: #20bfa9;
-    clip-path: none;
-    opacity: 0.12;
-    transform: rotate(18deg);
-  }
-}
-
-/* FINAL mobile page decorations: every target section gets a third small shape. */
-@media (max-width: 980px) {
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section {
-    background-image:
-      radial-gradient(circle at 82% 30%, rgba(0, 87, 217, 0.1) 0 7px, transparent 8px) !important;
-    background-repeat: no-repeat !important;
-  }
-
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section:nth-of-type(2n) {
-    background-image:
-      linear-gradient(35deg, transparent 0 28%, rgba(255, 216, 74, 0.18) 29% 70%, transparent 71%) !important;
-    background-size: 28px 28px !important;
-    background-position: 88% 72% !important;
-    background-repeat: no-repeat !important;
-  }
-
-  html body.site-orbit-theme:is(.page-about, .page-supporter, .page-price, .page-faq, .page-contact) main > section:nth-of-type(3n) {
-    background-image:
-      radial-gradient(circle at 16% 36%, transparent 0 8px, rgba(32, 191, 169, 0.14) 9px 11px, transparent 12px) !important;
-    background-repeat: no-repeat !important;
-  }
-
-  html body.site-orbit-theme.page-about main > section:nth-of-type(4n),
-  html body.site-orbit-theme.page-price main > section:nth-of-type(4n),
-  html body.site-orbit-theme.page-contact main > section:nth-of-type(4n) {
-    background-image:
-      linear-gradient(45deg, rgba(52, 201, 255, 0.14) 0 50%, transparent 51%) !important;
-    background-size: 24px 24px !important;
-    background-position: 14% 78% !important;
-    background-repeat: no-repeat !important;
-  }
-
-  html body.site-orbit-theme.page-price main > section {
-    background-position: 92% 96% !important;
-    background-size: 18px 18px !important;
-  }
-
-  html body.site-orbit-theme.page-price main > section::before {
-    top: auto !important;
-    right: 18px !important;
-    bottom: 18px !important;
-    left: auto !important;
-    opacity: 0.08 !important;
-  }
-
-  html body.site-orbit-theme.page-price main > section::after {
-    top: 18px !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: 16px !important;
-    opacity: 0.1 !important;
-  }
-
-  html body.site-orbit-theme.page-price main > section:nth-of-type(2n)::before {
-    top: 14px !important;
-    right: 18px !important;
-    bottom: auto !important;
-    left: auto !important;
-  }
-
-  html body.site-orbit-theme.page-price main > section:nth-of-type(2n)::after {
-    top: auto !important;
-    right: auto !important;
-    bottom: 16px !important;
-    left: 18px !important;
-  }
-
-  html body.site-orbit-theme.page-price main > section:nth-of-type(3n)::before {
-    top: auto !important;
-    right: 16px !important;
-    bottom: 20px !important;
-    left: auto !important;
-  }
-
-  html body.site-orbit-theme.page-price main > section:nth-of-type(3n)::after {
-    top: 18px !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: 18px !important;
-  }
-}
-
-/* FINAL VMV mobile decorations: small shapes only on smartphone layouts. */
-@media (max-width: 980px) {
-  html body.site-orbit-theme.page-vmv main > section {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-  }
-
-  html body.site-orbit-theme.page-vmv main > section > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  html body.site-orbit-theme.page-vmv main > section::before,
-  html body.site-orbit-theme.page-vmv main > section::after {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  html body.site-orbit-theme.page-vmv main > section:nth-of-type(1)::before {
-    top: 62px;
-    right: 24px;
-    width: 20px;
-    height: 20px;
-    border-radius: 6px;
-    background: #34c9ff;
-    opacity: 0.12;
-    transform: rotate(18deg);
-  }
-
-  html body.site-orbit-theme.page-vmv main > section:nth-of-type(1)::after {
-    bottom: 82px;
-    left: 20px;
-    width: 24px;
-    height: 21px;
-    background: #ffd84a;
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    opacity: 0.17;
-    transform: rotate(-18deg);
-  }
-
-  html body.site-orbit-theme.page-vmv main > section:nth-of-type(2)::before {
-    top: 46px;
-    left: 26px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #0057d9;
-    opacity: 0.08;
-  }
-
-  html body.site-orbit-theme.page-vmv main > section:nth-of-type(2)::after {
-    right: 28px;
-    bottom: 56px;
-    width: 22px;
-    height: 22px;
-    border: 2px solid rgba(32, 191, 169, 0.16);
-    border-radius: 50%;
-  }
-
-  html body.site-orbit-theme.page-vmv main > section:nth-of-type(3)::before {
-    top: 72px;
-    right: 30px;
-    width: 18px;
-    height: 18px;
-    border-radius: 5px 50% 50% 50%;
-    background: #20bfa9;
-    opacity: 0.13;
-    transform: rotate(34deg);
-  }
-
-  html body.site-orbit-theme.page-vmv main > section:nth-of-type(3)::after {
-    bottom: 78px;
-    left: 24px;
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-    background: #ffd84a;
-    opacity: 0.2;
-    transform: rotate(22deg);
-  }
-
-  html body.site-orbit-theme.page-vmv main > section:nth-of-type(4)::before {
-    top: 54px;
-    left: 18px;
-    width: 26px;
-    height: 23px;
-    background: #34c9ff;
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    opacity: 0.12;
-    transform: rotate(14deg);
-  }
-
-  html body.site-orbit-theme.page-vmv main > section:nth-of-type(4)::after {
-    right: 22px;
-    bottom: 66px;
-    width: 20px;
-    height: 20px;
-    border-radius: 7px;
-    background: #0057d9;
-    opacity: 0.07;
-    transform: rotate(-18deg);
-  }
-
-  html body.site-orbit-theme.page-vmv .vmv-bottom-image {
-    position: relative;
-    overflow: hidden;
-  }
-
-  html body.site-orbit-theme.page-vmv .vmv-bottom-image::before {
-    content: "";
-    position: absolute;
-    top: 22px;
-    right: 24px;
-    z-index: 1;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #20bfa9;
-    opacity: 0.12;
-    pointer-events: none;
-  }
-}
 
 /* FINAL price page restructure: overview table and individual plan sections. */
 html {
@@ -9933,5 +9451,397 @@ html body.site-orbit-theme #page-index main > section.top-about-section > * {
   html body.site-orbit-theme.page-faq .faq-group {
     display: grid !important;
     gap: 7px !important;
+  }
+}
+
+/* TOP ABOUT: overlapping circular feature labels. */
+html body.site-orbit-theme #page-index .top-about-circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 0 2px;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+
+html body.site-orbit-theme #page-index .top-about-circle {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: min(46.5vw, 226px);
+  aspect-ratio: 1;
+  padding: 6px;
+  border: 3px solid rgba(0, 87, 217, 0.24);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: none;
+  color: var(--blue);
+  font-size: clamp(1rem, 3.15vw, 1.25rem);
+  font-weight: 900;
+  line-height: 1.45;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+html body.site-orbit-theme #page-index .top-about-circle-line {
+  white-space: nowrap;
+}
+
+html body.site-orbit-theme #page-index .top-about-circle-text {
+  display: block;
+  text-align: center;
+}
+
+html body.site-orbit-theme #page-index .top-about-illustration-wrap {
+  position: relative !important;
+  z-index: 0 !important;
+  width: min(46.4%, 192px) !important;
+  margin: -30px auto 0 !important;
+  padding: 0 !important;
+  background: none !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-illustration {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-circle + .top-about-circle {
+  z-index: 0;
+  margin-left: -3.5vw;
+  border-color: rgba(52, 201, 213, 0.42);
+  color: #087fbd;
+  box-shadow: none;
+}
+
+html body.site-orbit-theme #page-index .top-about-lead {
+  margin: 22px 0 0;
+  color: #22282f;
+  font-size: clamp(1.18rem, 4.4vw, 1.42rem);
+  font-weight: 900;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+html body.site-orbit-theme #page-index .top-about-lead span {
+  color: var(--blue);
+  font-weight: 900;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme #page-index .top-about-circle {
+    letter-spacing: 0.01em;
+  }
+}
+
+@media (min-width: 981px) {
+  html body.site-orbit-theme #page-index .top-about-circles {
+    justify-content: center;
+  }
+
+  html body.site-orbit-theme #page-index .top-about-circle {
+    width: min(46.5%, 226px);
+  }
+
+html body.site-orbit-theme #page-index .top-about-circle + .top-about-circle {
+  margin-left: -3.5%;
+}
+}
+
+/* Footer: keep the bottom breathing room compact on both desktop and mobile. */
+html body.site-orbit-theme .site-footer {
+  padding-bottom: 28px !important;
+}
+
+html body.site-orbit-theme .site-footer .footer-copyright {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme .site-footer {
+    padding-bottom: 22px !important;
+  }
+}
+
+/* Remove only the small scattered particles outside the hero. */
+html body.site-orbit-theme .site-orbit-background:not(.hero-orbit-scene) .site-orbit-particle {
+  display: none !important;
+}
+
+/* Remove section-level small scattered shapes only. */
+html body.site-orbit-theme #page-index :is(
+  .top-about-section,
+  .supporter-section,
+  .price-section,
+  .reviews-section,
+  .faq-section
+)::before,
+html body.site-orbit-theme #page-index :is(
+  .top-about-section,
+  .supporter-section,
+  .price-section,
+  .reviews-section,
+  .faq-section
+)::after {
+  content: none !important;
+  display: none !important;
+}
+
+html body.site-orbit-theme #page-index main > section.top-about-section::before,
+html body.site-orbit-theme #page-index main > section.top-about-section::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme main > section:not(.hero):not(.vmv-cta-section)::before,
+  html body.site-orbit-theme main > section:not(.hero):not(.vmv-cta-section)::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  html body.site-orbit-theme main > section:not(.hero):not(.vmv-cta-section) {
+    background-image: none !important;
+  }
+}
+
+/* TOP ABOUT feature cards. */
+html body.site-orbit-theme #page-index .top-about-features {
+  display: grid !important;
+  gap: 26px !important;
+  margin-top: 34px !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2 {
+  position: relative !important;
+  display: block !important;
+  padding: 17px 24px !important;
+  border: 0 !important;
+  border-radius: 20px !important;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(226, 244, 255, 0.92)) !important;
+  box-shadow: none !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2 > span {
+  position: static !important;
+  display: block !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 auto 16px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  color: var(--blue) !important;
+  font-size: 0.9rem !important;
+  font-weight: 900 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.16em !important;
+  text-align: center !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2 h3 {
+  width: auto !important;
+  margin: 0 0 18px !important;
+  padding: 0 !important;
+  background: none !important;
+  color: #101820 !important;
+  font-size: 1.22rem !important;
+  font-weight: 900 !important;
+  line-height: 1.65 !important;
+  text-align: center !important;
+  letter-spacing: 0.04em !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .features-item-illustration {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 150px !important;
+  margin: 0 0 20px !important;
+  padding: 22px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(217, 247, 245, 0.9)) !important;
+  object-fit: contain !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .feature-photo-illustration {
+  height: auto !important;
+  aspect-ratio: 8 / 5 !important;
+  padding: 10px !important;
+  border: 0 !important;
+  border-radius: 18px !important;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(217, 247, 245, 0.92)) !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: saturate(0.9) brightness(1.05) contrast(0.96) !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .feature-vmv-photo {
+  aspect-ratio: 8 / 5 !important;
+  height: auto !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2 p {
+  margin: 0 !important;
+  color: #363c42 !important;
+  font-size: 0.92rem !important;
+  font-weight: 500 !important;
+  line-height: 1.9 !important;
+  letter-spacing: 0.04em !important;
+}
+
+@media (min-width: 981px) {
+  html body.site-orbit-theme #page-index .top-about-features {
+    gap: 29px !important;
+  }
+
+  html body.site-orbit-theme #page-index .top-about-features .features-item-v2 {
+    padding: 0 !important;
+  }
+}
+
+/* Final guard: remove leftover small decorations from TOP ABOUT only. */
+html body.site-orbit-theme #page-index main > section.top-about-section {
+  background: rgba(255, 255, 255, 0.95) !important;
+  background-image: none !important;
+}
+
+html body.site-orbit-theme #page-index main > section.top-about-section::before,
+html body.site-orbit-theme #page-index main > section.top-about-section::after,
+html body.site-orbit-theme #page-index .top-about-features::before,
+html body.site-orbit-theme #page-index .top-about-features::after,
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2::before,
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Final TOP ABOUT emphasis text: make the key sentence visibly larger than body copy. */
+html body.site-orbit-theme #page-index .top-about-section > .top-about-lead {
+  font-size: clamp(1.155rem, 4.35vw, 1.395rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.85 !important;
+  letter-spacing: 0.045em !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-section > .top-about-lead span {
+  font-weight: 900 !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-break-photo {
+  position: relative !important;
+  width: 100% !important;
+  margin: 26px 0 0 !important;
+  padding: 8px !important;
+  border-radius: 24px !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(226, 244, 255, 0.72)) !important;
+  overflow: hidden !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-break-photo img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 18px !important;
+  object-fit: contain !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-break-photo + .top-about-features {
+  margin-top: 30px !important;
+}
+
+/* TOP SUPPORTER: soften the profile photo after removing the title/meta line. */
+html body.site-orbit-theme #page-index .supporter-cta-photo > img:not(.supporter-career-text) {
+  border-radius: 26px !important;
+  clip-path: none !important;
+  transform: translateY(30px) !important;
+  box-shadow: 0 18px 40px rgba(0, 87, 217, 0.08) !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-cta-photo::before {
+  border-radius: 22px !important;
+}
+
+/* TOP SUPPORTER: tighten the gap from the section title to the visual content. */
+html body.site-orbit-theme #page-index .supporter-section {
+  row-gap: 3px !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-copy {
+  margin-bottom: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-photo {
+  margin-top: -12px !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-role {
+  grid-column: 1 !important;
+  grid-row: 3 !important;
+  justify-self: center !important;
+  align-self: center !important;
+  z-index: 25 !important;
+  margin: 0 !important;
+  color: #101820 !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0.12em !important;
+  text-align: center !important;
+  writing-mode: vertical-rl !important;
+  text-orientation: mixed !important;
+  transform: translate(112px, 18px) !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-section .supporter-bottom-cta {
+  grid-row: 4 !important;
+  margin-top: 56px !important;
+}
+
+html body.site-orbit-theme #page-index .supporter-cta-photo::before {
+  left: 18px !important;
+  right: -12px !important;
+  top: auto !important;
+  bottom: -36px !important;
+  height: 58% !important;
+  border-radius: 30px !important;
+  clip-path: none !important;
+  transform: rotate(-2deg) !important;
+}
+
+/* TOP VMV: make the visual band 1.2x taller and keep the skyline balanced. */
+html body.site-orbit-theme #page-index main > section.vmv-cta-section {
+  min-height: 396px !important;
+}
+
+html body.site-orbit-theme #page-index main > section.vmv-cta-section::before {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.72) 34%,
+      rgba(255, 255, 255, 0.2) 68%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url("assets/vmv-tokyo-skyline.jpg") center bottom / cover no-repeat !important;
+}
+
+@media (max-width: 980px) {
+  html body.site-orbit-theme #page-index main > section.vmv-cta-section {
+    min-height: 288px !important;
   }
 }
