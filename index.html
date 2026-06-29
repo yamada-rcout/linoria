@@ -7295,6 +7295,44 @@ html body.site-orbit-theme #page-index .reason-grid article:first-child {
   object-position: 50% 28%;
 }
 
+#page-index .hero-free-note {
+  position: absolute;
+  bottom: -7px;
+  left: -36px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 76px;
+  height: 76px;
+  padding: 0;
+  margin: 0;
+  border-radius: 20px;
+  background: rgba(255, 224, 74, 0.95);
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-align: center;
+  transform: rotate(12deg);
+}
+
+#page-index .hero-free-note strong {
+  display: block;
+  font-size: 1em;
+  font-weight: 900;
+}
+
+#page-index .hero-free-note span,
+#page-index .hero-free-note strong {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.08 !important;
+}
+
 #page-index .hero-portrait::before {
   inset: 12px -12px -12px 12px;
   border-radius: 50% 50% 18px 50%;
@@ -7303,15 +7341,8 @@ html body.site-orbit-theme #page-index .reason-grid article:first-child {
 }
 
 #page-index .hero-portrait::after {
-  top: auto;
-  right: auto;
-  bottom: -18px;
-  left: -22px;
-  width: 48px;
-  border: 0;
-  border-radius: 12px;
-  background: rgba(255, 224, 74, 0.92);
-  transform: rotate(12deg);
+  content: none;
+  display: none;
 }
 
 #page-index .top-about-section {
@@ -9985,6 +10016,11 @@ html body.site-orbit-theme #page-index .top-about-features .features-item-v2 h3 
 html body.site-orbit-theme #page-index .top-about-features .features-item-v2 p {
   margin: 0 !important;
 }
+
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2 p strong {
+  color: var(--blue) !important;
+  font-weight: 900 !important;
+}
     
 /* TOP ABOUT break photo: remove pale blue backing. */
 html body.site-orbit-theme #page-index .top-about-break-photo {
@@ -10051,6 +10087,7 @@ html body.site-orbit-theme #page-index .top-about-break-photo img {
           </h1>
         </div>
         <figure class="hero-portrait">
+          <figcaption class="hero-free-note"><span>無料相談</span><strong>受付中</strong></figcaption>
           <img src="assets/hero-teacher-v2.jpg" alt="教室に立つ女性教員" width="1017" height="1017" fetchpriority="high" decoding="async">
         </figure>
       </div>
@@ -10073,9 +10110,9 @@ html body.site-orbit-theme #page-index .top-about-break-photo img {
       <img src="assets/about-consultation-break.png" alt="相談の様子" loading="lazy" decoding="async">
     </figure>
     <div class="features-list-v2 top-about-features">
-      <article class="features-item-v2"><span>01</span><div><h3>転職を前提としない</h3><p>転職を前提とせず、対話を通して自己理解から始め、続ける・転職するなど、あなたに合う選択肢を見つけ、実行まで広くサポートします。</p></div></article>
-      <article class="features-item-v2"><span>02</span><div><h3>経験豊富なサポーター</h3><p>教員・転職・独立を経験しているサポーターが伴走することで、現実的な選択肢を広く見渡すことができます。</p></div></article>
-      <article class="features-item-v2"><span>03</span><div><h3>相談のしやすさ</h3><p>コストも時間も負担のない、現役の先生に徹底的に寄り添った設計のため、忙しい先生でも無理なく利用できます。</p></div></article>
+      <article class="features-item-v2"><span>01</span><div><h3>転職を前提としない</h3><p><strong>転職を前提とせず</strong>、対話を通して自己理解から始め、続ける・転職するなど、<strong>あなたに合う選択肢</strong>を見つけ、実行まで広くサポートします。</p></div></article>
+      <article class="features-item-v2"><span>02</span><div><h3>経験豊富なサポーター</h3><p><strong>教員・転職・独立を経験</strong>し、<strong>キャリアサポート実績が豊富</strong>なサポーターが伴走することで、<strong>現実的な選択肢</strong>を広く見渡すことができます。</p></div></article>
+      <article class="features-item-v2"><span>03</span><div><h3>相談のしやすさ</h3><p><strong>料金は完全明確化</strong>。コストも時間も負担のない、<strong>現役の先生に徹底的に寄り添った設計</strong>のため、忙しい先生でも<strong>無理なく利用</strong>できます。</p></div></article>
     </div>
   </section>
 

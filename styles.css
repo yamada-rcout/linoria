@@ -897,8 +897,11 @@ h3 {
 .about-geometry {
   position: relative;
   z-index: 1;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   min-height: clamp(340px, 42vw, 560px);
   opacity: 1;
   transform: none;
@@ -6860,6 +6863,41 @@ html body.site-orbit-theme #page-index main > section.price-section {
   object-position: 50% 28%;
 }
 
+#page-index .hero-free-note {
+  position: absolute;
+  bottom: -7px;
+  left: -36px;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  padding: 0;
+  margin: 0;
+  border-radius: 20px;
+  background: rgba(255, 224, 74, 0.95);
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-align: center;
+  transform: rotate(12deg);
+}
+
+#page-index .hero-free-note strong {
+  display: block;
+  font-size: 1em;
+  font-weight: 900;
+}
+
+#page-index .hero-free-note span,
+#page-index .hero-free-note strong {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.08 !important;
+}
+
 #page-index .hero-portrait::before {
   inset: 12px -12px -12px 12px;
   border-radius: 50% 50% 18px 50%;
@@ -6868,15 +6906,8 @@ html body.site-orbit-theme #page-index main > section.price-section {
 }
 
 #page-index .hero-portrait::after {
-  top: auto;
-  right: auto;
-  bottom: -18px;
-  left: -22px;
-  width: 48px;
-  border: 0;
-  border-radius: 12px;
-  background: rgba(255, 224, 74, 0.92);
-  transform: rotate(12deg);
+  content: none;
+  display: none;
 }
 
 #page-index .top-about-section {
@@ -10258,6 +10289,11 @@ html body.site-orbit-theme #page-index .top-about-features .features-item-v2 h3 
 
 html body.site-orbit-theme #page-index .top-about-features .features-item-v2 p {
   margin: 0 !important;
+}
+
+html body.site-orbit-theme #page-index .top-about-features .features-item-v2 p strong {
+  color: var(--blue) !important;
+  font-weight: 900 !important;
 }
 /* TOP ABOUT break photo: remove pale blue backing. */
 html body.site-orbit-theme #page-index .top-about-break-photo {
