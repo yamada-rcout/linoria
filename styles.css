@@ -10408,6 +10408,15 @@ html body.site-orbit-theme .floating-cta-group.is-hidden {
   transform: translateY(16px) !important;
 }
 
+/* PC keeps the contact CTA fixed and visible under the side menu. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme .floating-cta-group.is-hidden {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+}
+
 /* SUPPORTER role label: vertical but designed as a soft profile tag. */
 html body.site-orbit-theme #page-index .supporter-section .supporter-cta-role {
   right: -30px !important;
