@@ -6904,9 +6904,9 @@ body.site-orbit-theme #page-index .reason-section .reason-grid article {
   }
 
   .floating-cta-group.is-hidden {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    transform: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(16px) !important;
   }
 
   body.site-orbit-theme #page-index .review-card-list {
@@ -8105,9 +8105,9 @@ html body.site-orbit-theme #page-index .faq-summary-panel > .section-link span {
   }
 
   .floating-cta-group.is-hidden {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    transform: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(16px) !important;
   }
 
   body.site-orbit-theme #page-index .review-card-list {
@@ -10076,6 +10076,75 @@ html body.site-orbit-theme #page-index .supporter-section .supporter-cta-role {
   writing-mode: vertical-rl !important;
   text-orientation: upright !important;
 }
+    
+/* Global contact CTA: blue and placed under the PC menu. */
+
+
+html body.site-orbit-theme .floating-cta-group .floating-cta,
+html body.site-orbit-theme .floating-cta-group .floating-cta--mail {
+  background: var(--blue) !important;
+  color: var(--white) !important;
+  border: 0 !important;
+  box-shadow: 8px 8px 0 rgba(210, 244, 255, 0.72), 0 12px 28px rgba(0, 87, 217, 0.07) !important;
+}
+
+html body.site-orbit-theme .floating-cta-group .floating-cta:hover,
+html body.site-orbit-theme .floating-cta-group .floating-cta--mail:hover {
+  background: var(--blue-dark) !important;
+  color: var(--white) !important;
+}
+
+@media (min-width: 981px) {
+  html body.site-orbit-theme .floating-cta-group {
+    position: fixed !important;
+    top: 410px !important;
+    left: max(18px, calc((100vw - var(--center-stage-width)) / 2 - var(--pc-left-menu-width, 200px) - var(--pc-outer-gap, 96px))) !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: var(--pc-left-menu-width, 200px) !important;
+    z-index: 40 !important;
+    display: grid !important;
+    gap: 8px !important;
+    justify-items: stretch !important;
+  }
+
+  html body.site-orbit-theme .floating-cta-group .floating-cta {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+    
+/* Keep scroll-hide behavior for the contact CTA. */
+html body.site-orbit-theme .floating-cta-group.is-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(16px) !important;
+}
+
+    
+/* SUPPORTER role label: vertical but designed as a soft profile tag. */
+html body.site-orbit-theme #page-index .supporter-section .supporter-cta-role {
+  right: -30px !important;
+  z-index: 4 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 172px !important;
+  padding: 14px 6px !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-left: 3px solid var(--blue) !important;
+  border-radius: 999px !important;
+  color: var(--blue-dark) !important;
+  box-shadow: 6px 6px 0 rgba(210, 244, 255, 0.68), 0 12px 24px rgba(0, 87, 217, 0.08) !important;
+  font-size: 0.86rem !important;
+  font-weight: 900 !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.12em !important;
+  writing-mode: vertical-rl !important;
+  text-orientation: upright !important;
+}
+
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -10103,7 +10172,7 @@ html body.site-orbit-theme #page-index .supporter-section .supporter-cta-role {
   <nav class="nav" id="site-nav" aria-label="メインナビゲーション"><a href="#top">TOP</a><a href="message.html">SUPPORTER</a><a href="price.html">PLAN / PRICE</a><a href="faq.html">FAQ</a><a href="contact.html">CONTACT</a></nav>
 </header>
 
-<div class="floating-cta-group" aria-label="お問い合わせ導線"><a class="floating-cta floating-cta--mail" href="contact.html">メールで無料相談</a></div>
+<div class="floating-cta-group" aria-label="&#x304A;&#x554F;&#x3044;&#x5408;&#x308F;&#x305B;&#x5C0E;&#x7DDA;"><a class="floating-cta floating-cta--mail" href="contact.html">&#x7121;&#x6599;&#x76F8;&#x8AC7;&#x306F;&#x3053;&#x3061;&#x3089;&#x304B;&#x3089;</a></div>
 
 <!-- INDEX PAGE -->
 <div id="page-index">
