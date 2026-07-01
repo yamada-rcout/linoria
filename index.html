@@ -10145,6 +10145,24 @@ html body.site-orbit-theme #page-index .supporter-section .supporter-cta-role {
   text-orientation: upright !important;
 }
 
+    
+/* PC keeps the contact CTA fixed and visible under the side menu. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme .floating-cta-group.is-hidden {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+}
+
+    
+/* PC logo width matches the side menu. */
+@media (min-width: 981px) {
+  html body.site-orbit-theme .site-header .brand {
+    width: var(--pc-left-menu-width, 200px) !important;
+  }
+}
+
     </style>
 </head>
 <body class="site-orbit-theme">
@@ -10278,7 +10296,7 @@ html body.site-orbit-theme #page-index .supporter-section .supporter-cta-role {
         <details><summary>転職するか決めていなくても相談できますか？</summary><p>はい。Linoriaは転職を前提としたサービスではありません。現職継続、転職、起業・独立など、さまざまな選択肢を一緒に整理します。</p></details>
         <details><summary>考えを整理できていなくても相談できますか？</summary><p>もちろんです。言葉にしきれていない悩みや迷いも、対話を通して一緒に整理していきます。</p></details>
         <details><summary>無料相談後に、有料プランへ申し込む必要はありますか？</summary><p>いいえ、必要ありません。無料相談だけで終了していただくことも可能です。無理な勧誘は行いませんので、安心してご相談ください。</p></details>
-        <details><summary>求人を紹介してもらえますか？</summary><p>いいえ。Linoriaは人材紹介サービスではありません。中立な立場でキャリア選択をサポートしています。</p></details>
+        <details><summary>求人を紹介してもらえますか？</summary><p>いいえ。Linoriaは人材紹介サービス・転職エージェントではないため、特定の求人や企業の紹介、応募のあっせんは行っていません。</p><p>一方で、転職を希望される場合には、求人の探し方や選び方、求人票を見るときのポイント、応募先を選ぶための判断軸づくりなどはサポートしています。</p><p>また、教員経験をどのように言語化するか、どんな職種や働き方が選択肢になり得るか、転職活動を始める前に何を整理すべきかについて、一緒に考えることができます。</p><p>Linoriaが大切にしているのは、特定の求人に誘導することではなく、あなた自身が納得してキャリアを選べる状態をつくることです。</p></details>
       </div>
       <a class="section-link" href="faq.html">FAQを見る<span aria-hidden="true">→</span></a>
     </div>

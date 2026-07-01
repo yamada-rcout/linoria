@@ -10415,6 +10415,10 @@ html body.site-orbit-theme .floating-cta-group.is-hidden {
     pointer-events: auto !important;
     transform: none !important;
   }
+
+  html body.site-orbit-theme .site-header .brand {
+    width: var(--pc-left-menu-width, 200px) !important;
+  }
 }
 
 /* SUPPORTER role label: vertical but designed as a soft profile tag. */
