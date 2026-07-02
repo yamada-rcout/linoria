@@ -10442,3 +10442,45 @@ html body.site-orbit-theme #page-index .supporter-section .supporter-cta-role {
   writing-mode: vertical-rl !important;
   text-orientation: upright !important;
 }
+
+/* TOP REVIEWS: monthly consultation count. */
+html body.site-orbit-theme #page-index .reviews-monthly-stat {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  margin: 0 0 22px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--blue) !important;
+  box-shadow: none !important;
+}
+
+html body.site-orbit-theme #page-index .reviews-monthly-stat span {
+  font-size: 0.82rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+}
+
+html body.site-orbit-theme #page-index .reviews-monthly-stat strong {
+  position: relative !important;
+  font-size: clamp(1.6rem, 7vw, 2.35rem) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.04em !important;
+}
+
+html body.site-orbit-theme #page-index .reviews-monthly-stat strong::after {
+  content: "" !important;
+  position: absolute !important;
+  top: -0.22em !important;
+  right: -0.30em !important;
+  width: 0.18em !important;
+  height: 0.34em !important;
+  border-radius: 999px !important;
+  background: #ffd94d !important;
+  box-shadow: 0.20em 0.02em 0 #ffd94d !important;
+  transform: rotate(12deg) !important;
+}
